@@ -43,7 +43,7 @@ https://github.com/junegunn/vim-plug
 
 ## git
 
-git config --global user.name "Mark Jones"
+git config --global user.name "Fred Basset"
 git config --global user.email email_no_quotes
 
 ## R / RStudio (and dep)
