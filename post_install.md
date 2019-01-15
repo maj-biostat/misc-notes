@@ -43,7 +43,7 @@ https://github.com/junegunn/vim-plug
 ## git
 
 
-`git config --global user.name "Mark Jones"`
+`git config --global user.name "Fred Basset"`
 `git config --global user.email email_no_quotes`
 
 
@@ -102,7 +102,7 @@ install.packages("pch", dependencies = T)
 install.packages("nphsim", dependencies = T)
 
 
-Stepped wedge sample size:
+# Stepped wedge sample size:
 https://github.com/giabaio/SWSamp
 
 install.packages("SWSamp",
@@ -112,9 +112,8 @@ install.packages("SWSamp",
 	dependencies=TRUE
 )
 
-Stan
-follow instructions
-https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
+# Stan follow instructions
+# https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
 
 install.packages("rstan", repos = "https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("brms", dependencies = T)
@@ -158,7 +157,7 @@ Use @nameyyyy for citations.
 
 ## atom
 
-https://jstaf.github.io/2018/03/25/atom-ide.html
+
 I think I had to uninstall language-r and then let lintr install it as a dependency.
 
 `yay -S atom`
@@ -180,11 +179,10 @@ I think I had to uninstall language-r and then let lintr install it as a depende
 ## vim
 
 To install a vimball (*.vmb) open it in vim and then do :source %
+https://jstaf.github.io/2018/03/25/atom-ide.html
+
+## Hardware
 
 
-
-
-
-
-
-
+Intel Xeon Silver 4110 LGA3647 2.1GHz 8-Core CPU Processor
+SKU# AC08317, Model# BX806734110
