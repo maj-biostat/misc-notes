@@ -166,16 +166,17 @@ Use @nameyyyy for citations.
 
 I think I had to uninstall language-r and then let lintr install it as a dependency.
 
-`yay -S atom`
-`yay -S apm`
-`apm install ide-r language-r`
-`sed -i '0,/Grep/{s/Grep/Grep 2/}' ~/.atom/packages/language-r/snippets/language-r.cson`
-`sed -i '0,/Cummulative max/{s/Cummulative max/Cummulative max 2/}' ~/.atom/packages/language-r/snippets/language-r.cson`
-`apm install language-markdown`
-`apm install atom-ide-ui ide-python`
-`apm install block-select`
-`apm install column-select`
-
+```
+yay -S atom
+yay -S apm
+apm install ide-r language-r
+sed -i '0,/Grep/{s/Grep/Grep 2/}' ~/.atom/packages/language-r/snippets/language-r.cson
+sed -i '0,/Cummulative max/{s/Cummulative max/Cummulative max 2/}' ~/.atom/packages/language-r/snippets/language-r.cson
+apm install language-markdown
+apm install atom-ide-ui ide-python
+apm install block-select
+apm install column-select
+```
 
 ## Memory details
 
