@@ -18,41 +18,42 @@ many others...
 
 ## Yay
 
-sudo pacman -S yay
+`sudo pacman -S yay`
 https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 ## Phoronix bench tests
 
-yay -S phoronix-test-suite
+`yay -S phoronix-test-suite`
 
 ## Chrome
 
-yay -S google-chrome
-
-## Sublime text 3 
+`yay -S google-chrome`
+## Sublime text 3
 
 Follow instructions
 https://www.sublimetext.com/docs/3/linux_repositories.html
 
 ## Vim / vim-plug
 
-sudo pacman -S vim
+`sudo pacman -S vim`
 
 Go here, follow instruc
 https://github.com/junegunn/vim-plug
 
 ## git
 
-git config --global user.name "Mark Jones"
-git config --global user.email email_no_quotes
+
+`git config --global user.name "Mark Jones"`
+`git config --global user.email email_no_quotes`
+
 
 ## R / RStudio (and dep)
 
-sudo pacman -S r
-yay -S rstudio-desktop-bin
-yay -S openblas-lapack
-sudo pacman -S pandoc
-sudo pacman -S pandoc-citeproc
+`sudo pacman -S r`
+`yay -S rstudio-desktop-bin`
+`yay -S openblas-lapack`
+`sudo pacman -S pandoc`
+`sudo pacman -S pandoc-citeproc`
 
 
 ### JAGS
@@ -61,8 +62,10 @@ yay -S jags
 
 ### Minimal set of packages
 
+```
 install.packages("ggplot2", dependencies = T)
 install.packages("tidyr", dependencies = T)
+install.packages("lintr", dependencies = T)
 install.packages("dplyr", dependencies = T)
 install.packages("pryr", dependencies = T)
 install.packages("Rcpp", dependencies = T)
@@ -73,6 +76,9 @@ install.packages("RcppDist", dependencies = T)
 install.packages("msm", dependencies = T)
 install.packages("grid", dependencies = T)
 install.packages("gridExtra", dependencies = T)
+install.packages("optparse", dependencies = T)
+install.packages("formattable", dependencies = T)
+install.packages("psych", dependencies = T)
 
 install.packages("knitr", dependencies = T)
 install.packages("configr", dependencies = T)
@@ -125,7 +131,7 @@ install.packages("invgamma", dependencies = T)
 #### devtools::install_version("BayesLogit", "0.6")
 #### devtools::install_version("tglm", "1.0")
 #### devtools::install_version("EPGLM", "1.1.2")
-
+```
 
 
 ### yaml Header for Rmd
@@ -149,5 +155,36 @@ bibliography: my.bib
 ```
 
 Use @nameyyyy for citations.
+
+## atom
+
+https://jstaf.github.io/2018/03/25/atom-ide.html
+I think I had to uninstall language-r and then let lintr install it as a dependency.
+
+`yay -S atom`
+`yay -S apm`
+`apm install ide-r language-r`
+`sed -i '0,/Grep/{s/Grep/Grep 2/}' ~/.atom/packages/language-r/snippets/language-r.cson`
+`sed -i '0,/Cummulative max/{s/Cummulative max/Cummulative max 2/}' ~/.atom/packages/language-r/snippets/language-r.cson`
+`apm install language-markdown`
+`apm install atom-ide-ui ide-python`
+`apm install block-select`
+`apm install column-select`
+
+
+## Memory details
+
+`sudo dmidecode --type memory`
+
+
+## vim
+
+To install a vimball (*.vmb) open it in vim and then do :source %
+
+
+
+
+
+
 
 
