@@ -61,6 +61,7 @@ yay -S jags
 
 ### Minimal set of packages
 
+```
 install.packages("ggplot2", dependencies = T)
 install.packages("tidyr", dependencies = T)
 install.packages("dplyr", dependencies = T)
@@ -96,7 +97,7 @@ install.packages("pch", dependencies = T)
 install.packages("nphsim", dependencies = T)
 
 
-Stepped wedge sample size:
+# Stepped wedge sample size:
 https://github.com/giabaio/SWSamp
 
 install.packages("SWSamp",
@@ -106,9 +107,8 @@ install.packages("SWSamp",
 	dependencies=TRUE
 )
 
-Stan
-follow instructions
-https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
+# Stan follow instructions
+# https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
 
 install.packages("rstan", repos = "https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("brms", dependencies = T)
@@ -126,7 +126,7 @@ install.packages("invgamma", dependencies = T)
 #### devtools::install_version("tglm", "1.0")
 #### devtools::install_version("EPGLM", "1.1.2")
 
-
+```
 
 ### yaml Header for Rmd
 
