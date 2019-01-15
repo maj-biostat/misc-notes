@@ -1,6 +1,12 @@
 
 # Manjaro (post) install
 
+# To redo install 
+create liveusb
+Press F12? to go to boot screen
+boot the live install
+run the installer (select free driver)
+
 ## NVIDIA
 
 Select free drivers, edit grub (/etc/default/grub) then sudo update-grub as per dorian dot slash then go to https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup and follow instructions.
