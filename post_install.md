@@ -150,4 +150,7 @@ bibliography: my.bib
 
 Use @nameyyyy for citations.
 
+## Hardware
 
+Intel Xeon Silver 4110 LGA3647 2.1GHz 8-Core CPU Processor 
+SKU# AC08317, Model# BX806734110
