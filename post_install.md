@@ -115,6 +115,7 @@ install.packages("formattable", dependencies = T)
 install.packages("psych", dependencies = T)
 
 install.packages("knitr", dependencies = T)
+install.packages("kableExtra", dependencies = T)
 install.packages("configr", dependencies = T)
 install.packages("futile.logger", dependencies = T)
 install.packages("survival", dependencies = T)
