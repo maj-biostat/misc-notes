@@ -33,6 +33,12 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 `yay -S phoronix-test-suite`
 
+## Panel plugins
+
+```
+yay -S xfce4-hardware-monitor-plugin
+yay -S xfce4-datetime-plugin
+```
 
 ## Hamster time tracker
 
@@ -203,7 +209,7 @@ apm install block-select
 apm install column-select
 ```
 
-## Memory details
+## Hardware details
 
 ```
 sudo pacman -S hardinfo
@@ -216,6 +222,8 @@ sudo dmidecode --type memory
 cat /proc/cpuinfo
 cat /proc/cpuinfo | grep processor | wc -l
 lscpu
+
+sudo pacman -S i-nex libcpuid
 ```
 
 
