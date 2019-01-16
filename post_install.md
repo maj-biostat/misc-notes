@@ -33,6 +33,11 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 `yay -S phoronix-test-suite`
 
+
+## Hamster time tracker
+
+`sudo pacman -S hamster-time-tracker`
+
 ## Chrome
 
 `yay -S google-chrome`
@@ -46,7 +51,12 @@ https://www.sublimetext.com/docs/3/linux_repositories.html
 
 `sudo pacman -S vim`
 
-Go here, follow instruc
+Download the package `nvim-r` from here:
+https://www.vim.org/scripts/script.php?script_id=2628
+
+open it in vim and then do :so %
+
+To install vimplug: go here, follow instruc
 https://github.com/junegunn/vim-plug
 
 ## git
@@ -55,6 +65,16 @@ https://github.com/junegunn/vim-plug
 `git config --global user.email email_no_quotes`
 
 
+## Apps
+
+Nightlight (red shift)
+tweaktool - window deco
+libre
+gparted - kde partition mgr
+gimp
+timeshift
+geary - email
+
 ## R / RStudio (and dep) / pandoc
 
 `sudo pacman -S r`
@@ -62,7 +82,6 @@ https://github.com/junegunn/vim-plug
 `yay -S openblas-lapack`
 `sudo pacman -S pandoc`
 `sudo pacman -S pandoc-citeproc`
-
 
 ### JAGS
 
@@ -111,7 +130,7 @@ install.packages("nphsim", dependencies = T)
 
 
 # Stepped wedge sample size:
-https://github.com/giabaio/SWSamp
+# https://github.com/giabaio/SWSamp
 
 install.packages("SWSamp",
 	repos=c("http://www.statistica.it/gianluca/R",
@@ -163,6 +182,10 @@ bibliography: my.bib
 
 Use @nameyyyy for citations.
 
+## python
+
+already installed
+
 ## atom
 
 
@@ -182,7 +205,18 @@ apm install column-select
 
 ## Memory details
 
-`sudo dmidecode --type memory`
+```
+sudo pacman -S hardinfo
+
+sudo dmidecode
+
+sudo dmidecode --type memory
+
+
+cat /proc/cpuinfo
+cat /proc/cpuinfo | grep processor | wc -l
+lscpu
+```
 
 
 ## vim
@@ -191,7 +225,6 @@ To install a vimball (*.vmb) open it in vim and then do :source %
 https://jstaf.github.io/2018/03/25/atom-ide.html
 
 ## Hardware
-
 
 Intel Xeon Silver 4110 LGA3647 2.1GHz 8-Core CPU Processor
 SKU# AC08317, Model# BX806734110
