@@ -26,8 +26,9 @@ many others...
 
 ## Yay
 
-`sudo pacman -S yay`
 https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
+
+`sudo pacman -S yay`
 
 ## Phoronix bench tests
 
@@ -50,7 +51,6 @@ yay -S xfce4-datetime-plugin
 
 ## Sublime text 3
 
-Follow instructions
 https://www.sublimetext.com/docs/3/linux_repositories.html
 
 ## Vim / vim-plug
@@ -60,19 +60,20 @@ https://www.sublimetext.com/docs/3/linux_repositories.html
 Download the package `nvim-r` from here:
 https://www.vim.org/scripts/script.php?script_id=2628
 
-open it in vim and then do :so %
-
 To install vimplug: go here, follow instruc
 https://github.com/junegunn/vim-plug
+
+In a nutshell:
+open Nvim-R.vmb in vim and then do `:so %`
 
 ## git
 
 `git config --global user.name "Fred Basset"`
 `git config --global user.email email_no_quotes`
 
-
 ## Apps
 
+Look into.
 Nightlight (red shift)
 tweaktool - window deco
 libre
@@ -197,6 +198,9 @@ already installed
 
 I think I had to uninstall language-r and then let lintr install it as a dependency.
 
+Also note:
+https://jstaf.github.io/2018/03/25/atom-ide.html
+
 ```
 yay -S atom
 yay -S apm
@@ -225,12 +229,6 @@ lscpu
 
 sudo pacman -S i-nex libcpuid
 ```
-
-
-## vim
-
-To install a vimball (*.vmb) open it in vim and then do :source %
-https://jstaf.github.io/2018/03/25/atom-ide.html
 
 ## Hardware
 
