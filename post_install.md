@@ -15,11 +15,12 @@ Select free drivers, edit grub (/etc/default/grub) then sudo update-grub as per 
 
 https://wiki.manjaro.org/index.php?title=Pacman_Tips
 
-search -Ss pkg_name
-download fresh copy of master package db -Sy
-install -S pkg_name
-upgrade -Su
-remove -R package_name
+
+search `pacman -Ss pkg_name`
+download fresh copy of master package db `pacman -Sy`
+install `pacman -S pkg_name`
+upgrade `pacman -Su`
+remove `pacman -R package_name`
 many others...
 
 ## Yay
@@ -34,6 +35,7 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 ## Chrome
 
 `yay -S google-chrome`
+
 ## Sublime text 3
 
 Follow instructions
@@ -47,7 +49,6 @@ Go here, follow instruc
 https://github.com/junegunn/vim-plug
 
 ## git
-
 
 `git config --global user.name "Fred Basset"`
 `git config --global user.email email_no_quotes`
