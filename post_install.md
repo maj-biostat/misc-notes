@@ -9,7 +9,8 @@ run the installer (select free driver)
 
 ## NVIDIA
 
-Select free drivers, edit grub (/etc/default/grub) then sudo update-grub as per dorian dot slash then go to https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup and follow instructions.
+You need to have done the install using the free drivers.
+Edit grub (/etc/default/grub) then `sudo update-grub` as per dorian dot slash then go to https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup and follow instructions.
 
 ## Pacman tips
 
@@ -54,7 +55,7 @@ https://github.com/junegunn/vim-plug
 `git config --global user.email email_no_quotes`
 
 
-## R / RStudio (and dep)
+## R / RStudio (and dep) / pandoc
 
 `sudo pacman -S r`
 `yay -S rstudio-desktop-bin`
