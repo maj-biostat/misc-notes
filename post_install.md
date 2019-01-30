@@ -57,6 +57,16 @@ https://www.sublimetext.com/docs/3/linux_repositories.html
 
 `sudo pacman -S vim`
 
+Thing is, the above installs vim-minimal (I think). This does not have clipboard enabled.
+
+Test with:
+
+:echo has('clipboard')
+
+if the result is 0 then install gvim (you might need to uninstall vim). This will give you access to the system clipboard via select and middle mouse button.
+
+
+
 Download the package `nvim-r` from here:
 https://www.vim.org/scripts/script.php?script_id=2628
 
