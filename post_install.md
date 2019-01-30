@@ -194,6 +194,53 @@ Use @nameyyyy for citations.
 
 already installed
 
+## tensorflow and greta
+
+This was a bit of a dick on but I really wanted to test out greta, see:
+
++ https://rviews.rstudio.com/2018/04/23/on-first-meeting-greta/
++ https://greta-stats.org/articles/get_started.html
+
+Greta depends on tensorflow and the suggested way to install relies on anaconda, which I didn't want to use. Also there is a dependency issue on tensorflow 1.10 from rstudio whereas tensorflow is currently up to 1.12. So I installed from scratch:
+
+```
+pip install virtualenv
+yay -S tensorflow
+yay -S python-tensorflow
+pip install --user tensorflow-probability
+```
+
+Unfortunately I do not presently have a clue about virtualenv.
+
+In R you can then do:
+
+```
+devtools::install_github("greta-dev/greta")
+# at the time of writing the above required an update to purrr
+# lets you easily specify python to use
+# install.packages("reticulate")
+library(reticulate)
+reticulate::use_python("/usr/bin/python")
+
+library(greta)
+library(bayesplot)
+
+intercept <- normal(0, 5)
+coef <- normal(0, 3)
+sd <- lognormal(0, 3)
+
+x <- iris$Petal.Length
+y <- iris$Sepal.Length
+mean <- intercept + coef * x
+distribution(y) <- normal(mean, sd)
+m <- model(intercept, coef, sd)
+
+draws <- greta::mcmc(m, n_samples = 1000, chains = 4)
+bayesplot::mcmc_trace(draws)
+```
+
+
+
 ## atom
 
 
@@ -214,6 +261,8 @@ apm install block-select
 apm install column-select
 ```
 
+
+
 ## Hardware details
 
 ```
@@ -230,6 +279,8 @@ lscpu
 
 sudo pacman -S i-nex libcpuid
 ```
+
+
 
 ## Hardware
 
