@@ -427,8 +427,15 @@ pass generate test 10
 # review the passwords in the store
 pass
 ```
+typing `pass test` will prompt you for the gpg passphrase then show you the requested password. if you use `pass -c test` the password will be copied to the clipboard for 45 seconds. remove the password using `pass rm test` 
 
-typing `pass test` will prompt you for the gpg passphrase then show you the requested password. if you use `pass -c test` the password will be copied to the clipboard for 45 seconds. remove the password using `pass rm test`
+## pgrep
+
+is something i was unaware of but is very useful for killing a number of instances of the same application, e.g. 
+
+```
+for pid in $(pgrep R); do kill -9 $pid; done
+```
 
 ## openssh
 
