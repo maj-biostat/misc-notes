@@ -76,10 +76,64 @@ https://github.com/junegunn/vim-plug
 In a nutshell:
 open Nvim-R.vmb in vim and then do `:so %`
 
+
+### Colourscheme
+
+Get colourschemes from eg
+
+https://github.com/flazz/vim-colorschemes
+https://github.com/fxn/vim-monochrome
+https://github.com/sjl/badwolf
+https://github.com/noahfrederick/vim-noctu
+
+Download the .vim files and copy to `~/.vim/color` directory:
+
+mv ~/Downloads/vim-distinguished-develop/colors/*.vim ~/.vim/colors/
+
+Edit the `~/.vimrc` file introducing:
+
+syntax enable
+colorscheme distinguished
+
+
+### tmux
+
+Terminal windows.
+
+`sudo pacman -S tmux`
+
+For vim colors see:
+
+https://vi.stackexchange.com/questions/7112/tmux-messing-with-vim-highlighting
+https://sunaku.github.io/vim-256color-bce.html
+https://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
+
+
+```
+# Add this line to your tmux.conf file
+
+set -g default-terminal "screen-256color"
+
+# Add the line below to you shells rc file in my case its my .zshrc
+
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi 
+
+# Add the line below to your .vimrc
+
+set t_Co=256
+
+```
+
+
+
+
 ## git
 
 `git config --global user.name "Fred Basset"`
 `git config --global user.email email_no_quotes`
+
+
+
 
 ## Apps
 
@@ -375,3 +429,29 @@ pass
 ```
 
 typing `pass test` will prompt you for the gpg passphrase then show you the requested password. if you use `pass -c test` the password will be copied to the clipboard for 45 seconds. remove the password using `pass rm test`
+
+## openssh
+
+`sshd`, `sftp` and other things. 
+
+After diligently updating `/etc/ssh/sshd_config` use the following to control the status of the ssh demon.
+
+```
+# this has the sshd running continually - bad
+sudo systemctl enable sshd.service
+
+# so change it:
+sudo systemctl disable sshd.service
+
+# a one off start is 
+sudo systemctl start sshd.service
+
+# and stop with
+sudo systemctl stop sshd.service
+```
+
+
+
+
+
+
