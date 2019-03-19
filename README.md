@@ -444,6 +444,42 @@ Start a job in the background piping to stdout and stderr to file.
 ```
 ./run_sim_3.sh > logs/test.log 2>&1 &
 ```
+## useful shell commands to used in conjunction with pipes
+
+These can be used for extracting columns, seeing the number of words in a file and selcting unique entries from a file respectively.
+```
+cut -d , -f 2 fname.txt
+wc -l fname.txt | sort -n
+uniq fname.txt
+
+# use all 3!!
+cut -d , -f 2 animals.txt | sort | uniq
+```
+
+## shell scripts
+
+Just some basic examples:
+
+Simple script processing a few command line args.
+
+```
+# Select lines from the middle of a file.
+# Usage: bash middle.sh filename end_line num_lines
+head -n "$2" "$1" | tail -n "$3"
+```
+
+Here we use the `"$@"` command to say that all command line arguments passed in should be used.
+```
+# Sort filenames by their length.
+# Usage: bash sorted.sh one_or_more_filenames
+wc -l "$@" | sort -n
+```
+
+Here is a snazzy thing to redo the last 4 commands in the history.
+
+```
+
+```
 
 
 ## openssh
