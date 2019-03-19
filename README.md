@@ -431,13 +431,20 @@ pass
 ```
 typing `pass test` will prompt you for the gpg passphrase then show you the requested password. if you use `pass -c test` the password will be copied to the clipboard for 45 seconds. remove the password using `pass rm test` 
 
-## pgrep
+## job management, e.g. pgrep
 
 is something i was unaware of but is very useful for killing a number of instances of the same application, e.g. 
 
 ```
 for pid in $(pgrep R); do kill -9 $pid; done
 ```
+
+Start a job in the background piping to stdout and stderr to file.
+
+```
+./run_sim_3.sh > logs/test.log 2>&1 &
+```
+
 
 ## openssh
 
@@ -458,7 +465,6 @@ sudo systemctl start sshd.service
 # and stop with
 sudo systemctl stop sshd.service
 ```
-
 
 
 
