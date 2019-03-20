@@ -478,7 +478,13 @@ wc -l "$@" | sort -n
 Here is a snazzy thing to redo the last 4 commands in the history.
 
 ```
+history | tail -5 | cut -d " " -f 2 | head -4
+```
 
+Wordcount on files identified with `find`:
+
+```
+wc -l $(find . -name "asterix.dat") | sort -n 
 ```
 
 
@@ -502,7 +508,26 @@ sudo systemctl start sshd.service
 sudo systemctl stop sshd.service
 ```
 
+## screen
 
+Linux Screen allows you to:
 
++ Use multiple shell windows from a single SSH session.
++ Keep a shell active even through network disruptions.
++ Disconnect and re-connect to a shell sessions from multiple locations.
++ Run a long running process without maintaining an active shell session.
 
+Commands:
 
+```
+# create a screen session
+screen             
+# detach current screen session
+Ctrl a + d   
+# reattach latest screen session
+screen -RR         
+# list all screen sessions
+screen -ls          
+# reattach session
+screen -R <session id (from screen -ls)>   
+```
