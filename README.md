@@ -196,7 +196,7 @@ tinytex::install_tinytex()
 install.packages("microbenchmark", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("coin", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("devtools", dependencies = T, repos = 'https://cran.curtin.edu.au')
-devtools::install_github("rmcelreath/rethinking", repos = 'https://cran.curtin.edu.au')
+devtools::install_github("rmcelreath/rethinking")
 
 install.packages("eph", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("pch", dependencies = T, repos = 'https://cran.curtin.edu.au')
