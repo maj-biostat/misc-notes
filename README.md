@@ -223,6 +223,8 @@ install.packages("loo", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("rjags", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("pwr", dependencies = T, repos = 'https://cran.curtin.edu.au')
 
+install.packages("mcmc", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("ggfortify", dependencies = T, repos = 'https://cran.curtin.edu.au')
 
 install.packages("LaplacesDemon", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("invgamma", dependencies = T, repos = 'https://cran.curtin.edu.au')
