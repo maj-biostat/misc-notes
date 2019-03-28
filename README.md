@@ -205,6 +205,7 @@ install.packages("RcppArmadillo", dependencies = T, repos = 'https://cran.curtin
 install.packages("RcppDist", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("msm", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("grid", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("simstudy", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("gridExtra", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("optparse", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("formattable", dependencies = T, repos = 'https://cran.curtin.edu.au')
