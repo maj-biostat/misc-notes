@@ -162,6 +162,36 @@ yay -S jags
 
 ### Minimal set of packages
 
+Note that if things go pear shaped with build tools just uninstall and reinstall rstudio and buildtools. 
+
+`pkgbuild::find_rtools()` shows you if the r tools are available.
+
+See:
+http://jtleek.com/modules/01_DataScientistToolbox/02_10_rtools/#1
+
+
+The .Rprofile should look something like:
+
+```
+.First <- function() {
+  Sys.setenv(PATH = paste("path..../R/Rtools35/bin",
+                          "path..../R/Rtools35/mingw_$(WIN)/bin",
+                          Sys.getenv("PATH"), sep=";"))
+  Sys.setenv(BINPREF = "path..../R/Rtools35/mingw_$(WIN)/bin/")
+}
+
+if (interactive()) {
+  suppressMessages(require(usethis))
+}
+
+options(prompt="R> ")
+
+options(usethis.full_name = "maj")
+
+```
+
+also pay attention to the path environment variable.
+
 ```
 install.packages("ggplot2", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("tidyr", dependencies = T, repos = 'https://cran.curtin.edu.au')
