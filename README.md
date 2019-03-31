@@ -563,4 +563,6 @@ screen -RR
 screen -ls          
 # reattach session
 screen -R <session id (from screen -ls)>   
+# kill all
+ctrl a + \
 ```
