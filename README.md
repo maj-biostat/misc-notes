@@ -240,7 +240,7 @@ install.packages("nphsim", dependencies = T, repos = 'https://cran.curtin.edu.au
 install.packages("SWSamp",
 	repos=c("http://www.statistica.it/gianluca/R",
 		"https://cran.rstudio.org",
-		"https://www.math.ntnu.no/inla/R/stable"),
+		"https://inla.r-inla-download.org/R/stable"),
 	dependencies=TRUE
 )
 
