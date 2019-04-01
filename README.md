@@ -210,6 +210,7 @@ install.packages("gridExtra", dependencies = T, repos = 'https://cran.curtin.edu
 install.packages("optparse", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("formattable", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("psych", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("RcppParallel", dependencies = T, repos = 'https://cran.curtin.edu.au')
 
 install.packages("knitr", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("kableExtra", dependencies = T, repos = 'https://cran.curtin.edu.au')
