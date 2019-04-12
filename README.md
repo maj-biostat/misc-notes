@@ -572,6 +572,11 @@ Wordcount on files identified with `find`:
 wc -l $(find . -name "asterix.dat") | sort -n 
 ```
 
+Find all files from current dir and sort them by date/time
+
+```
+find . your-options -printf "%T+\t%p\n" | sort
+```
 
 ## openssh
 
