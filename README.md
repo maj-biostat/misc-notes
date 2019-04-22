@@ -613,6 +613,10 @@ Linux Screen allows you to:
 + Disconnect and re-connect to a shell sessions from multiple locations.
 + Run a long running process without maintaining an active shell session.
 
+```
+sudo pacman -S extra/screen
+```
+
 Commands:
 
 ```
