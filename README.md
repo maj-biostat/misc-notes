@@ -318,6 +318,12 @@ install.packages("invgamma", dependencies = T, repos = 'https://cran.curtin.edu.
 #### devtools::install_version("EPGLM", "1.1.2")
 ```
 
+### R install packages
+
+```
+R CMD build pkgname
+R CMD INSTALL packagename_0.1.tar.gz
+```
 
 ### yaml Header for Rmd
 
