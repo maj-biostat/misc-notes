@@ -47,6 +47,8 @@ Don't use `ifconfig` use `ip` e.g.
 ip a
 ```
 
+and use `iw dev` to get the wifi mac address.
+
 ## Panel plugins
 
 ```
