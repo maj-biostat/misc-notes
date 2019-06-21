@@ -38,6 +38,15 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 `yay -S phoronix-test-suite`
 
+
+## Network configuration
+
+Don't use `ifconfig` use `ip` e.g. 
+
+```
+ip a
+```
+
 ## Panel plugins
 
 ```
