@@ -610,11 +610,20 @@ sudo systemctl enable sshd.service
 # so change it:
 sudo systemctl disable sshd.service
 
-# a one off start is 
+# manual start is 
 sudo systemctl start sshd.service
 
 # and stop with
 sudo systemctl stop sshd.service
+
+# check status
+sudo systemctl status sshd.service
+```
+
+On the client do
+
+```
+ssh -p portnum user@ipaddr
 ```
 
 ## screen
