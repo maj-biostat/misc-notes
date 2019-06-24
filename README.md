@@ -325,10 +325,15 @@ install.packages("ggfortify", dependencies = T, repos = 'https://cran.curtin.edu
 install.packages("LaplacesDemon", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("invgamma", dependencies = T, repos = 'https://cran.curtin.edu.au')
 
+install.packages(c("HRW","Ecdat","mlbench","quantreg","gam","gamlss","gamsel"),dependencies=TRUE, repos = 'https://cran.curtin.edu.au')
+
+
 #### https://stackoverflow.com/questions/53397352/installing-bayeslogit-package
 #### devtools::install_version("BayesLogit", "0.6")
 #### devtools::install_version("tglm", "1.0")
 #### devtools::install_version("EPGLM", "1.1.2")
+
+
 ```
 
 ### R install packages
