@@ -21,6 +21,12 @@ Edit grub (/etc/default/grub) then `sudo update-grub` as per dorian dot slash th
 https://wiki.manjaro.org/index.php?title=Pacman_Tips
 
 ```
+# first:
+# run checkupdates, which is included with the pacman, provides a safe way 
+# to check for upgrades to installed packages without running a system 
+# update at the same time
+checkupdates
+
 # update to closest mirror and update system
 sudo pacman-mirrors --geoip  && sudo pacman -Syyu
 # search
