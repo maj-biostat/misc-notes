@@ -20,13 +20,23 @@ Edit grub (/etc/default/grub) then `sudo update-grub` as per dorian dot slash th
 
 https://wiki.manjaro.org/index.php?title=Pacman_Tips
 
+```
+# search
+pacman -Ss pkg_name 
+# download fresh copy of master package db 
+pacman -Sy
+# install a package
+pacman -S pkg_name
+# upgrade 
+pacman -Su
+# remove 
+pacman -R package_name
 
-search `pacman -Ss pkg_name`
-download fresh copy of master package db `pacman -Sy`
-install `pacman -S pkg_name`
-upgrade `pacman -Su`
-remove `pacman -R package_name`
-many others...
+# update the package database and update all packages on the system
+sudo pacman -Syu
+```
+
+Use https://www.archlinux.org/mirrorlist/ to generate new list of mirrors.
 
 ## Yay
 
