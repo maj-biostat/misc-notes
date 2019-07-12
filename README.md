@@ -21,6 +21,8 @@ Edit grub (/etc/default/grub) then `sudo update-grub` as per dorian dot slash th
 https://wiki.manjaro.org/index.php?title=Pacman_Tips
 
 ```
+# update to closest mirror and update system
+sudo pacman-mirrors --geoip  && sudo pacman -Syyu
 # search
 pacman -Ss pkg_name 
 # download fresh copy of master package db 
