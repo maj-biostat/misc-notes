@@ -217,7 +217,24 @@ list sessions                 `^b s` or `tmux ls`
 `git config --global user.email email_no_quotes`
 
 
+## tar archives
 
+```
+tar cvf dir archive.tar
+gzip archive.tar
+
+# hash
+sha256sum archive.tar.gz
+
+# for fat32
+split -b 2000M archive.tar.gz archive_part
+
+# join back together
+cat archive_part* > test.tar.gz
+
+# hash
+sha256sum test.tar.gz
+```
 
 ## Apps
 
