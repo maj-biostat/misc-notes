@@ -292,6 +292,11 @@ options(usethis.full_name = "maj")
 also pay attention to the path environment variable.
 
 ```
+source("install_R_pkgs.R")
+```
+
+
+```
 install.packages("ggplot2", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("tidyr", dependencies = T, repos = 'https://cran.curtin.edu.au')
 install.packages("lintr", dependencies = T, repos = 'https://cran.curtin.edu.au')
