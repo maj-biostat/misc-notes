@@ -1,3 +1,23 @@
+install.packages("ggplot2", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("tidyr", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("lintr", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("dplyr", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("pryr", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("Rcpp", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("data.table", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("RcppEigen", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("RcppArmadillo", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("RcppDist", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("msm", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("grid", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("simstudy", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("gridExtra", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("optparse", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("formattable", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("psych", dependencies = T, repos = 'https://cran.curtin.edu.au')
+install.packages("RcppParallel", dependencies = T, repos = 'https://cran.curtin.edu.au')
+
+
 install.packages("knitr", dependencies = T, repos = "https://cran.curtin.edu.au")
 install.packages("kableExtra", dependencies = T, repos = "https://cran.curtin.edu.au")
 install.packages("configr", dependencies = T, repos = "https://cran.curtin.edu.au")
@@ -55,6 +75,11 @@ install.packages(c("gam"),dependencies=TRUE, repos = "https://cran.curtin.edu.au
 install.packages(c("gamlss"),dependencies=TRUE, repos = "https://cran.curtin.edu.au")
 
 
-
+install.packages("tibble", dependencies = T, repos = "https://cran.curtin.edu.au")
+install.packages("futile.logger", dependencies = T, repos = "https://cran.curtin.edu.au")
+install.packages("tryCatchLog", dependencies = T, repos = "https://cran.curtin.edu.au")
+install.packages("bookdown", dependencies = T, repos = "https://cran.curtin.edu.au")
+install.packages("rmarkdown", dependencies = T, repos = "https://cran.curtin.edu.au")
+install.packages("lubridate", dependencies = T, repos = "https://cran.curtin.edu.au")
 
 tinytex::install_tinytex(T)
