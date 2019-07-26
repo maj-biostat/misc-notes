@@ -388,3 +388,20 @@ more commitment damn you
 ```
 which is the bit we need to fix up. For the other files (that merged with no conflicts) all we need to do is review the changes then commit and push.
 
+Finally, you can delete a local branch and remove remotes with:
+
+```
+git branch -d test2
+Deleted branch test2 (was c3aa2e0).
+```
+
+```
+git remote rm ts
+```
+
+then `git remote -v` should only return:
+
+```
+origin  https://github.com/maj-tki/linux.git (fetch)
+origin  https://github.com/maj-tki/linux.git (push)
+```
