@@ -1,4 +1,4 @@
-# random commentary
+# script to install R packages
 
 dotinytex <- FALSE
 
