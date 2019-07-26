@@ -3,6 +3,8 @@ This is just some change to make sure I am out of whack with the pull request fr
 
 # Manjaro
 
+ban
+
 changes like this
 
 I kindly ask the perplexed to please be patient, do not panic under any circumstances, and do not allow themselves to be too upset with mistakes, omissions & other problems of this text. At the end of the day, everything will be fine, and in the long run, we will be dead anyway.
