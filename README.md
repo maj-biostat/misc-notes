@@ -219,7 +219,7 @@ list sessions                 `^b s` or `tmux ls`
 ## tar archives
 
 ```
-tar cvf dir archive.tar
+tar cvf archive.tar dir1 dir2 etc
 gzip archive.tar
 
 # hash
