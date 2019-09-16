@@ -51,6 +51,13 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 `sudo pacman -S yay`
 
+
+## Monitor the results from a command
+
+```
+watch -n 3 ls -l logs/ out/
+```
+
 ## Phoronix bench tests
 
 `yay -S phoronix-test-suite`
