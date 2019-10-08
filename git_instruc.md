@@ -1,4 +1,42 @@
 
+## Rebase a local clone of a forked repository
+
+In your local clone of your forked repository, you can add the original GitHub repository as a "remote". ("Remotes" are like nicknames for the URLs of repositories - origin is one, for example.) 
+
+Then you can fetch all the branches from that upstream repository, and rebase your work to continue working on the upstream version. In terms of commands that might look like:
+
+**Instructions**
+
+Add the remote, call it "upstream":
+```
+git remote add upstream https://github.com/fredbasset/whatever.git
+```
+
+Fetch all the branches of that remote into remote-tracking branches, such as upstream/master:
+```
+git fetch upstream
+```
+
+Make sure that you're on your master branch:
+```
+git checkout master
+```
+
+Rewrite your master branch so that any commits of yours that aren't already in upstream/master are replayed on top of that other branch:
+
+NOTE - If you don't want to rewrite the history of your master branch, (for example because other people may have cloned it) then you should use `git merge upstream/master` instead of `git rebase upstream/master`. However, for making further pull requests that are as clean as possible, it's probably better to rebase.
+
+```
+git rebase upstream/master
+```
+If you've rebased your branch onto upstream/master you may need to force the push in order to push it to your own forked repository on GitHub. You'd do that with (you only need to use the -f the first time after you've rebased):
+
+```
+git push -f origin master
+```
+
+That's it.
+
 ## Git squashing commits (especially for forked repositories)
 
 The mantra seems to be not to push until you are happy. Well, I pushed. The following will squash all the commits but is considered somewhat bad form.
