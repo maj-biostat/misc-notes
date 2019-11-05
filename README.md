@@ -41,6 +41,11 @@ pacman -R package_name
 
 # update the package database and update all packages on the system
 sudo pacman -Syu
+
+# dependencies
+pactree -U package
+pactree -r package
+
 ```
 
 Use https://www.archlinux.org/mirrorlist/ to generate new list of mirrors.
