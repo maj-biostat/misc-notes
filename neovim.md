@@ -114,11 +114,19 @@ Plug 'majutsushi/tagbar'
 
 ## Others
 
-Ctrlp for fuzzy file finding. 
-Commentary for commenting. 
-Airline for a fancy statusline. 
-Lucius (light) pretty black-on-white colortheme. 
-Iosevka Term Medium a programmable typeface. 
++ Ctrlp for fuzzy file finding.  
++ Commentary for commenting.  
++ Airline for a fancy statusline.  
++ Lucius (light) pretty black-on-white colortheme.  
++ Iosevka Term Medium a programmable typeface.  
+
+```
+Plug 'wsdjeg/FlyGrep.vim'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+```
 
 (not VIM related: I use pudb as debugger)
 
