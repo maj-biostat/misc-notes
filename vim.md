@@ -62,9 +62,28 @@ This may be wanted after using :set ignorecase to make searches case insensitive
 
 ## Files/Buffers
 
-
-## Windows
+### Windows
 
 To horizontally split use `:sp` vertically, `:vs` then use `ctl w` followed by hjkl to move around.
 
 You can increase/decrease the current height/width `ctl w` `+-<>`
+
+```
+:e filename      - edit another file
+:split filename  - split window and load another file
+ctrl-w up arrow  - move cursor up a window
+ctrl-w ctrl-w    - move cursor to another window (cycle)
+ctrl-w_          - maximize current window
+ctrl-w=          - make all equal size
+10 ctrl-w+       - increase window size by 10 lines
+:vsplit file     - vertical split (same as ctrl-w v)
+:hsplit file     - vertical split (same as ctrl-w h)
+:sview file      - same as split, but readonly
+:hide            - close current window
+:q               - close window with current focus
+:only            - keep only this window open
+:ls              - show current buffers
+:b 2             - open buffer #2 in this window
+```
+
+
