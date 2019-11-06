@@ -1,5 +1,14 @@
 # Vim
 
+This is in no particular order. I will add some structure one day.
+
+## Changing dir, opening files.
+
+```
+:pwd        - present working dir
+:cd <dir>   - make dir current working dir e.g. :cd ~
+```
+
 ## Visual Mode, Block select
 
 http://vimcasts.org/transcripts/22/en/
