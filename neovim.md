@@ -61,7 +61,7 @@ Plug '~/my-prototype-plugin'
 call plug#end()
 ```
 
-Now launch neovim and run `:PlugInstall` which should install the plugings listed in the `plug.vim` file located in the `autoload` dir.
+Now launch neovim and run `:PlugInstall` which should install the plugings listed in the `init.vim` file located in the `nvim` dir.
 
 ## Install NCM2
 
@@ -76,6 +76,8 @@ An autocomplete for python https://github.com/davidhalter/jedi
 `pip install --user jedi`
 
 ## Jedi-vim
+
+Note that further instructions available through `:help jedi-vim`  j
 
 Enables the above in neovim. First you have to install another plugin manager (pain). 
 
@@ -95,6 +97,8 @@ call vundle#end()
 ```
 
 Finally, startup neovim and run `:PluginInstall`
+
+
 
 
 
