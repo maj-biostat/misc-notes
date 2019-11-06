@@ -1,5 +1,10 @@
 # Neovim (on windows)
 
+Giving this a go, see:
+
+https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d
+https://thoughtbot.com/blog/my-life-with-neovim
+
 ## Install Neovim
 
 1. Go to https://github.com/neovim/neovim/wiki/Installing-Neovim, then stable releases then grab the `nvim-win64.zip` file and download to your downloads dir.
@@ -57,3 +62,42 @@ call plug#end()
 ```
 
 Now launch neovim and run `:PlugInstall` which should install the plugings listed in the `plug.vim` file located in the `autoload` dir.
+
+## Install NCM2
+
+Autocomplete. Follow the instructions here.
+
+https://github.com/ncm2/ncm2
+
+## Jedi
+
+An autocomplete for python https://github.com/davidhalter/jedi
+
+`pip install --user jedi`
+
+## Jedi-vim
+
+Enables the above in neovim. First you have to install another plugin manager (pain). 
+
+```
+git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+git clone https://github.com/VundleVim/Vundle.vim.git C:\Users\<user>\AppData\Local\nvim\bundle
+```
+
+Add the following into the `init.vim` file:
+
+```
+set rtp+=C:\Users\mjones\AppData\Local\nvim\bundle\Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'davidhalter/jedi-vim'
+call vundle#end()
+```
+
+Finally, startup neovim and run `:PluginInstall`
+
+
+
+
+
+
