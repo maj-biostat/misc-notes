@@ -98,12 +98,28 @@ Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 ```
 
-Finally, startup neovim and run `:PluginInstall`
+Finally, startup neovim and run `:PluginInstall` 
 
 
+## Tagbar and FlyGrep
 
+Tagbar for a nice overview of tags in the file. FlyGrep for project-wide search.
 
+Simply add the following into `init.vim` and then restart neovim and run `:PlugInstall`. See https://github.com/wsdjeg/FlyGrep.vim  and https://github.com/majutsushi/tagbar.
 
+```
+Plug 'wsdjeg/FlyGrep.vim'
+Plug 'majutsushi/tagbar'
+```
 
+## Others
+
+Ctrlp for fuzzy file finding. 
+Commentary for commenting. 
+Airline for a fancy statusline. 
+Lucius (light) pretty black-on-white colortheme. 
+Iosevka Term Medium a programmable typeface. 
+
+(not VIM related: I use pudb as debugger)
 
 
