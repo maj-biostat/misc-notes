@@ -6,7 +6,7 @@ I kindly ask the perplexed to please be patient, do not panic under any circumst
 
 The GNU GPLv3 also lets people do almost anything they want with your project, except to distribute closed source versions.
 
-[Linux Misc](misc.md)
+[Linux Misc](misc.md)  
 [NEOVIM](neovim.md)
 
 
