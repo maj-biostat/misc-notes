@@ -1,9 +1,9 @@
 # Neovim (on windows)
 
-[README](README.md) .
-[VIM](vim.md) .
+[README](README.md).  
+[VIM](vim.md).  
 
-Giving this a go, see:
+## Sources
 
 https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d
 https://thoughtbot.com/blog/my-life-with-neovim
