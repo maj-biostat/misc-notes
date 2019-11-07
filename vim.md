@@ -1,8 +1,8 @@
 # Vim
 
-[MISC](misc.md).   
-[README](README.md).  
-[VIM](vim.md).  
+[MISC](misc.md)    
+[README](README.md)    
+[VIM](vim.md)   
 
 This is in no particular order. I will add some structure one day.
 
