@@ -1,6 +1,7 @@
 # Neovim (on windows)
 
-Back to [README](README.md) .
+[README](README.md) .
+[VIM](vim.md) .
 
 Giving this a go, see:
 
