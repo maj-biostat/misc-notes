@@ -34,7 +34,7 @@ and combine with operators e.g. `2w` move two words
 
 ### The Mighty Search and Substitute  
 
-`/`  Start a forward search e.g. `/fred`, once found press enter then `n` to find the next   
+`/`  Start a forward search e.g. `/fred`, once found press enter then `n` to find the next  `N` to find the previous.   
 `?`  Start a backward search e.g. `/fred`, once found press enter then `n` to find the previous   
 `%` find matching parentheses   
 
@@ -85,6 +85,14 @@ Note that a space was added.
 Can use in combination with delete, e.g. do `dd` move to the line above where you want to paste then do `p`.   
 
 
+### External commands
+
+`:!ls`
+
+### Files
+
+`:w filename_you_choose`  write a file   
+`:rm filename_you_choose`  delete a file   
 
 ## Sources
 
