@@ -34,6 +34,9 @@ and combine with operators e.g. `2w` move two words
 
 ### The Mighty Search and Substitute  
 
+`:set ic` ignore case
+`:set noic` make case sensitive
+
 `/`  Start a forward search e.g. `/fred`, once found press enter then `n` to find the next  `N` to find the previous.   
 `?`  Start a backward search e.g. `/fred`, once found press enter then `n` to find the previous   
 `%` find matching parentheses   
@@ -42,16 +45,18 @@ and combine with operators e.g. `2w` move two words
 `:%s/old/new/g`  search and sub old for new in the whole file  
 `:%s/old/new/gc`  with a confirm prompt   
 
-
 ### Inserts etc
 
 `i` put your cursor on a letter say on the `o` of `you` then typing `i` will insert letters before the `o`   
 `a` put your cursor on a letter say on the `o` of `you` then typing `a` will insert letters after the `o`    
+`o` open a new line below the current line   
 
 `I` insert at the start of a line      
 `A` append to the end of a line   
+`O` open a line above the current one     
 
-`r` replace the character at the cursor with the next character typed   
+`r` replace the character at the cursor with the next character typed  
+`R` to replace and keep on replacing until escape    
 `cw` change the current the word - note the operator is required, we cannot just do `c`   
 `ce` change to the end of the word - note the operator is required, we cannot just do `c`  (no diff from cw??)   
 `c$` change to end of line    
@@ -80,19 +85,52 @@ Note that a space was added.
 `de` delete to end of word   
 `d2w` delete next two words   
 
+## Yanking (aka copy)
+
+For visual mode do `v`, highlight what you want then `y`, go to the line where you want the paste to start then `p`.   
+
+`yy` yank current line
+`yw` yank a word (`y5w` yank five words from the character you are over) 
+
 ### Pasting
 
-Can use in combination with delete, e.g. do `dd` move to the line above where you want to paste then do `p`.   
-
+Can use in combination with delete, e.g. do `dd` move to the **line above** where you want to paste then do `p`.   
 
 ### External commands
 
-`:!ls`
+`:!ls` note the bang !
 
 ### Files
 
 `:w filename_you_choose`  write a file   
 `:rm filename_you_choose`  delete a file   
+
+### Window, Buffer etc management
+
+`:sp` horizontal split   
+`:vs` vertical split    
+`:close` closes the currently active window (without closing the buffer)   
+
+
+
+With the following mappings in the `init.vim` you can use ctl + nav keys to switch window focus.   
+
+```
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+```
+
+** Buffers (are good) **
+`:ls` list buffers (active files) note the absence of bang !     
+`:b <buffer name or num>` to switch to that buffer      
+`:badd <filename>` add a new buffer session     
+`:ball` layout all the current buffers    
+`:bp` previous buffer   
+`:bn` next buffer    
+
+
 
 ## Sources
 
@@ -117,11 +155,11 @@ https://thoughtbot.com/blog/my-life-with-neovim
 
 ```
 
-" Plugins and config
+" Plugins and config filename init.vim
 
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('C:\Users\<username>\.config\nvim\plugged')
+call plug#begin('C:\Users\<username>\AppData\Local\nvim\plugged')
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -262,12 +300,15 @@ let g:jedi#show_call_signatures_modes = 'i'  " ni = also in normal mode
 let g:jedi#enable_speed_debugging=0
 
 
-
-
-
-
-
 ```
 
 Now launch neovim and run `:PlugInstall` which should install the plugings listed in the `init.vim` file located in the `nvim` dir.
 
+## A word on lint
+
+To use the autolint functionality available through the `ale` plugin you need to have `pylint` installed and have it in your path. Should be something like:
+
+```
+python -m pip install --user pylint
+# pylint located -> C:\Users\<username>\programs\python-3.6.0\Scripts\;
+```
