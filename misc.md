@@ -60,6 +60,14 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 `sudo pacman -S yay`
 
+## Jupyter / IPython
+
+From the command line
+
+```
+pip install --user jupyter
+jupyter notebook
+```
 
 ## Monitor the results from a command
 
