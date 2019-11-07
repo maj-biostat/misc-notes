@@ -5,6 +5,16 @@
 [README](README.md)    
 [VIM](vim.md)   
 
+1. [Tutorial](#Tutorial)
+2. [Sources](#Sources)
+3. [Install Neovim](#Install-Neovim)
+4. [Install plugin manager](#Install-plugin-manager)
+
+## Tutorial
+
+This should be done regularly.  
+`:Tutor`  
+
 ## Sources
 
 https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d
