@@ -72,6 +72,10 @@ import math
 
 
 class Point:
+    # initialises the object attributes, bit like constructor but not
+    def __init__(self):
+        self.move(0, 0)
+        
     def reset(self):
         self.x = 0
         self.y = 0
