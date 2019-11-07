@@ -14,6 +14,78 @@
 This should be done regularly.  
 `:Tutor`  
 
+You can also get to it (sometimes) with `vim tutor`   
+
+### Navigation
+
+`hjkl` are the movement keys one unit at a time    
+`wb` start of next/previous word  
+`e` end of next word  
+ 
+and combine with operators e.g. `2w` move two words   
+
+`0` start of line   
+`$` end of line   
+
+`C-g` tells you where you are in the file  (in %) and the number of lines in file     
+`99G` moves you to line 99    
+`GG`  bottom of file   
+`gg` start of file    
+
+### The Mighty Search and Substitute  
+
+`/`  Start a forward search e.g. `/fred`, once found press enter then `n` to find the next   
+`?`  Start a backward search e.g. `/fred`, once found press enter then `n` to find the previous   
+`%` find matching parentheses   
+
+`:s/old/new/g`  search and sub old for new.   
+`:%s/old/new/g`  search and sub old for new in the whole file  
+`:%s/old/new/gc`  with a confirm prompt   
+
+
+### Inserts etc
+
+`i` put your cursor on a letter say on the `o` of `you` then typing `i` will insert letters before the `o`   
+`a` put your cursor on a letter say on the `o` of `you` then typing `a` will insert letters after the `o`    
+
+`I` insert at the start of a line      
+`A` append to the end of a line   
+
+`r` replace the character at the cursor with the next character typed   
+`cw` change the current the word - note the operator is required, we cannot just do `c`   
+`ce` change to the end of the word - note the operator is required, we cannot just do `c`  (no diff from cw??)   
+`c$` change to end of line    
+
+`J` join lines, e.g. in the following there is no white space after the word test:      
+
+```
+this is a test
+bless
+```
+
+press `J` gives     
+
+```
+this is a test bless
+```
+
+Note that a space was added.    
+
+### Deleting
+
+`x` delete character   
+`dd` delete current line (using d operator)   
+`2dd` delete two lines (current and next lines)   
+`d$` delete to end of line (using $operator)   
+`de` delete to end of word   
+`d2w` delete next two words   
+
+### Pasting
+
+Can use in combination with delete, e.g. do `dd` move to the line above where you want to paste then do `p`.   
+
+
+
 ## Sources
 
 https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d
