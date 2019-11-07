@@ -163,7 +163,8 @@ nnoremap <C-H> <C-W><C-H>
 
 ```
 
-" Plugins and config filename init.vim
+
+" Plugins and config
 
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -187,12 +188,9 @@ Plug '~/my-prototype-plugin'
 
 Plug 'junegunn/vim-easy-align'          
 
-
-Plug 'jonathanfilip/vim-lucius'                  " nice white colortheme
-
 " customish for python
 
-Plug 'jonathanfilip/vim-lucius'
+Plug 'jonathanfilip/vim-lucius'                  " nice white colortheme
 
 Plug 'ncm2/ncm2'                                 " auto-complete 
 Plug 'roxma/nvim-yarp'                           " dependency of ncm2
@@ -207,17 +205,32 @@ Plug 'ctrlpvim/ctrlp.vim'                        " fuzzy file find
 Plug 'tpope/vim-commentary'                      " comments
 Plug 'vim-airline/vim-airline'                   " make statusline awesome
 Plug 'vim-airline/vim-airline-themes'            " themes for statuslin
+" another status line option Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-Plug 'Vimjas/vim-python-pep8-indent'             " better indenting for python
+Plug 'Vimjas/vim-python-pep8-indent'             "better indenting for python
+
+" python linters - ** you need to have pylint or flake8 installed **
+" flake8 is generally recommended
 Plug 'dense-analysis/ale'                        " python linters
 Plug 'airblade/vim-gitgutter'                    " show git changes to files in gutter
+Plug 'tmhedberg/SimpylFold'                      "  fold code blocks
+
 
 " Initialize plugin system
 call plug#end()
 
 
+cd ~
+
 filetype indent on
 
+
+
+set nu
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za   " remaps space to fold things
+set encoding=utf-8
 set mouse=a  " change cursor per mode
 set number  " always show current line number
 set smartcase  " better case-sensitivity when searching
@@ -231,8 +244,8 @@ set showbreak=..
 set lbr  " wrap words
 set nowrap  " i turn on wra
 set scrolloff=3 "
-set undodir='C:\Users\mjones\.vim\undodir'
-set undofile  " save undos
+" set undodir='C:\Users\mjones\.vim\undodir'
+" set undofile  " save undos
 set undolevels=1000  " maximum number of changes that can be undone
 set undoreload=1000  " maximum number lines to save for undo on a buffer reload
 set laststatus=2  " alwa
@@ -242,7 +255,11 @@ set hlsearch  " highlight search and search while typing
 set incsearch
 
 
-" easy split movement
+" nerdtree directory on open
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" easy movement around windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -250,7 +267,7 @@ nnoremap <C-l> <C-w>l
 
 
 " colorscheme options
-let g:lucius_style="dark"
+let g:lucius_style="light"
 let g:lucius_contrast="high"
 color lucius
 set background=light
@@ -273,23 +290,39 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent> <expr> <CR> (pumvisible() && empty(v:completed_item)) ?  "\<c-y>\<cr>" : "\<CR>"
 
 " airline stuff
-let g:airline_powerline_fonts = 1
-let g:airline_section_y = ""
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_error = ""
-let g:airline_section_warning = ""
+" let g:airline_powerline_fonts = 1
+" let g:airline_section_y = ""
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_section_error = ""
+" let g:airline_section_warning = ""
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
 
 " ale options
-let g:ale_python_flake8_options = '--ignore=E129,E501,E302,E265,E241,E305,E402,W503'
-let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
-let g:ale_list_window_size = 4
-let g:ale_sign_column_always = 0
-let g:ale_open_list = 1
-let g:ale_keep_list_window_open = '1'
+" let g:ale_python_flake8_options = '--ignore=E129,E501,E302,E265,E241,E305,E402,W503'
+" let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
+" let g:ale_list_window_size = 4
+" let g:ale_sign_column_always = 0
+" let g:ale_open_list = 1
+" let g:ale_keep_list_window_open = '1'
+
+
+" Ale
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {'python': ['flake8']}
+" Airline
+
+let g:airline_left_sep  = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#ale#enabled = 1
+let airline#extensions#ale#error_symbol = 'E:'
+let airline#extensions#ale#warning_symbol = 'W:'
 
 " Options are in .pylintrc!
 highlight VertSplit ctermbg=253
@@ -306,6 +339,10 @@ let g:jedi#show_call_signatures_delay = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#show_call_signatures_modes = 'i'  " ni = also in normal mode
 let g:jedi#enable_speed_debugging=0
+
+
+nmap <F6> :NERDTreeToggle<CR>
+
 
 
 ```
