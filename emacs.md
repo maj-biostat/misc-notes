@@ -1,5 +1,7 @@
 # EMACS (mainly for Python) (on Windows)
 
+Back to [README](README.md).
+
 ## Sources
 
 https://realpython.com/emacs-the-best-python-editor/  
