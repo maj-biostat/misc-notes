@@ -1,9 +1,9 @@
 # Neovim (on windows)
 
 [MISC](misc.md)    
+[NEOVIM](neovim.md)   
 [README](README.md)    
 [VIM](vim.md)   
-
 
 ## Sources
 
