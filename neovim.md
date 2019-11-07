@@ -118,6 +118,11 @@ Can use in combination with delete, e.g. do `dd` move to the **line above** wher
 `:vs` vertical split    
 `:close` closes the currently active window (without closing the buffer)   
 
+`C-w _` minimises a split   
+`C-w =` minimises a split   
+`C-w 5+` increases the current window by 5 lines   
+`C-w 2>` increase width by 2 units
+`C-w <` increase width by 1 unit
 
 
 With the following mappings in the `init.vim` you can use ctl + nav keys to switch window focus.   
@@ -315,5 +320,5 @@ To use the autolint functionality available through the `ale` plugin you need to
 python -m pip install --user pylint
 # pylint located -> C:\Users\<username>\programs\python-3.6.0\Scripts\;
 ```
-
+also see https://nicedoc.io/w0rp/ale  for detailed instruction into use of ALE   
 
