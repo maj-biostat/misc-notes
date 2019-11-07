@@ -45,6 +45,8 @@ These allow you to define and organise code.
 from library.floor_two.row_three import fred
 ```
 
+Methods go in classes, which go in modules, which go in packages.
+
 ## Classes
 
 A class that does nothing.
@@ -90,4 +92,25 @@ class Point:
         a = (self.x - pt2.x)**2
         b = (self.y - pt2.y)**2
         return math.sqrt(a + b)
+```
+
+
+Import a module (a file in the same dir) using `import fname`. Alternatively, (better) specify the class `from fname import ClassName` then `c = ClassName()` to instantiate the class. You can do things like import multiple classes by passing a comma separated list or give the class a new name, e.g. `from fname import ClassName as CN` then `c = CN()`.
+
+
+## Special main
+
+Used when we know that we are running the module as a script, but not when the code is imported from a different script.
+
+```
+class AClass:
+    pass
+
+def main():
+    a = AClass()
+    print(a)
+    
+if __name__ == "__main__":
+    main()
+```
 ```
