@@ -4,10 +4,17 @@
 
 ## Contents
 
-1. [Tutorial](#Tutorial)
-2. [Sources](#Sources)
+1. [Sources](#Sources)
+2. [Tutorial](#Tutorial)
 3. [Install Neovim](#Install-Neovim)
 4. [Install plugin manager](#Install-plugin-manager)
+
+
+## Sources
+
+https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d  
+https://thoughtbot.com/blog/my-life-with-neovim  
+https://nicedoc.io/w0rp/ale  
 
 ## Tutorial
 
@@ -132,10 +139,6 @@ nnoremap <C-H> <C-W><C-H>
 
 
 
-## Sources
-
-https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d
-https://thoughtbot.com/blog/my-life-with-neovim
 
 ## Install Neovim
 
@@ -200,9 +203,9 @@ Plug 'tpope/vim-commentary'                      " comments
 Plug 'vim-airline/vim-airline'                   " make statusline awesome
 Plug 'vim-airline/vim-airline-themes'            " themes for statuslin
 
-Plug 'Vimjas/vim-python-pep8-indent'  "better indenting for python
-Plug 'w0rp/ale'  " python linters
-Plug 'airblade/vim-gitgutter'  " show git changes to files in gutter
+Plug 'Vimjas/vim-python-pep8-indent'             " better indenting for python
+Plug 'dense-analysis/ale'                        " python linters
+Plug 'airblade/vim-gitgutter'                    " show git changes to files in gutter
 
 " Initialize plugin system
 call plug#end()
@@ -312,3 +315,5 @@ To use the autolint functionality available through the `ale` plugin you need to
 python -m pip install --user pylint
 # pylint located -> C:\Users\<username>\programs\python-3.6.0\Scripts\;
 ```
+
+
