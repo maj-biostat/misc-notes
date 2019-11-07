@@ -7,6 +7,11 @@
 
 This is in no particular order. I will add some structure one day.
 
+## Tutorial
+
+This is actually `neovim` specific, but just do `:Tutor`  
+You should do this on a regular basis.  
+
 ## Changing dir, opening files.
 
 ```
