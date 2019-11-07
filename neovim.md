@@ -163,12 +163,11 @@ nnoremap <C-H> <C-W><C-H>
 
 ```
 
-
 " Plugins and config
 
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('C:\Users\<username>\AppData\Local\nvim\plugged')
+call plug#begin('C:\Users\mjones\AppData\Local\nvim\plugged')
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -342,8 +341,6 @@ let g:jedi#enable_speed_debugging=0
 
 
 nmap <F6> :NERDTreeToggle<CR>
-
-
 
 ```
 
