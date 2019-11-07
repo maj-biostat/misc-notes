@@ -1,6 +1,6 @@
 # Vim
 
-[MISC](misc.md). 
+[MISC](misc.md).   
 [README](README.md).  
 [VIM](vim.md).  
 
