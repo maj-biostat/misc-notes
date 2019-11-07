@@ -65,15 +65,17 @@ print(a)
 you can add attributes simply with `a.x = 5` `a.y = 10` they do not have to be members.
 
 A point class; methods require a self argument (not an argument with self). This is a reference to the object. 
-Used here to access attributes.
+Used here to access attributes. Do `python -i fname.py` then `help(Point)`
 
 ```
 import math
 
 
 class Point:
-    # initialises the object attributes, bit like constructor but not
+    "Represents a point in 2d"
+    
     def __init__(self):
+        "Initialise a new point to 0,0"
         self.move(0, 0)
         
     def reset(self):
