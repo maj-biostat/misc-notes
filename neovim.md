@@ -23,6 +23,13 @@ This should be done regularly.
 
 You can also get to it (sometimes) with `vim tutor`   
 
+## Copy and Paste from Windows
+
+From https://github.com/equalsraf/neovim-qt/issues/327  
+Until an alternative appears:
+
+`:source $VIMRUNTIME/mswin.vim`
+
 ### Navigation
 
 `hjkl` are the movement keys one unit at a time    
