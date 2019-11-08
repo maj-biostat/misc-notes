@@ -23,6 +23,18 @@ ipcluster nbextension disable
 Are a way of grouping code. 
 Nothing more than a folder containing a special file, `__init__.py` although even this is not strictly needed since 3.3
 
+## Virtual Env
+
+From 3.4 create a virtual env for your projects so that you don't need to clobber system installs.
+
+```
+cd proj_dir
+python -m venv env # create a virtual environment called 'env'
+source env/bin/activate # on linux
+env/bin/activate.bat # on windows (use deactivate.bat when you are done)
+```
+
+
 ## Execution
 
 Chop off their heads! 
