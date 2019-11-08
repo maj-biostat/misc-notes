@@ -61,6 +61,12 @@ and combine with operators e.g. `2w` move two words
 `:%s/old/new/g`  search and sub old for new in the whole file  
 `:%s/old/new/gc`  with a confirm prompt   
 
+*AWESOME*
+
+1. Select the character currently under the cursor with `*` i.e. `shift-8`.  
+2. Now `:%s//new-string/g` e.g. `:%s///g` to delete all in the file.
+
+
 ### Inserts etc
 
 `i` put your cursor on a letter say on the `o` of `you` then typing `i` will insert letters before the `o`   
