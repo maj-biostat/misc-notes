@@ -118,9 +118,14 @@ For visual mode do `v`, highlight what you want then `y`, go to the line where y
 
 Can use in combination with delete, e.g. do `dd` move to the **line above** where you want to paste then do `p`.   
 
+### Indent
+
+In visual mode, select some text then do `>` or `5>>` to indent next 5 lines.
+
 ### External commands
 
 `:!ls` note the bang !
+`:!mkdir blah` note the bang !
 
 ### Files
 
