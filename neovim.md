@@ -30,6 +30,8 @@ Until an alternative appears:
 
 `:source $VIMRUNTIME/mswin.vim`
 
+https://www.reddit.com/r/neovim/comments/3fricd/easiest_way_to_copy_from_neovim_to_system/
+
 ### Navigation
 
 `hjkl` are the movement keys one unit at a time    
