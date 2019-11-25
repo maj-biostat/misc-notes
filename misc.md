@@ -14,6 +14,11 @@ Press F12? to go to boot screen
 boot the live install
 run the installer (select free driver)
 
+## Wget
+
+Mirror  
+`wget --recursive --no-parent --continue --no-clobber https://urlOfInterest`
+
 ## NVIDIA
 
 You need to have done the install using the free drivers.
