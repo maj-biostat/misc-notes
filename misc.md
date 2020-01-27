@@ -8,6 +8,13 @@ The GNU GPLv3 also lets people do almost anything they want with your project, e
 
 [Neovim](neovim.md)
 
+# Ghostscript (kind of)
+
+`ps2pdf` is obtained via tinytex but my understanding is that this is just a wrapper to gs  
+You can specify an output size as `ps2pdf -g5950x8420 kalman4.ps`
+
+This https://stackoverflow.com/questions/30128250/ps2pdf-preserve-page-size is useful.
+
 # To redo install
 create liveusb
 Press F12? to go to boot screen
