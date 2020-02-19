@@ -284,6 +284,25 @@ geary - email
 
 ## R / RStudio (and dep) / pandoc
 
+### Install R from command line to local folder
+
+```
+The easiest way to do this is to install R from source:
+
+$ wget http://cran.rstudio.com/src/base/R-3/R-3.4.1.tar.gz
+$ tar xvf R-3.4.1.tar.gz
+$ cd R-3.4.1
+$ ./configure --prefix=$HOME/myr
+$ make && make install
+```
+
+The configure part is very important. 
+It specifies the directory you will install to.
+
+Next you might want to specify where your packages are installed. 
+I create a `.Rprofile` file with the line `.libPaths("/home/me/myrlib/3.6")`.
+
+
 `sudo pacman -S r`
 `yay -S rstudio-desktop-bin`
 `yay -S openblas-lapack`
