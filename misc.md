@@ -251,6 +251,12 @@ list sessions                 `^b s` or `tmux ls`
 `git config --global user.name "Fred Basset"`
 `git config --global user.email email_no_quotes`
 
+## grep et al
+
+Recursive from current directory, only *.R files.
+
+`grep -R --include="*.R" 'contr.sum' .`
+
 
 ## tar archives
 
