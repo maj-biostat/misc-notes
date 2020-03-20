@@ -744,6 +744,9 @@ Linux Screen allows you to:
 sudo pacman -S extra/screen
 ```
 
+Note that to scroll up in `screen` you need to invoke `ctl A` then hit escape, then use the arrow keys (up and down) or page up/down. When you are done hit escape again.
+
+
 Commands:
 
 ```
