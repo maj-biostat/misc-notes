@@ -72,7 +72,7 @@ https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
 ```
 sudo pacman -S yay
-# Uninstall package 
+# Uninstall package (although you can just use pacman -R)
 yay -Rns pkgname
 ```
 
