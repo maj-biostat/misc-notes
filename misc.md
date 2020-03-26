@@ -296,6 +296,14 @@ geary - email
 
 ### Install R from command line to local folder
 
+Update 2020-03-26:
+
+The approach https://forum.manjaro.org/t/using-the-statistical-package-r-in-manjaro-with-rstudio/484 
+
+seems to work just fine. 
+
+The following is retained for posterity.
+
 ```
 The easiest way to do this is to install R from source:
 
@@ -312,12 +320,14 @@ It specifies the directory you will install to.
 Next you might want to specify where your packages are installed. 
 I create a `.Rprofile` file with the line `.libPaths("/home/me/myrlib/3.6")`.
 
-
-`sudo pacman -S r`
-`yay -S rstudio-desktop-bin`
-`yay -S openblas-lapack`
-`sudo pacman -S pandoc`
-`sudo pacman -S pandoc-citeproc`
+```
+sudo pacman -S r
+yay -S rstudio-desktop-bin
+# multicore support
+yay -S openblas-lapack
+sudo pacman -S pandoc
+sudo pacman -S pandoc-citeproc
+```
 
 ### JAGS
 
