@@ -23,6 +23,17 @@ ipcluster nbextension disable
 Are a way of grouping code. 
 Nothing more than a folder containing a special file, `__init__.py` although even this is not strictly needed since 3.3
 
+### To install a package from a github repo
+Sources
+https://medium.com/@lynzt/install-python-packages-from-github-5866d234c4e4
+https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
+
+First clone that repository.
+Then either run the setup.py file from the relevant directory *OR* change dir to the one containing setup.py and then run `pip install .` .
+
+Alternatively `pip install git+https://github.com/jkbr/httpie.git#egg=httpie`
+
+
 ## Virtual Env
 
 From 3.4 create a virtual env for your projects so that you don't need to clobber system installs.
