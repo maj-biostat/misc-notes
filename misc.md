@@ -778,5 +778,7 @@ screen -R <session id (from screen -ls)>
 ctrl a + \
 ```
 
+# XFCE things
 
+Switch workspace `ctl alt left/right arrow`
 
