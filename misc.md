@@ -70,7 +70,11 @@ Use https://www.archlinux.org/mirrorlist/ to generate new list of mirrors.
 
 https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 
-`sudo pacman -S yay`
+```
+sudo pacman -S yay
+# Uninstall package 
+yay -Rns pkgname
+```
 
 ## Jupyter / IPython
 
