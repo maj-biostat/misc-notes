@@ -26,6 +26,35 @@ run the installer (select free driver)
 Mirror  
 `wget --recursive --no-parent --continue --no-clobber https://urlOfInterest`
 
+
+## USB Drives
+
+Ask - what usb devices can my box see?
+
+```
+sudo lsusb
+```
+What devs?
+
+```
+sudo fdisk -l
+```
+
+Create a director in your home directory and mount
+
+```
+mkdir /home/fred/usb
+sudo mount /dev/deviceid /home/fred/usb
+```
+
+Umount
+
+```
+sudo umount /home/fred/usb
+```
+
+
+
 ## NVIDIA
 
 You need to have done the install using the free drivers.
