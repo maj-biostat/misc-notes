@@ -172,7 +172,8 @@ Download the package `nvim-r` from here:
 https://www.vim.org/scripts/script.php?script_id=2628
 
 To install vimplug: go here, follow instruc
-https://github.com/junegunn/vim-plug
+https://
+hub.com/junegunn/vim-plug
 
 In a nutshell:
 open Nvim-R.vmb in vim and then do `:so %`
@@ -279,10 +280,16 @@ re-attach a detached session  `tmux attach`
 list sessions                 `^b s` or `tmux ls`  
 
 
-## git
+## git help
 
 `git config --global user.name "Fred Basset"`
 `git config --global user.email email_no_quotes`
+
+History of file...?
+
+`gitk filename.R`
+
+will launch a gui viewer.
 
 ## grep et al
 
