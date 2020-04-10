@@ -330,6 +330,76 @@ geary - email
 
 ## R / RStudio (and dep) / pandoc
 
+Debugging R
+
+```
+tryCatch({
+	if(stuff){
+	  # do something
+	}, error = function(e) {
+	
+	  dump.frames(include.GlobalEnv = T19)
+	  save.image(file = paste0(get_hash(), "_blast.dump.rda"))
+	}
+
+})
+
+```
+
+then in a new session:
+
+```
+> load("7b9ab05b_last.dump.rda")
+> debugger(last.dump)
+Available environments had calls:
+1: sim(cfg_rar_4(trial_interface = trial_GS_RAR, outdir = "outrar4", nsim = 20
+2: mclapply(X = 1:length(ld), mc.cores = ncores, FUN = function(x) {
+    lmet
+3: lapply(seq_len(cores), inner.do)
+4: FUN(X[[i]], ...)
+5: sendMaster(try(lapply(X = S, FUN = FUN, ...), silent = TRUE))
+6: try(lapply(X = S, FUN = FUN, ...), silent = TRUE)
+7: tryCatch(expr, error = function(e) {
+    call <- conditionCall(e)
+    if (!
+8: tryCatchList(expr, classes, parentenv, handlers)
+9: tryCatchOne(expr, names, parentenv, handlers[[1]])
+10: doTryCatch(return(expr), name, parentenv, handler)
+11: lapply(X = S, FUN = FUN, ...)
+12: FUN(X[[i]], ...)
+13: tryCatch(lpar$trial_interface(ld[[x]], lpar, x), error = function(e) {
+
+14: tryCatchList(expr, classes, parentenv, handlers)
+15: tryCatchOne(expr, names, parentenv, handlers[[1]])
+16: doTryCatch(return(expr), name, parentenv, handler)
+17: lpar$trial_interface(ld[[x]], lpar, x)
+18: RAR_alloc(ldat, idxend + 1, nrow(ldat$d), interim = 99)
+19: tryCatch({
+    if (!is.null(arm_to_enable) & length(arm_to_enable) > 0 & !(
+20: tryCatchList(expr, classes, parentenv, handlers)
+21: tryCatchOne(expr, names, parentenv, handlers[[1]])
+22: value[[3]](cond)
+
+```
+to see environment, select a number, e.g. 19 then 
+
+```
+Browse[1]> ls()
+[1] "classes"      "handlers"     "parentenv"    "tryCatchList" "tryCatchOne"
+Browse[1]> get("arm_to_enable", parentenv)
+integer(0)
+Browse[1]> length(integer(0))
+[1] 0
+Browse[1]> get("arms_for_p_best", parentenv)
+[1] 1 2 3
+
+```
+
+to exit `c` should take you back to the menu then `0`.
+
+also note that `if(logical(0))` is a bit of a horrendous bug that you should remember...
+
+
 ### Install R from command line to local folder
 
 Update 2020-03-26:
