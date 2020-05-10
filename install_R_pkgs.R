@@ -39,15 +39,18 @@ pkgs <- c("beepr", "bookdown", "brms", "coda", "coin", "configr", "data.table",
   "rstan", "simstudy", "survival", "tibble", "tidyr", "tinytex",
   "truncnorm", "tryCatchLog")
 
+
+
+
 for(i in 1:length(pkgs)){
   if(!check_for_pkg(pkgs[i])){
-
+    
     message(paste0("Installing    : ", pkgs[i]))
-
-    install.packages(pkgs[i], dependencies = T, repos = 'https://cran.curtin.edu.au')
+    # Change to turn off interactive and install from source if available 
+    options(install.packages.compile.from.source = "both")
+    install.packages(pkgs[i], repos = 'https://cran.curtin.edu.au', quiet = T)
   }
 }
-
 
 
 if(!check_for_pkg("SWSamp")){
