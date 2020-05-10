@@ -1,5 +1,13 @@
 # script to install R packages
 
+
+# checking for rtools:
+pkgbuild::find_rtools(debug = TRUE)
+pkgbuild::check_rtools(debug = T)
+
+# location
+callr::rcmd_safe("config", "CC")$stdout
+
 dotinytex <- FALSE
 
 if(dotinytex){
