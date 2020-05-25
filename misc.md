@@ -822,6 +822,14 @@ Find all files from current dir and sort them by date/time
 find . your-options -printf "%T+\t%p\n" | sort
 ```
 
+
+Invoke command on other machine when your command has quotes within quotes:
+
+```
+ssh username@machinename "sh -c 'R CMD REMOVE '\''rstanmodels'\'' &'"
+```
+
+
 ## openssh
 
 `sshd`, `sftp` and other things. 
