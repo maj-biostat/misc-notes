@@ -827,6 +827,8 @@ Invoke command on other machine when your command has quotes within quotes:
 
 ```
 ssh username@machinename "sh -c 'R CMD REMOVE '\''rstanmodels'\'' &'"
+
+ssh username@machinename "sh -c 'R CMD INSTALL --preclean rstanmodels'"
 ```
 
 
