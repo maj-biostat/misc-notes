@@ -441,7 +441,11 @@ yay -S jags
 
 ### Local R packages
 
-Install dependencies by any means necessary.
+See 
+https://support.rstudio.com/hc/en-us/articles/200486518-Customizing-Package-Build-Options
+https://cran.r-project.org/doc/manuals/r-release/R-exts.html
+
+First, install dependencies by any means necessary.
 
 ```
 # Build package. First cd to parent dir containing `mypackage`
@@ -450,6 +454,12 @@ cd ~/Documents
 R CMD build mypackage
 # install
 R CMD INSTALL mypackage_0.1.tar.gz
+```
+
+the above builds for all architectures (slow)
+
+```
+R CMD INSTALL --preclean --no-multiarch mypackage
 ```
 
 alternatively via R
