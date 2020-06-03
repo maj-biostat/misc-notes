@@ -466,6 +466,7 @@ alternatively via R
 
 ```
 library(devtools)
+devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))
 devtools::build()
 devtools::install()
 ```
