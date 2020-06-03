@@ -291,6 +291,10 @@ History of file...?
 
 will launch a gui viewer.
 
+remove a file from git but keep locally
+
+`git rm --cached somefile.ext`
+
 ## grep et al
 
 Recursive from current directory, only *.R files.
