@@ -439,6 +439,27 @@ sudo pacman -S pandoc-citeproc
 
 yay -S jags
 
+### Local R packages
+
+Install dependencies by any means necessary.
+
+```
+# Build package. First cd to parent dir containing `mypackage`
+cd ~/Documents
+# Build (old school) version is 0.1
+R CMD build mypackage
+# install
+R CMD INSTALL mypackage_0.1.tar.gz
+```
+
+alternatively via R
+
+```
+library(devtools)
+devtools::build()
+devtools::install()
+```
+
 ### Minimal set of packages
 
 Note that if things go pear shaped with build tools just uninstall and reinstall rstudio and buildtools. 
