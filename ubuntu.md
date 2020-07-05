@@ -28,5 +28,21 @@ Use evolution, or hiri, or mailspring (if you can stand it) or thunderbird in co
 
 https://www.youtube.com/watch?v=yCEK2hNP7bg
 
+## R
+
+Add `deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/` to `etc/apt/sources.list`.  
+
+If on `apt update` you get   
+
+```
+The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 759347893
+```
+
+then do  
+
+`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 759347893`
+
+
+more information here https://cran.r-project.org/bin/linux/ubuntu/README.html under Secure APT.  
 
 
