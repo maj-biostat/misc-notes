@@ -35,6 +35,9 @@ sudo apt list --installed | grep nvid
 sudo apt-get purge nvidia*
 # default installs
 sudo ubuntu-drivers autoinstall
+
+# in gnome
+nvidia-settings
 ```
 https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
 https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
@@ -80,6 +83,10 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 
 ```
 
+### Firefox
+
+Completely uninstall. 
+
 ### MS Teams
 
 https://www.howtoforge.com/how-to-install-microsoft-teams-linux-on-ubuntu-and-centos/
@@ -113,5 +120,9 @@ then do
 
 
 more information here https://cran.r-project.org/bin/linux/ubuntu/README.html under Secure APT.  
+
+## KeypassXC
+
+Open source version of KeyPass. Cross platform. Can import Keypass db.
 
 
