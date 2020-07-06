@@ -129,6 +129,11 @@ then do
 
 more information here https://cran.r-project.org/bin/linux/ubuntu/README.html under Secure APT.  
 
+### VIM
+
+Use neovim instead `sudo apt install neovim`. Nb `nvim` to execute.
+
+
 ### KeepassXC
 
 Open source version of KeePass. Cross platform. Can import Keepass db.
