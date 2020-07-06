@@ -164,6 +164,8 @@ sudo apt install libgdal-dev
 sudo apt install libudunits2-dev
 ```
 
+https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux
+
 ### VIM
 
 Use neovim instead `sudo apt install neovim`. Nb `nvim` to execute.
