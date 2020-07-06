@@ -6,6 +6,8 @@ https://www.youtube.com/watch?v=n8VwTYU0Mec
 
 ## Software
 
+Package description https://packages.ubuntu.com/focal/
+
 ```
 # update file list (then upgrade if necessary)
 sudo apt update
