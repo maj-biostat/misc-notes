@@ -4,6 +4,41 @@
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
+## BSOD (black screen of death)
+
+Usually nvidia drivers.
+
+possibly  
+https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
+
+
+Alt-F2 then login to terminal.
+
+```
+# Graphics card and drivers
+sudo hwinfo --gfxcard --short
+lspci -k | grep -A 2 -i "VGA"
+# suggest recommended drivers
+sudo ubuntu-drivers devices
+# e.g.
+sudo apt install nvidia-driver-440
+sudo shutdown -r now
+# and pray
+
+# switch primary card
+sudo prime-select query
+sudo prime-select intel
+sudo prime-select nvidia
+sudo apt list --installed | grep nvid
+
+# remove nvidia
+sudo apt-get purge nvidia*
+# default installs
+sudo ubuntu-drivers autoinstall
+```
+https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
+https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
+
 ## Software
 
 ### Management
