@@ -157,6 +157,13 @@ then do
 
 more information here https://cran.r-project.org/bin/linux/ubuntu/README.html under Secure APT.  
 
+Necessary libs:
+
+```
+sudo apt install libgdal-dev 
+sudo apt install libudunits2-dev
+```
+
 ### VIM
 
 Use neovim instead `sudo apt install neovim`. Nb `nvim` to execute.
