@@ -6,6 +6,24 @@ https://www.youtube.com/watch?v=n8VwTYU0Mec
 
 ## Software
 
+### Management
+
+```
+# update repos
+sudo apt update
+# upgrade apps to lastest repos version
+sudo apt upgrade
+sudo apt remove apache2 vim
+sudo apt-get --purge remove gimp
+# also remove config
+sudo apt purge apache2
+sudo apt search apache2
+sudo apt list --installed
+# dependency
+sudo apt show apache2
+sudo apt depends apache2
+```
+
 Package description https://packages.ubuntu.com/focal/
 
 ```
