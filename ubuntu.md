@@ -55,6 +55,19 @@ External monitor works, internal screen doesn't or vice versa. Why?
 `~/.config/monitor.xml` can occassionally get munted.  
 Delete the above file, disconnect external, restart, replug external.  
 
+Note default display manager (lightdm, gdm3 etc) from `cat /etc/X11/default-display-manager`
+
+## GRUBBY
+
+Get rid of the quiet splash:
+
+```
+# in /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="nomodeset"
+sudo update-grub2
+sudo shutdown -r now
+```
+
 ## Software
 
 ### Management
