@@ -129,9 +129,9 @@ then do
 
 more information here https://cran.r-project.org/bin/linux/ubuntu/README.html under Secure APT.  
 
-### KeypassXC
+### KeepassXC
 
-Open source version of KeyPass. Cross platform. Can import Keypass db.
+Open source version of KeePass. Cross platform. Can import Keepass db.
 
 ### Network monitoring
 
