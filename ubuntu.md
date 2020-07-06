@@ -46,6 +46,8 @@ Note comment on grub update
 https://askubuntu.com/questions/1059965/internal-laptop-screen-not-detected-when-using-nvidia-driver
 
 
+Restarting X with `pkill X`
+
 ## Monitor madness
 
 External monitor works, internal screen doesn't or vice versa. Why?
