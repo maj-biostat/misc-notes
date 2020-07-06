@@ -39,6 +39,13 @@ sudo ubuntu-drivers autoinstall
 https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
 https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
 
+## Monitor madness
+
+External monitor works, internal screen doesn't or vice versa. Why?
+
+`~/.config/monitor.xml` can occassionally get munted.  
+Delete the above file, disconnect external, restart, replug external.  
+
 ## Software
 
 ### Management
