@@ -42,6 +42,10 @@ nvidia-settings
 https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
 https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
 
+Note comment on grub update  
+https://askubuntu.com/questions/1059965/internal-laptop-screen-not-detected-when-using-nvidia-driver
+
+
 ## Monitor madness
 
 External monitor works, internal screen doesn't or vice versa. Why?
