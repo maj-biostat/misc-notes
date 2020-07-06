@@ -30,6 +30,13 @@ Use evolution, or hiri, or mailspring (if you can stand it) or thunderbird in co
 
 https://www.youtube.com/watch?v=yCEK2hNP7bg
 
+or Hiri (proprietary).
+
+related    
+
+https://www.zimbra.com/email-server-software/email-outlook-sync-mapi-zco/  
+https://zentyal.com/community/  
+
 ## R
 
 Add `deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/` to `etc/apt/sources.list`.  
