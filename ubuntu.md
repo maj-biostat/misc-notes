@@ -57,7 +57,7 @@ Delete the above file, disconnect external, restart, replug external.
 
 Note default display manager (lightdm, gdm3 etc) from `cat /etc/X11/default-display-manager`
 
-## GRUBBY
+## GRUB
 
 Get rid of the quiet splash:
 
