@@ -89,6 +89,14 @@ Completely uninstall.
 
 ### MS Teams
 
+Download the deb package from the link to link below then rather than use `dpkg` use:
+
+```
+# for deb packages
+sudo apt install gdebi-core
+sudo gdebi skype.deb
+```
+
 https://www.howtoforge.com/how-to-install-microsoft-teams-linux-on-ubuntu-and-centos/
 
 ### Email
@@ -97,14 +105,14 @@ Use evolution, or hiri, or mailspring (if you can stand it) or thunderbird in co
 
 https://www.youtube.com/watch?v=yCEK2hNP7bg
 
-or Hiri (proprietary).
+or Hiri (proprietary) via snap.
 
 related    
 
 https://www.zimbra.com/email-server-software/email-outlook-sync-mapi-zco/  
 https://zentyal.com/community/  
 
-## R
+### R
 
 Add `deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/` to `etc/apt/sources.list`.  
 
@@ -121,8 +129,17 @@ then do
 
 more information here https://cran.r-project.org/bin/linux/ubuntu/README.html under Secure APT.  
 
-## KeypassXC
+### KeypassXC
 
 Open source version of KeyPass. Cross platform. Can import Keypass db.
 
+### Network monitoring
 
+```
+sudo apt install bmon
+sudo apt install slurm
+sudo apt tcptrack
+sudo apt vnstat
+```
+
+https://www.tecmint.com/linux-network-bandwidth-monitoring-tools/
