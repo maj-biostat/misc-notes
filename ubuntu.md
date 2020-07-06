@@ -106,6 +106,15 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 
 Completely uninstall. 
 
+```
+sudo apt-get purge firefox
+rm -rf .mozilla/firefox/
+sudo rm -rf /etc/firefox/
+sudo rm -rf /usr/lib/firefox/
+sudo rm -rf /usr/lib/firefox-addons/
+```
+
+
 ### MS Teams
 
 Download the deb package from the link to link below then rather than use `dpkg` use:
