@@ -192,3 +192,10 @@ sudo apt vnstat
 ```
 
 https://www.tecmint.com/linux-network-bandwidth-monitoring-tools/
+
+### Diff/Merge/FTP
+
+```
+sudo apt install meld
+sudo apt install filezilla
+```
