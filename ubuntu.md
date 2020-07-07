@@ -164,6 +164,12 @@ sudo apt install libgdal-dev
 sudo apt install libudunits2-dev
 ```
 
+
+### Zoom
+
+Use sso to login (uni-sydney).
+
+
 https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux
 
 ### VIM
