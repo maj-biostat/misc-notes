@@ -162,6 +162,7 @@ Necessary libs:
 ```
 sudo apt install libgdal-dev 
 sudo apt install libudunits2-dev
+sudo apt install libgdal-dev
 ```
 
 https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux
