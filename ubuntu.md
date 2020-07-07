@@ -1,6 +1,6 @@
 # Ubuntu
 
-## Installing 20.04 LTS
+## <a name="install"></a>Installing 20.04 LTS
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
