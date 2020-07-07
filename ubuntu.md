@@ -199,3 +199,22 @@ https://www.tecmint.com/linux-network-bandwidth-monitoring-tools/
 sudo apt install meld
 sudo apt install filezilla
 ```
+
+### SSH
+
+Tools for converting ppk from win box to ssh key. 
+
+```
+sudo apt-get install putty-tools
+# convert priv
+puttygen id_dsa.ppk -O private-openssh -o id_dsa
+puttygen id_dsa.ppk -O public-openssh -o id_dsa
+# agent running?
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_dsa
+# use passphrase from original to get in
+# then just
+ssh -p portnum usernamem@199.19.19.1
+```
+
+or do it from scratch: https://support.pawsey.org.au/documentation/display/US/Logging+in+with+SSH
