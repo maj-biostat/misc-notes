@@ -163,6 +163,8 @@ Necessary libs:
 sudo apt install libgdal-dev 
 sudo apt install libudunits2-dev
 sudo apt install libgdal-dev
+# for bookdownplus
+sudo apt install libmagick++-dev
 ```
 
 https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux
