@@ -9,9 +9,9 @@ Aside
 ```
 sudo lsusb
 sudo fdisk -l
-# mkdir /home/media
-sodo mount /dev/blah /home/media/usb1
-sudo umount /home/media/usb1
+# mkdir /home/fred/media
+sudo mount /dev/sda1 /home/fred/media
+sudo umount /home/fred/media
 ```
 
 ## BSOD (black screen of death)
