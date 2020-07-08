@@ -4,6 +4,16 @@
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
+Aside 
+
+```
+sudo lsusb
+sudo fdisk -l
+# mkdir /home/media
+sodo mount /dev/blah /home/media/usb1
+sudo umount /home/media/usb1
+```
+
 ## BSOD (black screen of death)
 
 Usually nvidia drivers.
