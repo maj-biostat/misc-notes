@@ -67,7 +67,7 @@ Delete the above file, disconnect external, restart, replug external.
 
 Note default display manager (lightdm, gdm3 etc) from `cat /etc/X11/default-display-manager`
 
-## GRUB
+## Grub
 
 Get rid of the quiet splash:
 
@@ -77,6 +77,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="nomodeset"
 sudo update-grub2
 sudo shutdown -r now
 ```
+
+https://www.dedoimedo.com/computers/grub-2.html
+
 
 ## Software
 
