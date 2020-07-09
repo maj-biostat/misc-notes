@@ -131,3 +131,6 @@ See around 8:15 mins for config (under gnome) at https://www.youtube.com/watch?v
 It looks like EWS is dead so not sure that access via DavMail etc is going to work regardless of app.  
 Install `hiri` works with full calendar integration; no idea how.
 
+### Zoom
+
+Note comments on mic for zoom https://aur.archlinux.org/packages/zoom/
