@@ -56,6 +56,8 @@ If you can deal with it then the simplest approach is to turn off the internal g
 Specifically, note the 'in short' text here:  
 http://www.daknetworks.com/blog/453-dell-precision-7720-graphics
 
+The NVIDIA guide:  
+http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/index.html
 
 Useful commands
 
