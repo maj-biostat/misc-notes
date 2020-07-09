@@ -139,4 +139,28 @@ Note comments on mic for zoom https://aur.archlinux.org/packages/zoom/
 
 Use `meld`
 
+### Keepassxc
 
+```
+sudo pacman -Syu keepassxc
+```
+
+## Network access e.g. pawsey
+
+SSH
+Tools for converting ppk from win box to ssh key.
+
+```
+sudo pacman -Syu putty
+# convert priv - you will need to enter the keynim for the original .ppk file
+puttygen id_dsa.ppk -O private-openssh -o id_dsa
+puttygen id_dsa.ppk -O public-openssh -o id_dsa.pub
+# agent running?
+eval "$(ssh-agent -s)"
+# you will need to use the passphrase again
+ssh-add ~/.ssh/id_dsa
+# then just
+ssh -p 22 usernamem@199.19.19.1
+```
+
+or do it from scratch: https://support.pawsey.org.au/documentation/display/US/Logging+in+with+SSH
