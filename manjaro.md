@@ -52,8 +52,8 @@ Note the summary here:
 https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
 
 If you can deal with it then the simplest approach is to turn off the internal gpu via the uefi and to power the output ports by the gpu.  
-Note the 'in short' text here:
 
+Specifically, note the 'in short' text here:  
 http://www.daknetworks.com/blog/453-dell-precision-7720-graphics
 
 
