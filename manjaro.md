@@ -112,6 +112,17 @@ yay -Syu rstudio-desktop
 # select 1 rstudio-desktop
 ```
 
+Now `rstudio` will probably not show windows due to a `qt` issue.
+
+```
+sudo vi /usr/lib/qt/libexec/qt.conf
+# add and then save and try rstudio again:
+[Paths]
+Prefix = /usr/lib/qt
+Data = /usr/share/qt
+Translations = /usr/share/qt/translations
+```
+
 
 ### Email
 
