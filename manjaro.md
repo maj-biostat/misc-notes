@@ -3,7 +3,10 @@
 Going with minimal with xfce: `manjaro-xfce-20.0.3-minimal-200606-linux56.iso`.
 Also tried gnome `manjaro-gnome-20.0.3-minimal-200606-linux56.iso` but did not like.
 
-Once installed and do updates etc, make sure to `sudo pacman -Syu base-devel`
+Install updates to bring you up to date.
+
+Make sure to `sudo pacman -Syu base-devel` to finish off.
+
 
 ## Software
 
