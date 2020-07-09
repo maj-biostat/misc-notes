@@ -43,6 +43,13 @@ sudo pacman-mirrors --geoip  && sudo pacman -Syyu
 sudo pacman -U /var/cache/pacman/pkg/smplayer-19.5.0-1-x86_64.pkg.tar.xz
 ```
 
+Urgh, install additional package manger `yay` to get to Arch User Repository.  
+Commands pretty much as per `pacman`
+
+```
+sudo pacman -Syu yay
+```
+
 ### Video drivers
 
 The standard guide is here:
@@ -87,4 +94,22 @@ ls -la /usr/share/X11/xorg.conf.d ; grep -v /usr/share/X11/xorg.conf.d/*.conf
 Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
 
 
-### 
+### R
+
+```
+sudo pacman -Syu gcc-fortran
+# use faster openblas - need to install prior to install r
+sudo pacman -Syu openblas
+sudo pacman -Syu r
+yay -Syu rstudio-desktop
+# select 1 rstudio-desktop
+```
+
+
+### Email
+
+See around 8:15 mins for config (under gnome) at https://www.youtube.com/watch?v=yCEK2hNP7bg
+
+```
+
+```
