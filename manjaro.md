@@ -134,3 +134,9 @@ Install `hiri` works with full calendar integration; no idea how.
 ### Zoom
 
 Note comments on mic for zoom https://aur.archlinux.org/packages/zoom/
+
+### Winmerge alternative
+
+Use `meld`
+
+
