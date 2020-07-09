@@ -127,8 +127,7 @@ Translations = /usr/share/qt/translations
 
 ### Email
 
-See around 8:15 mins for config (under gnome) at https://www.youtube.com/watch?v=yCEK2hNP7bg
+See around 8:15 mins for config (under gnome) at https://www.youtube.com/watch?v=yCEK2hNP7bg  
+It looks like EWS is dead so not sure that access via DavMail etc is going to work regardless of app.  
+Install `hiri` works with full calendar integration; no idea how.
 
-```
-
-```
