@@ -37,6 +37,7 @@ Never install a package without updating the system first.
 |pacman -Qii pkg	               | List information on package                |
 |pacman -Qo file	               |  Who owns this file?                       |
 |pacman -Qs query	               | Search installed packages for keywords     |
+|pacman -Q --info pkg            | get info on installed package              |
 
 
 Also
