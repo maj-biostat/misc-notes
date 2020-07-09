@@ -48,6 +48,8 @@ sudo pacman -U /var/cache/pacman/pkg/smplayer-19.5.0-1-x86_64.pkg.tar.xz
 The standard guide is here:
 https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup
 
+also relevant https://wiki.archlinux.org/index.php/NVIDIA_Optimus
+
 Note the summary here:
 https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
 
@@ -66,6 +68,20 @@ Useful commands
 sudo pacman -Syu xorg-xrandr
 # List configs
 xrandr
+# driver
+mhwd -li
+# system desc
+inxi -Fxxxza
+inxi -G
+hwinfo --display --monitor
+
+xrandr --listproviders 
+xrandr --prop
+pacman -Qs | grep -Ei 'prime|nvidia|optimus|bbsw|vesa|xf86-video'
+ls -laR /etc/X11 ; cat /etc/X11/xorg.conf.d/*.conf
+ls -la /etc/modprobe.d ; cat /etc/modprobe.d/*.conf
+ls -la /etc/modules-load.d ; cat /etc/modules-load.d/*.conf
+ls -la /usr/share/X11/xorg.conf.d ; grep -v /usr/share/X11/xorg.conf.d/*.conf
 ```
 
 Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
