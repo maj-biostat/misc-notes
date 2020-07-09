@@ -11,7 +11,7 @@ Note `checkupdates` provides a safe way to check for upgrades to installed packa
 Never install a package without updating the system first.
 
 | command                        | desc                                       |
-|================================|============================================|
+|--------------------------------|--------------------------------------------|
 |pacman -Sy                      | download fresh copy of master package db   |
 |pacman -Syu <pkg>               |	Install (and update package list)         |
 |pacman -S <pkg>                 |	Install only                              |
