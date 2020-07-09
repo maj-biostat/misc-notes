@@ -1,6 +1,6 @@
 # Manjaro
 
-Minimal with xfce: `manjaro-xfce-20.0.3-minimal-200606-linux56.iso`
+Started with minimal with xfce: `manjaro-xfce-20.0.3-minimal-200606-linux56.iso` but evolution has got stronger dependencies on gnome so moved to `manjaro-gnome-20.0.3-minimal-200606-linux56.iso`.
 
 ## Software
 
