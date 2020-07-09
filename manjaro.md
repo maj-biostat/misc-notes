@@ -13,11 +13,11 @@ Never install a package without updating the system first.
 | command                        | desc                                       |
 |--------------------------------|--------------------------------------------|
 |pacman -Sy                      | download fresh copy of master package db   |
-|pacman -Syu <pkg>               |	Install (and update package list)         |
-|pacman -S <pkg>                 |	Install only                              |
-|pacman -R <pkg>                 |	Uninstall pkg                             |
-|pacman -Rsu <pkg>               |	Uninstall pkg and unneeded dep            |
-|pacman -Ss <keywords>	         | Search                                     |
+|pacman -Syu pkg                 |	Install (and update package list)         |
+|pacman -S pkg                   |	Install only                              |
+|pacman -R pkg                   |	Uninstall pkg                             |
+|pacman -Rsu pkg                 |	Uninstall pkg and unneeded dep            |
+|pacman -Ss keywords	           | Search                                     |
 |pacman -Syu	                   | Upgrade everything                         |
 |pacman -Qdt                     | list orphan pkgs not used by anything else |
 |sudo pacman -Rs $(pacman -Qdtq) | remove all the orphans                     |
@@ -25,10 +25,10 @@ Never install a package without updating the system first.
 |pactree -U package              | dependencies                               |
 |pactree -r package              | dep                                        |
 |pacman -Qe	                     | List explictly-installed packages          |
-|pacman -Ql <pkg>	               | What files does this package have?         |
-|pacman -Qii <pkg>	             | List information on package                |
-|pacman -Qo <file>	             |  Who owns this file?                       |
-|pacman -Qs <query>	             | Search installed packages for keywords     |
+|pacman -Ql pkg	                 | What files does this package have?         |
+|pacman -Qii pkg	               | List information on package                |
+|pacman -Qo file	               |  Who owns this file?                       |
+|pacman -Qs query	               | Search installed packages for keywords     |
 
 
 
