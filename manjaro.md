@@ -112,7 +112,8 @@ yay -Syu rstudio-desktop
 # select 1 rstudio-desktop
 ```
 
-Now `rstudio` will probably not show windows due to a `qt` issue.
+Now `rstudio` will probably not show windows due to a `qt` issue.  
+Solution at bottom of thread here: https://forum.manjaro.org/t/rstudio-gui-broken-after-update/120635/8
 
 ```
 sudo vi /usr/lib/qt/libexec/qt.conf
