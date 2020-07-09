@@ -24,6 +24,13 @@ Never install a package without updating the system first.
 |sudo pacman -Sc                 | clear out cache                            |
 |pactree -U package              | dependencies                               |
 |pactree -r package              | dep                                        |
+|pacman -Qe	                     | List explictly-installed packages          |
+|pacman -Ql <pkg>	               | What files does this package have?         |
+|pacman -Qii <pkg>	             | List information on package                |
+|pacman -Qo <file>	             |  Who owns this file?                       |
+|pacman -Qs <query>	             | Search installed packages for keywords     |
+
+
 
 Also
 
