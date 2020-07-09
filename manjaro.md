@@ -1,5 +1,7 @@
 # Manjaro
 
+Minimal with xfce: `manjaro-xfce-20.0.3-minimal-200606-linux56.iso`
+
 ## Software
 
 ### Management 
@@ -31,7 +33,6 @@ Never install a package without updating the system first.
 |pacman -Qs query	               | Search installed packages for keywords     |
 
 
-
 Also
 
 ```
@@ -42,4 +43,30 @@ sudo pacman-mirrors --geoip  && sudo pacman -Syyu
 sudo pacman -U /var/cache/pacman/pkg/smplayer-19.5.0-1-x86_64.pkg.tar.xz
 ```
 
+### Video drivers
 
+The standard guide is here:
+https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup
+
+Note the summary here:
+https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
+
+If you can deal with it then the simplest approach is to turn off the internal gpu via the uefi and to power the output ports by the gpu.  
+Note the 'in short' text here:
+
+http://www.daknetworks.com/blog/453-dell-precision-7720-graphics
+
+
+Useful commands
+
+```
+# install screen configurator
+sudo pacman -Syu xorg-xrandr
+# List configs
+xrandr
+```
+
+Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
+
+
+### 
