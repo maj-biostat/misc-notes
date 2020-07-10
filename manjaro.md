@@ -9,6 +9,12 @@ Make sure to `sudo pacman -Syu base-devel` to finish off.
 
 Remember, `dmesg | grep blah` `dmesg | tail -20` are your friends.
 
+```
+sudo dmesg --level=err,warn
+# timestamps
+dmesg -T
+```
+
 
 ## Software
 
@@ -58,50 +64,6 @@ Commands pretty much as per `pacman`
 ```
 sudo pacman -Syu yay
 ```
-
-### Video drivers
-
-The standard guide is here:
-https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup
-
-also relevant https://wiki.archlinux.org/index.php/NVIDIA_Optimus
-
-Note the summary here:
-https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
-
-If you can deal with it then the simplest approach is to turn off the internal gpu via the uefi and to power the output ports by the gpu.  
-
-Specifically, note the 'in short' text here:  
-http://www.daknetworks.com/blog/453-dell-precision-7720-graphics
-
-The NVIDIA guide:  
-http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/index.html
-
-Useful commands
-
-```
-# install screen configurator
-sudo pacman -Syu xorg-xrandr
-# List configs
-xrandr
-# driver
-mhwd -li
-# system desc
-inxi -Fxxxza
-inxi -G
-hwinfo --display --monitor
-
-xrandr --listproviders 
-xrandr --prop
-pacman -Qs | grep -Ei 'prime|nvidia|optimus|bbsw|vesa|xf86-video'
-ls -laR /etc/X11 ; cat /etc/X11/xorg.conf.d/*.conf
-ls -la /etc/modprobe.d ; cat /etc/modprobe.d/*.conf
-ls -la /etc/modules-load.d ; cat /etc/modules-load.d/*.conf
-ls -la /usr/share/X11/xorg.conf.d ; grep -v /usr/share/X11/xorg.conf.d/*.conf
-```
-
-Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
-
 
 ### R
 
@@ -154,6 +116,69 @@ Use `meld`
 sudo pacman -Syu keepassxc
 ```
 
+## Video drivers
+
+The standard guide is here:
+https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup
+
+also relevant https://wiki.archlinux.org/index.php/NVIDIA_Optimus
+
+Note the summary here:
+https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
+
+If you can deal with it then the simplest approach is to turn off the internal gpu via the uefi and to power the output ports by the gpu.  
+
+Specifically, note the 'in short' text here:  
+http://www.daknetworks.com/blog/453-dell-precision-7720-graphics
+
+The NVIDIA guide:  
+http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/index.html
+
+Useful commands
+
+```
+# install screen configurator
+sudo pacman -Syu xorg-xrandr
+# List configs
+xrandr
+# driver
+mhwd -li
+# system desc
+inxi -Fxxxza
+inxi -G
+hwinfo --display --monitor
+
+xrandr --listproviders 
+xrandr --prop
+pacman -Qs | grep -Ei 'prime|nvidia|optimus|bbsw|vesa|xf86-video'
+ls -laR /etc/X11 ; cat /etc/X11/xorg.conf.d/*.conf
+ls -la /etc/modprobe.d ; cat /etc/modprobe.d/*.conf
+ls -la /etc/modules-load.d ; cat /etc/modules-load.d/*.conf
+ls -la /usr/share/X11/xorg.conf.d ; grep -v /usr/share/X11/xorg.conf.d/*.conf
+```
+
+Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
+
+## Audio
+
+```
+# show cards and devices
+pactl list cards & pacmd list-sinks
+# launch pulseaudio mixer
+alsamixer
+
+# list all mics
+arecord -l
+# card 0: PCH [HDA Intel PCH], device 0: ALC289 Analog [ALC289 Analog]
+# Subdevices: 0/1
+# Subdevice #0: subdevice #0
+
+# arecord and aplay for command line record and play
+```
+
+Aside - sound recording via audacity `sudo pacman -Syu audacity`
+
+
 ## Network access e.g. pawsey
 
 SSH
@@ -173,3 +198,5 @@ ssh -p 22 usernamem@199.19.19.1
 ```
 
 or do it from scratch: https://support.pawsey.org.au/documentation/display/US/Logging+in+with+SSH
+
+
