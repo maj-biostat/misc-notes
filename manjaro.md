@@ -161,6 +161,8 @@ Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920
 
 ## Audio
 
+Dated but may be useful https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/
+
 ```
 # show cards and devices
 pactl list cards & pacmd list-sinks
