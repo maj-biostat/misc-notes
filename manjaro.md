@@ -7,6 +7,8 @@ Install updates to bring you up to date.
 
 Make sure to `sudo pacman -Syu base-devel` to finish off.
 
+Remember, `dmesg | grep blah` `dmesg | tail -20` are your friends.
+
 
 ## Software
 
