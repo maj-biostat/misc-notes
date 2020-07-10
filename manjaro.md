@@ -89,6 +89,11 @@ Translations = /usr/share/qt/translations
 ```
 
 
+### Python
+
+Don't bother with `spyder` etc; more hassle than it is worth.
+
+
 ### Email
 
 See around 8:15 mins for config (under gnome) at https://www.youtube.com/watch?v=yCEK2hNP7bg  
