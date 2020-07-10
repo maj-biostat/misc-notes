@@ -14,7 +14,7 @@ sudo dmesg --level=err,warn
 # timestamps
 dmesg -T
 ```
-
+Also, `modprobe` for adding/removing modules from kernel.
 
 ## Software
 
