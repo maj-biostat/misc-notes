@@ -161,13 +161,48 @@ Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920
 
 ## Video capture 
 
-`v4l2-ctl --list-devices`
+First, a simple tool to test things:
+
+```
+sudo pacman -Syu guvcview
+
+# alt using vlc, should open web cam and audio capture:
+vlc v4l2:// :input-slave=alsa:// :v4l-vdev="/dev/video0"
+```
+
+```
+v4l2-ctl --list-devices
+
+# to get detail on the actual cam - what you can modify:
+v4l2-ctl -d /dev/video0 --list-ctrls
+                     brightness 0x00980900 (int)    : min=-64 max=64 step=1 default=0 value=0
+                       contrast 0x00980901 (int)    : min=0 max=95 step=1 default=0 value=0
+                     saturation 0x00980902 (int)    : min=0 max=100 step=1 default=64 value=64
+                            hue 0x00980903 (int)    : min=-2000 max=2000 step=1 default=0 value=0
+ white_balance_temperature_auto 0x0098090c (bool)   : default=1 value=1
+                          gamma 0x00980910 (int)    : min=100 max=300 step=1 default=100 value=100
+                           gain 0x00980913 (int)    : min=1 max=8 step=1 default=1 value=1
+           power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=2 value=2
+      white_balance_temperature 0x0098091a (int)    : min=2800 max=6500 step=1 default=4600 value=4600 flags=inactive
+                      sharpness 0x0098091b (int)    : min=1 max=7 step=1 default=2 value=2
+         backlight_compensation 0x0098091c (int)    : min=0 max=3 step=1 default=3 value=3
+                  exposure_auto 0x009a0901 (menu)   : min=0 max=3 default=3 value=3
+              exposure_absolute 0x009a0902 (int)    : min=10 max=626 step=1 default=156 value=156 flags=inactive
+```
+
+
+
+
+
+ffmpeg seems like a bit of a nightmare as a bundle of utilities but probably worth having some familiarity with.
 
 http://www.ffmpeg.org/
 
 and
 
 https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
+
+some translation of options for ffmpeg http://4youngpadawans.com/stream-camera-video-and-audio-with-ffmpeg/
 
 
 ## Audio
