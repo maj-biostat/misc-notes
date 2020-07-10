@@ -163,6 +163,10 @@ Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920
 
 `v4l2-ctl --list-devices`
 
+http://www.ffmpeg.org/
+
+and
+
 https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
 
 
