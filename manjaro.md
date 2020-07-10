@@ -168,8 +168,13 @@ Also, earlier zoom link https://aur.archlinux.org/packages/zoom/
 ```
 # show cards and devices
 pactl list cards & pacmd list-sinks
-# launch pulseaudio mixer
+# launch pulseaudio mixer 
 alsamixer
+# f6 to select card (intel is the Realtek ALC289) set mic as reqd then 
+sudo alsactl store
+# Note that alsamixer PCM = Pulse Code Modulation. This is where all sound is 
+# sent to (I think). Review (selecting the appropriate card num):
+amixer --card 0
 
 # list all mics
 arecord -l
