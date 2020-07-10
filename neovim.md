@@ -173,7 +173,32 @@ nnoremap <C-H> <C-W><C-H>
 4. Close down neovim.
 5. Create `C:\Users\<username>\AppData\Local\nvim`
 
-## Install plugin manager
+## Install plugin manager 
+
+### Linux
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+create `/home/user/.config/nvim/init.vim` and add:
+
+```
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+```
+
+start `nvim` and run `:PlugInstall`.  Edit config then `:PlugUpdate` to refresh.
+
+### windows
 
 1. Create `autoload` dir under `C:\Users\<username>\AppData\Local\nvim` 
 2. Create `plugged` dir under `C:\Users\<username>\AppData\Local\nvim` 
