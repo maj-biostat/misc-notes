@@ -196,7 +196,9 @@ Plug 'junegunn/seoul256.vim'
 call plug#end()
 ```
 
-start `nvim` and run `:PlugInstall`.  Edit config then `:PlugUpdate` to refresh.
+Start `nvim` and run `:PlugInstall`.  
+Edit config then `:PlugUpdate` to refresh.  
+Delete unwanted from config then `:PlugClean`
 
 ### Windows
 
