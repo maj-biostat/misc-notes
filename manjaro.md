@@ -191,7 +191,12 @@ v4l2-ctl -d /dev/video0 --list-ctrls
 ```
 
 
+Kernel status modules.  
+The `uvcvideo` is a kernel driver module meant to support any usb video class compliant device.
 
+```
+lsmod | grep uvcvideo
+```
 
 
 ffmpeg seems like a bit of a nightmare as a bundle of utilities but probably worth having some familiarity with.
