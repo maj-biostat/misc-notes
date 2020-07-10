@@ -161,7 +161,9 @@ Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920
 
 ## Audio
 
-Dated but may be useful https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/
+Dated but may be useful https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/  
+
+Also, earlier zoom link https://aur.archlinux.org/packages/zoom/
 
 ```
 # show cards and devices
