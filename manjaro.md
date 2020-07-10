@@ -159,6 +159,13 @@ ls -la /usr/share/X11/xorg.conf.d ; grep -v /usr/share/X11/xorg.conf.d/*.conf
 
 Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
 
+## Video capture 
+
+`v4l2-ctl --list-devices`
+
+https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
+
+
 ## Audio
 
 Dated but may be useful https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/  
