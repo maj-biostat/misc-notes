@@ -198,13 +198,15 @@ call plug#end()
 
 start `nvim` and run `:PlugInstall`.  Edit config then `:PlugUpdate` to refresh.
 
-### windows
+### Windows
 
 1. Create `autoload` dir under `C:\Users\<username>\AppData\Local\nvim` 
 2. Create `plugged` dir under `C:\Users\<username>\AppData\Local\nvim` 
 3. Create `init.vim` file under `C:\Users\<username>\AppData\Local\nvim`
 4. Download https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim into you `C:\Users\<username>\AppData\Local\nvim\autoload`
-5. Drop the following (boilerplate) content into the `init.vim` file.
+5. Drop the example content into the `init.vim` file.
+
+### Example plugin content
 
 ```
 
