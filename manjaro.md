@@ -67,6 +67,12 @@ sudo pacman -Syu yay
 
 ### R
 
+Libs:
+```
+yay -Syu v8
+
+```
+
 ```
 sudo pacman -Syu gcc-fortran
 # use faster openblas - need to install prior to install r
