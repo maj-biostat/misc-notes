@@ -228,6 +228,12 @@ sudo apt install libgdal-dev
 # for bookdownplus
 sudo apt install libmagick++-dev
 ```
+Base R
+
+```
+sudo apt install r-base
+sudo apt install r-base-dev
+```
 
 https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux
 
