@@ -227,6 +227,8 @@ sudo apt install libudunits2-dev
 sudo apt install libgdal-dev
 # for bookdownplus
 sudo apt install libmagick++-dev
+# for V8 (rstan dependency)
+sudo apt install libnode-dev
 ```
 Base R
 
