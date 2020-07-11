@@ -58,6 +58,38 @@ https://askubuntu.com/questions/1059965/internal-laptop-screen-not-detected-when
 
 Restarting X with `pkill X`
 
+
+Now we see the Quadro T2000 running off the nvidia driver (look below at `configuration: driver=nvidia`
+
+```
+sudo lshw -c display
+  *-display                 
+       description: VGA compatible controller
+       product: TU117GLM [Quadro T2000 Mobile / Max-Q]
+       vendor: NVIDIA Corporation
+       physical id: 0
+       bus info: pci@0000:01:00.0
+       version: a1
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pm msi pciexpress vga_controller bus_master cap_list rom
+       configuration: driver=nvidia latency=0
+       resources: irq:205 memory:b4000000-b4ffffff memory:70000000-7fffffff memory:80000000-81ffffff ioport:3000(size=128) memory:b5000000-b507ffff
+  *-display
+       description: VGA compatible controller
+       product: UHD Graphics 630 (Mobile)
+       vendor: Intel Corporation
+       physical id: 2
+       bus info: pci@0000:00:02.0
+       version: 02
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pciexpress msi pm vga_controller bus_master cap_list rom
+       configuration: driver=i915 latency=0
+       resources: irq:203 memory:b3000000-b3ffffff memory:60000000-6fffffff ioport:4000(size=64) memory:c0000-dffff
+
+```
+
 ## Monitor madness
 
 External monitor works, internal screen doesn't or vice versa. Why?
