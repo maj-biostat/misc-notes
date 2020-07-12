@@ -90,6 +90,32 @@ sudo lshw -c display
 
 ```
 
+```
+nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.100      Driver Version: 440.100      CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Quadro T2000        Off  | 00000000:01:00.0  On |                  N/A |
+| N/A   35C    P8     6W /  N/A |    479MiB /  3903MiB |      2%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1035      G   /usr/lib/xorg/Xorg                           161MiB |
+|    0      1614      G   /usr/lib/xorg/Xorg                           125MiB |
+|    0      1819      G   /usr/bin/gnome-shell                         113MiB |
+|    0      2117      G   ...6454/.local/share/hiri_1.4.0.5/hirimain    22MiB |
+|    0      2274      G   ...6454/.local/share/hiri_1.4.0.5/hirimain     1MiB |
+|    0      2299      G   ...AAAAAAAAAAAACAAAAAAAAAA= --shared-files    44MiB |
++-----------------------------------------------------------------------------+
+```
+
+
 ## Monitor madness
 
 External monitor works, internal screen doesn't or vice versa. Why?
