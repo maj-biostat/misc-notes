@@ -14,9 +14,9 @@ sudo mount /dev/sda1 /home/fred/media
 sudo umount /home/fred/media
 ```
 
-## BSOD (black screen of death)
+## Video drivers
 
-Usually nvidia drivers.
+Often blue screen of death relates to nvidia drivers.
 
 possibly  
 https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
