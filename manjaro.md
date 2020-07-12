@@ -1,5 +1,10 @@
 # Manjaro
 
+Arch turns out to be a bit of a nightmare due to a `rstan` dependency on `V8`.  
+`rstan` needs the `V8` lib but `V8` doesn't currently compile without manual intervention.
+
+See https://discourse.mc-stan.org/t/dangerous-design-in-rstan-2-21/16483
+
 Going with minimal with xfce: `manjaro-xfce-20.0.3-minimal-200606-linux56.iso`.
 Also tried gnome `manjaro-gnome-20.0.3-minimal-200606-linux56.iso` but did not like.
 
