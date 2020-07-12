@@ -116,6 +116,22 @@ nvidia-smi
 ```
 
 
+
+```
+# kernel module status
+lsmod | grep video
+uvcvideo               98304  0
+videobuf2_vmalloc      20480  1 uvcvideo
+videobuf2_memops       20480  1 videobuf2_vmalloc
+videobuf2_v4l2         24576  1 uvcvideo
+videobuf2_common       49152  2 videobuf2_v4l2,uvcvideo
+videodev              225280  3 videobuf2_v4l2,uvcvideo,videobuf2_common
+mc                     53248  4 videodev,videobuf2_v4l2,uvcvideo,videobuf2_common
+video                  49152  2 dell_wmi,dell_laptop
+```
+
+
+
 ## Monitor madness
 
 External monitor works, internal screen doesn't or vice versa. Why?
