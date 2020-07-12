@@ -330,3 +330,11 @@ ssh -p portnum usernamem@199.19.19.1
 ```
 
 or do it from scratch: https://support.pawsey.org.au/documentation/display/US/Logging+in+with+SSH
+
+### Video/audio capture
+
+```
+sudo apt install guvcview
+sudo apt install audacity
+sudo apt install vlc
+```
