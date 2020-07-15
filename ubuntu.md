@@ -348,3 +348,22 @@ https://www.youtube.com/watch?v=2oO9CeZXjTY
 
 If everything has gone to plan, you will be prompted on clicking Device -> Insert guest additions to download.  
 Download, then insert the iso as a cd then install the guest additions on the virtual windows box.
+
+```
+sudo apt search virtualbox
+sudo apt install virtualbox-ext-pack
+```
+
+If you forget to install the extension pack (like I did) then your webcam (for example) won't work in your virtual machine. 
+To rectify this, start your windows vm, then in the linux terminal do:
+
+```
+# The the webcam devices, the integrated cam in a laptop will be the first
+VBoxManage list webcams
+# Then add the webcam to the vm
+VBoxManage controlvm "win10_or_whatever_you_called_your_vm" webcam attach /dev/vid123 
+```
+
+The windows OS should register the webcam and set it up for you and after that you will be able to use the webcam on the vm.
+
+
