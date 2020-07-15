@@ -338,3 +338,13 @@ sudo apt install guvcview
 sudo apt install audacity
 sudo apt install vlc
 ```
+
+
+### Virtualisation
+
+Virtual box.
+
+https://www.youtube.com/watch?v=2oO9CeZXjTY
+
+If everything has gone to plan, you will be prompted on clicking Device -> Insert guest additions to download.  
+Download, then insert the iso as a cd then install the guest additions on the virtual windows box.
