@@ -30,9 +30,31 @@ run the installer (select free driver)
 
 ## Wget
 
-Mirror  
-`wget --recursive --no-parent --continue --no-clobber https://urlOfInterest`
+Examples
 
+```
+# Mirror
+wget --recursive --no-parent --continue --no-clobber https://urlOfInterest
+# All files of type
+wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
+# Single file
+wget https://test.org/latest.zip
+
+# All files of type
+wget --spider -r --accept "*.docx" 
+# List of urls
+wget ‐‐input list-of-file-urls.txt
+
+```
+
+
+## File renames
+
+```
+for f in *.txt; do 
+    mv -- "$f" "${f%.txt}.text"
+done
+```
 
 ## USB Drives
 
