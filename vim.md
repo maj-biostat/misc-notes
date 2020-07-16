@@ -1,10 +1,5 @@
 # Vim
 
-[MISC](misc.md)    
-[NEOVIM](neovim.md)   
-[README](README.md)    
-[VIM](vim.md)   
-
 This is in no particular order. I will add some structure one day.
 
 ## Tutorial
