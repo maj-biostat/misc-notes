@@ -75,6 +75,15 @@ Change each 'foo' (case sensitive due to the I flag) to 'bar'; ask for confirmat
 This may be wanted after using :set ignorecase to make searches case insensitive.
 ```
 
+## Delete 
+
+```
+# from cursor to (and including) character x:
+d\x<cr>
+# from current line to end of file
+dG
+```
+
 ## Insert new line
 
 `o` after current `O` before current line 
