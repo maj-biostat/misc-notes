@@ -4,7 +4,11 @@
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
-Aside 
+
+
+## Drive management
+
+Useful commants
 
 ```
 sudo lsusb
@@ -13,6 +17,40 @@ sudo fdisk -l
 sudo mount /dev/sda1 /home/fred/media
 sudo umount /home/fred/media
 ```
+
+### Adding drive to automount
+
+Identify the device (disk) you want to mount with `sudo fdisk -l` (gives you the `/dev/blah`) then get its universal id with `sudo blkid` (gives you the id e.g. `UUID="123a-321b"`).  
+
+Create a mount point `sudo mkdir /data` and update grouop ownership:  
+
+```
+sudo groupadd data
+sudo usermod -aG data USERNAME (Where USERNAME is the name of the user to be added)
+sudo chown -R :data /data
+```
+
+Add the following to the end of `/etc/fstab` (note the id is from the dummy example above):
+
+```
+UUID=123a-321b /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0
+```
+
+The flags indicate:
+
++ `UUID=123a-321b` is the UUID of the drive
++ `/data` is the mount point for the device.
++ `auto` automatically mounts the partition at boot 
++ `nosuid` the filesystem cannot contain set userid files. This prevents root escalation and other security issues.
++ `nodev` the filesystem cannot contain special devices (to prevent access to random device hardware).
++ `nofail` removes the errorcheck.
++ `x-gvfs-show` show the mount option in the file manager
++ `0` determines which filesystems need to be dumped (0 is the default).
++ `0` determine the order in which filesystem checks are done at boot time (0 is the default).
+
+Finally, test with `sudo mount -a`.  
+If there are no errors and you can access the mount point then you should be fine to reboot.
+
 
 ## Video drivers
 
