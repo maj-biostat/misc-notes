@@ -1,27 +1,17 @@
-# Neovim (on windows)
-
-[MISC](misc.md) [NEOVIM](neovim.md) [README](README.md) [VIM](vim.md)   
-
-## Contents
-
-1. [Sources](#Sources)
-2. [Tutorial](#Tutorial)
-3. [Install Neovim](#Install-Neovim)
-4. [Install plugin manager](#Install-plugin-manager)
-
-
-## Sources
-
-https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d  
-https://thoughtbot.com/blog/my-life-with-neovim  
-https://nicedoc.io/w0rp/ale  
+# Neovim
 
 ## Tutorial
 
-This should be done regularly.  
-`:Tutor`  
+`:Tutor`  This should be done regularly.   
+`vim tutor`  as above
 
-You can also get to it (sometimes) with `vim tutor`   
+## Thoughts
+
+`vim` is mainly about editing. 
+Think in terms of verbs and nouns (actions on things). 
+For example, `dw` <deletes> the <word> that is currently under the cursor. 
+It also remembers our edits. 
+So, if we do `.` it repeats our last edit and if we want to undo the last edit by `u`.
 
 ## Copy and Paste from Windows
 
@@ -32,10 +22,11 @@ Until an alternative appears:
 
 https://www.reddit.com/r/neovim/comments/3fricd/easiest_way_to_copy_from_neovim_to_system/
 
-### Navigation
+## Navigation
 
 `hjkl` are the movement keys one unit at a time    
-`wb` start of next/previous word  
+`w` start of next word  
+`b` back to the previous word
 `e` end of next word  
  
 and combine with operators e.g. `2w` move two words   
@@ -48,7 +39,71 @@ and combine with operators e.g. `2w` move two words
 `GG`  bottom of file   
 `gg` start of file    
 
-### The Mighty Search and Substitute  
+## Inserts
+
+`i` put your cursor on a letter say on the `o` of `you` then typing `i` will insert letters before the `o`   
+`a` put your cursor on a letter say on the `o` of `you` then typing `a` will insert letters after the `o`    
+`o` open a new line below the current line   
+
+`I` insert at the start of a line      
+`A` append to the end of a line   
+`O` open a line above the current one     
+
+`r` replace the character at the cursor with the next character typed  
+`R` to replace and keep on replacing until escape    
+  
+
+`J` join lines, e.g. in the following there is no white space after the word test:      
+
+```
+this is a test
+bless
+```
+
+press `J` gives     
+
+```
+this is a test bless
+```
+
+Note that a space was added automatically.
+
+## Change
+
+Using the `inner` modifier is also very useful. 
+For example `ciw` changes the whole word under your cursor regardless of where your cursor is in the word. 
+You can also do things like `cit` which means change inner tag. 
+
+`cw` change the current the word - note the operator is required, we cannot just do `c`   
+`ce` change to the end of the word - note the operator is required, we cannot just do `c`  (no diff from cw??)   
+`c$` change to end of line  
+
+## Deleting
+
+The following commands are useful but it is also useful to think in terms of the noun modifiers. 
+For example, `diw` will delete the whole word from within (inner) the word.
+Similarly, `dip` deletes a paragraph from within a paragraph. 
+There are others:   
+
+`di"` delete within quotes   
+`das` delete a sentence   
+`di)` deletes within parentheses  
+
+And here are some standard deletes:
+
+`x` delete character   
+`dd` delete current line (using d operator)   
+`2dd` delete two lines (current and next lines)   
+`d$` delete to end of line (using $operator)   
+`de` delete to end of word   
+`d2w` delete next two words   
+`d\x<cr>` delete from cursor to (and including) character x   
+`dG` delete from current line to end of file (inclusive of current line)   
+`dgg` deletes from current line to the beginning of a file (inclusive of current line)  
+
+
+
+## The Mighty Search and Substitute  
 
 `:set ic` ignore case
 `:set noic` make case sensitive
@@ -67,49 +122,6 @@ and combine with operators e.g. `2w` move two words
 2. Now `:%s//new-string/g` e.g. `:%s///g` to delete all in the file.
 
 
-### Inserts etc
-
-`i` put your cursor on a letter say on the `o` of `you` then typing `i` will insert letters before the `o`   
-`a` put your cursor on a letter say on the `o` of `you` then typing `a` will insert letters after the `o`    
-`o` open a new line below the current line   
-
-`I` insert at the start of a line      
-`A` append to the end of a line   
-`O` open a line above the current one     
-
-`r` replace the character at the cursor with the next character typed  
-`R` to replace and keep on replacing until escape    
-`cw` change the current the word - note the operator is required, we cannot just do `c`   
-`ce` change to the end of the word - note the operator is required, we cannot just do `c`  (no diff from cw??)   
-`c$` change to end of line    
-
-`J` join lines, e.g. in the following there is no white space after the word test:      
-
-```
-this is a test
-bless
-```
-
-press `J` gives     
-
-```
-this is a test bless
-```
-
-Note that a space was added.    
-
-### Deleting
-
-`x` delete character   
-`dd` delete current line (using d operator)   
-`2dd` delete two lines (current and next lines)   
-`d$` delete to end of line (using $operator)   
-`de` delete to end of word   
-`d2w` delete next two words   
-`d\x<cr>` delete from cursor to (and including) character x   
-`dG` delete from current line to end of file (inclusive of current line)   
-`dgg` deletes from current line to the beginning of a file (inclusive of current line)  
-
 ## Yanking (aka copy)
 
 For visual mode do `v`, highlight what you want then `y`, go to the line where you want the paste to start then `p`.   
@@ -117,27 +129,27 @@ For visual mode do `v`, highlight what you want then `y`, go to the line where y
 `yy` yank current line
 `yw` yank a word (`y5w` yank five words from the character you are over) 
 
-### Pasting
+## Pasting
 
 Can use in combination with delete, e.g. do `dd` move to the **line above** where you want to paste then do `p`.   
 
-### Indent
+## Indent
 
 In visual mode, select some text then do `>` or `5>>` to indent next 5 lines.
 
-### External commands
+## External commands
 
 `:!ls` note the bang !
 `:!mkdir blah` note the bang !
 
-### Files
+## Files
 
 `:w filename_you_choose`  write a file   
 `:rm filename_you_choose`  delete a file   
 `:e path to file` open a new file
 `:bd` close a buffer (without quitting vim)
 
-### Window, Buffer etc management
+## Window, Buffer etc management
 
 `:sp` horizontal split   
 `:vs` vertical split    
@@ -177,6 +189,8 @@ nnoremap <C-H> <C-W><C-H>
 
 ## Install plugin manager 
 
+Depends on whether you run linux or win:
+
 ### Linux
 
 ```
@@ -207,8 +221,6 @@ Under `~/.config/nvim` create `colors` directory then clone the dracula repo (fo
 ```
 git clone https://github.com/dracula/vim.git dracula
 ```
-
-
 ### Windows
 
 1. Create `autoload` dir under `C:\Users\<username>\AppData\Local\nvim` 
@@ -963,3 +975,12 @@ python -m pip install --user pylint
 ```
 also see https://nicedoc.io/w0rp/ale  for detailed instruction into use of ALE   
 
+
+
+
+
+## References
+
+https://medium.com/@hanspinckaers/setting-up-vim-as-an-ide-for-python-773722142d1d  
+https://thoughtbot.com/blog/my-life-with-neovim  
+https://nicedoc.io/w0rp/ale  
