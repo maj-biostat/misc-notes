@@ -134,6 +134,8 @@ In visual mode, select some text then do `>` or `5>>` to indent next 5 lines.
 
 `:w filename_you_choose`  write a file   
 `:rm filename_you_choose`  delete a file   
+`:e path to file` open a new file
+`:bd` close a buffer (without quitting vim)
 
 ### Window, Buffer etc management
 
@@ -218,6 +220,9 @@ git clone https://github.com/dracula/vim.git dracula
 
 ### Example 1 simple plugin content
 
+The `vim-slime` allows you to select a block of code in a file that is open in `vim` in one `tmux` pane to a `repl` that is open in another pane.
+However, `tmux` is not the default so you have to add the `slime_target` modifier, see more in [](multiplex.md).
+
 ```
 "*****************************************************************************
 "" Vim-PLug core
@@ -240,8 +245,6 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
-
-
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -257,8 +260,6 @@ call plug#end()
 " Required:
 filetype plugin indent on
 
-
-
 "*****************************************************************************
 "" Basic Setup
 "*****************************************************************************"
@@ -268,7 +269,6 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
-
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -299,6 +299,9 @@ set fileformats=unix,dos,mac
 set showcmd
 set shell=/bin/sh
 
+"" Slime - tmux is not the default
+let g:slime_target = "tmux"
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -328,12 +331,8 @@ else
   let g:indentLine_enabled = 1
   let g:indentLine_concealcursor = 0
   let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
-
-  
+  let g:indentLine_faster = 1  
 endif
-
-
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -355,9 +354,6 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
-
-
-
 ```
 
 
