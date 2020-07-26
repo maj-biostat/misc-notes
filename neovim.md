@@ -106,9 +106,9 @@ Note that a space was added.
 `d$` delete to end of line (using $operator)   
 `de` delete to end of word   
 `d2w` delete next two words   
-`d\x<cr>` delete from cursor to (and including) character x:
-`dG` delete from current line to end of file (inclusive of current line)
-`dgg` deletes from current line to the beginning of a file (inclusive of current line)
+`d\x<cr>` delete from cursor to (and including) character x   
+`dG` delete from current line to end of file (inclusive of current line)   
+`dgg` deletes from current line to the beginning of a file (inclusive of current line)  
 
 ## Yanking (aka copy)
 
