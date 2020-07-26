@@ -106,6 +106,9 @@ Note that a space was added.
 `d$` delete to end of line (using $operator)   
 `de` delete to end of word   
 `d2w` delete next two words   
+`d\x<cr>` delete from cursor to (and including) character x:
+`dG` delete from current line to end of file (inclusive of current line)
+`dgg` deletes from current line to the beginning of a file (inclusive of current line)
 
 ## Yanking (aka copy)
 
@@ -154,16 +157,13 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 ```
 
-** Buffers (are good) **
+** Buffers (are good) you should try to use them **
 `:ls` list buffers (active files) note the absence of bang !     
 `:b <buffer name or num>` to switch to that buffer      
 `:badd <filename>` add a new buffer session     
 `:ball` layout all the current buffers    
 `:bp` previous buffer   
 `:bn` next buffer    
-
-
-
 
 ## Install Neovim
 
@@ -216,7 +216,7 @@ git clone https://github.com/dracula/vim.git dracula
 5. Drop the example content into the `init.vim` file.
 
 
-### Example 1 plugin content
+### Example 1 simple plugin content
 
 ```
 "*****************************************************************************
@@ -245,10 +245,12 @@ endif
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
 
-
-
 Plug 'dracula/vim'
 Plug 'tomasr/molokai'
+
+Plug 'jpalardy/vim-slime', { 'for': ['python', 'julia']}
+Plug 'hanschen/vim-ipython-cell', { 'for': ['python', 'julia'] }
+Plug 'JuliaEditorSupport/julia-vim'
 
 call plug#end()
 
@@ -359,7 +361,7 @@ endif
 ```
 
 
-### Example 2 plugin content
+### Example 2 expanded plugin content
 
 ```
 "*****************************************************************************
