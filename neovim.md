@@ -5,6 +5,14 @@
 `:Tutor`  This should be done regularly.   
 `vim tutor`  as above
 
+## Getting help
+
+`:help` 
+
+Scroll through the list of topics. 
+Put your cursor above a topic then do `ctl + ]`.
+Type `:bd` to close the topic once you are done.
+
 ## Thoughts
 
 `vim` is mainly about editing. 
