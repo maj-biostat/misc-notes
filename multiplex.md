@@ -1,18 +1,18 @@
 # Multiplexer
 
 Is a way to get multiple terminal sessions within a single display. 
-`tmux` is a commonly used example.
+`tmux` is a commonly used multiplexer.
 
 ## `tmux`
 
 Install (on ubuntu) `sudo apt install tmux`
 Install (on arch) `sudo pacman -S tmux`
 
+## Basic commands
 
+Cheatsheet https://tmuxcheatsheet.com/
 
-Also see https://tmuxcheatsheet.com/
-
-`^b` indicates `ctl key + b`
+Note that `^b` indicates `ctl key + b`
 
 new session named snme        `tmux new -s snme`  
 kill session                  `tmux kill-session -t snme`   
