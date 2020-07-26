@@ -80,11 +80,17 @@ You can **list and select windows** with `^b w` (cursor to the window you want; 
 
 Cheatsheet https://tmuxcheatsheet.com/ but vital ones below
 
-new session named snme        `tmux new -s snme`  
-kill session                  `tmux kill-session -t snme`   
+### Sessions 
+
+`^b s` shows all sessions
+`tmux new -s julia` new session named julia (don't create a new session within a session)
+`tmux kill-session -t snme` kill session
+`^b $` rename session
+`^b )` next session (`)` for previous)
 
 ### Windows
 
+`^b w` shows all windows
 `^b c` creates window   
 `^b ,` renames window   
 `^b &` close current window   
