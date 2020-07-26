@@ -3,7 +3,7 @@
 Is a way to get multiple terminal sessions within a single display. 
 `tmux` is a commonly used multiplexer.
 
-## `tmux`
+## Installation of `tmux`
 
 Install (on ubuntu) `sudo apt install tmux`
 Install (on arch) `sudo pacman -S tmux`
@@ -47,7 +47,7 @@ println("this won't be run")
 ##
 ```
 
-Move your cursor to the `1+1` and then hit `ctl + c c` (to run all the code in the first cell).
+Move your cursor to the `1+1` and then hit `ctl + c c` (control then hit `c` twice) to run all the code in the first cell (or just highlight the bit you want to run).
 At the bottom of the `vim` pane you will see the following:
 
 ```
@@ -70,81 +70,39 @@ For example if you repl is on the LHS and vim is on the RHS and these are your o
 "{token}" one of tmux's supported special tokens, like "{last}"
 ```
 
-If you close your target pane then you can respecify the target by invoking `:SlimeConfig` in `vim`.
+If you accidentally **close your target pane** (`^b x`) then you can respecify the target by invoking `:SlimeConfig` in `vim`.
 
-
-
-**create a new window** with `^b c`.
-Notes that you can **list and select windows** with `^b w` (cursor to the window you want; you can press `x` if you want to del). 
-
-
-**vertical or horizontal split** with `^b %`  or `^b "`. 
-Now run neovim with `nvim`.
-You can to switch to the next pane with `^b o` (or `^b ;` to toggle b/w two panes) and then type `julia` to kick off the julia repl.
-
-
-
-
-
-+ Create new window:  `^b c`   (initially hidden from view)
-+ Choose window from list: `^b w` (cursor to the window you want; you can press `x` if you want to del)
-
-
-
-
+If you want to **create an entirely new window** then `^b c`.
+You can **list and select windows** with `^b w` (cursor to the window you want; you can press `x` if you want to del a window). 
 
 ## Basic commands
 
-Cheatsheet https://tmuxcheatsheet.com/
-
-
+Cheatsheet https://tmuxcheatsheet.com/ but vital ones below
 
 new session named snme        `tmux new -s snme`  
 kill session                  `tmux kill-session -t snme`   
 
-#### split window into panes:
+### Windows
 
- 
+`^b c` creates window   
+`^b ,` renames window   
+`^b &` close current window   
+`^b n` next window  (`p` for previous)
 
-#### scrolling
+### Panes
 
-   
+`^b o` next pane  
+`^b ;` toggle b/w panes	  
+`^b x` close current pane            
+`^b q` show pane numbers	             
 
-#### resize panes
+`^b + DOWN ARROW` resize pane down (note the `+` key means hold `^b` while pressing DOWN ARROW) 
+`^b + UP ARROW` resize pane 
+`^b + LEFT ARROW` resize pane 
+`^b + RIGHT ARROW` resize pane 
 
-next pane	                  `b o`   
-previous pane	              `b ;`   
-  
-close current pane            `^b x`       
-
-show pane numbers	          `^b q`    
-move pane left	              `^b {`    
-move pane right	              `^b {`    
-swap pane locations	          `^b ^o`    
-resize pane down	          `^b ^j` or `^b : resize-pane -D XX`    
-resize pane up	              `^b ^k` or `^b : resize-pane -U XX`    
-resize pane left	          `^b ^h` or `^b : resize-pane -L`    
-resize pane right	          `^b ^j` or `^b : resize-pane -R`    
-
-toggle zoom                   `^b z`    
-toggle layouts                `^b spacebar`    
-
-#### other
-
-new window	                  `^b c`     
-close window                  `^d` or `^b x`     
-kill window	                  `^b &`    
-next window	                  `^b n`    
-
-previous window	              `^b p`   
-rename window	              `^b`    
-list all windows	          `^b w`     
-move to window number	      `^b [number]`     
-split window vertically	      `^b %`    
-split window horizontally	  `^b "`    
-
-re-attach a detached session  `tmux attach`    
-list sessions                 `^b s` or `tmux ls`  
+`^b z` toggle zoom to full window
+`^b spacebar` toggle layouts                
 
 ### Issues with vim colors
 
