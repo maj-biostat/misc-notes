@@ -30,7 +30,7 @@ Also, at times lsof `-U | grep "^tmux"` is useful if you need to **get the names
 
 One thing that will be awkward at first is accepting that **scroll** will no longer work as anticipated.
 For example, if you cat a file that is longer than a page and you try to scroll with your mouse, it will not work.
-To activate scroll mode	`^b [` and use the mouse to scroll as usual.
+To **activate scroll mode** `^b [` and use the mouse to scroll as usual.
 To exist scroll mode, simply type `q`.
 
 Some common things you will want to do include creating and closing new windows or panes, splitting the pane and moving between windows and panes.
@@ -48,7 +48,7 @@ println("this won't be run")
 ##
 ```
 
-Move your cursor to the `1+1` and then hit `ctl + c c` (control then hit `c` twice) to run all the code in the first cell (or just highlight the bit you want to run).
+Move your cursor to the `1+1` and then hit `ctl + c c` (control then hit `c` twice) to **run all the code** in the first cell (or just highlight the bit you want to run).
 At the bottom of the `vim` pane you will see the following:
 
 ```
@@ -56,10 +56,10 @@ If you started tmux with the -L or -S flag, use that same socket name or path he
 If you didn't put anything, the default name is "default".
 ```
 
-So in most cases, `default` is the right name.
+So in most cases, if you have a single socket running, then `default` is the right name.
 After that you will be quizzed about the target pane.
 To **show the pane numbers** `^b q` and then use the following format to select the pane with the repl.
-For example if you repl is on the LHS and vim is on the RHS and these are your only two panes in a single window then `:0.0` is the right target.
+For example, if you repl is on the LHS and vim is on the RHS and these are your only two panes in a single window then `:0.0` is the right target.
 
 ```
 ":"       means current window, current pane (a reasonable default)
