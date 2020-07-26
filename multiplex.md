@@ -26,6 +26,7 @@ Detaching from a session leaves what you were doing running in the background.
 
 From the parent terminal you can do `tmux ls` to get a **list of the sessions** then `tmux attach -t julia` to **re-attach** to the session named julia.
 Note that if you did not name the session then you can return by referencing the session id.  
+Also, at times lsof `-U | grep "^tmux"` is useful if you need to **get the names of the active sockets**.
 
 One thing that will be awkward at first is accepting that **scroll** will no longer work as anticipated.
 For example, if you cat a file that is longer than a page and you try to scroll with your mouse, it will not work.
