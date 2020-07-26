@@ -9,9 +9,8 @@
 
 `vim` is mainly about editing. 
 Think in terms of verbs and nouns (actions on things). 
-For example, `dw` <deletes> the <word> that is currently under the cursor. 
-It also remembers our edits. 
-So, if we do `.` it repeats our last edit and if we want to undo the last edit by `u`.
+For example, `dw` deletes the remainder of the word that is currently under the cursor. 
+`vim` also remembers our edits and so if we do `.` it repeats our last edit (as a whole chunk) and if we want to undo the last edit by `u`.
 
 ## Copy and Paste from Windows
 
@@ -22,9 +21,13 @@ Until an alternative appears:
 
 https://www.reddit.com/r/neovim/comments/3fricd/easiest_way_to_copy_from_neovim_to_system/
 
-## Navigation
+## Navigation and motion
 
 `hjkl` are the movement keys one unit at a time    
+
+The following coordinate motion but do not work too nicely with `.` for repeat. 
+Instead use the inner operator e.g. `iw` (see later)  
+
 `w` start of next word  
 `b` back to the previous word
 `e` end of next word  
@@ -70,13 +73,23 @@ Note that a space was added automatically.
 
 ## Change
 
-Using the `inner` modifier is also very useful. 
-For example `ciw` changes the whole word under your cursor regardless of where your cursor is in the word. 
+Using the "inner" modifier `i` is also very useful. 
+For example, `ciw` changes the whole word under your cursor regardless of where your cursor is in the word. 
 You can also do things like `cit` which means change inner tag. 
+The inner operator works better with `.` the repeat.
 
 `cw` change the current the word - note the operator is required, we cannot just do `c`   
 `ce` change to the end of the word - note the operator is required, we cannot just do `c`  (no diff from cw??)   
-`c$` change to end of line  
+`c$` change to end of line 
+
+Another way to change a portion of text is to use the find and search operators. 
+For example, if we had the text `about that,` and the cursor were over the `o` you could type `cf,` and then enter the text `ove this` to give you `above this`.
+
+`cfx` change up to and including the next `x` where `x` could be any character.
+`ctx` change up to and excluding the next `x` where `x` could be any character.
+`c/whatever` change up to the result from forward search for the next instance of `whatever`
+`c/whatever` change up to the result from backward search for the next instance of `whatever`
+
 
 ## Deleting
 
@@ -101,9 +114,46 @@ And here are some standard deletes:
 `dG` delete from current line to end of file (inclusive of current line)   
 `dgg` deletes from current line to the beginning of a file (inclusive of current line)  
 
+## Custom verbs
+
+These are something to look at later on... look at [textobj-user wiki](https://github.com/kana/vim-textobj-user/wiki). 
+
+Examples:
+
++ Indent `ii`
++ Entire `ee`
++ Line `il`
+
+## Relative number
+
+With relative number turned off `:set norelativenumber` the line numbers remain static giving you the absolute line number. 
+Turning it on `set relativenumber` allows you to make multiline changes really easy. 
+So, if you want to change from the current line down to 3 lines below, you just look at the relative numbering on the left and do `c3j` interpreted as change from and including the current line to the next 3 lines below.
+
+```
+3
+2 more on This Bsocks
+1 more carrots                                                                                                                        
+10 THIS IS THE CURRENT LINE (which is also the ABSOLUTE line number)
+1 and more money
+2 ok, when is it going to be done?
+3 i said, when is it?                                                                                                                  4 umph          
+```
+
+Hitting `c3j` gives the following putting the cursor at the line marked by `10`:
+
+```
+3
+2 more on This Bsocks
+1 more carrots                                                                                                                        
+10 
+1 umph          
+```
 
 
 ## The Mighty Search and Substitute  
+
+`:nohl` after you are done with your search, turn off the highlighting
 
 `:set ic` ignore case
 `:set noic` make case sensitive
@@ -133,9 +183,10 @@ For visual mode do `v`, highlight what you want then `y`, go to the line where y
 
 Can use in combination with delete, e.g. do `dd` move to the **line above** where you want to paste then do `p`.   
 
-## Indent
+## Indenting
 
 In visual mode, select some text then do `>` or `5>>` to indent next 5 lines.
+
 
 ## External commands
 
@@ -229,6 +280,52 @@ git clone https://github.com/dracula/vim.git dracula
 4. Download https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim into you `C:\Users\<username>\AppData\Local\nvim\autoload`
 5. Drop the example content into the `init.vim` file.
 
+
+## Plugins
+
+### vim-slime
+
+For use in conjunction with a multiplexer to (for example) send commands from an R script to an R shell.
+
+### vim-ipython-cell
+
+For defining blocks in the code.
+
+### julia-vim
+
+Stuff for julia support
+
+### Surround
+
+`s` becomes a verb modifier for surround
+`ds"` delete surrounding `"`
+`ys"` add surrounding `"` around current word
+`cs"'` change surround `"` to single quote
+
+### Commentary
+
+For toggling commenting.
+
+`cml` comment current line
+`cmj` comment current and line below
+`cmip` comment the entire paragraph
+
+### ReplaceWitRegister
+
+`griw` replace the inner word with the current register
+
+### Titlecase
+
+`gtip'` Capitalise the whole para
+
+### Sort-motion
+
+`gsip` 
+
+### System-copy
+
+
+## Examples `init.vim`
 
 ### Example 1 simple plugin content
 
