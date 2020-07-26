@@ -8,24 +8,51 @@ Is a way to get multiple terminal sessions within a single display.
 Install (on ubuntu) `sudo apt install tmux`
 Install (on arch) `sudo pacman -S tmux`
 
+## Overview
+
+Note that `tmux` commands are prefixed with a `Ctl + b` leader (denoted `^b` here). 
+You hit the leader, let go and then press the command that you want. 
+
+From the terminal **create a new tmux session** named julia `tmux new -s julia` from which you could start a repl or whatever.
+From the `tmux` command line you could type `exit` to exit or from anywhere do `^b d` to **detach** and return to the parent terminal.
+Detaching from a session leaves what you were doing running in the background.  
+From the parent terminal you can do `tmux ls` to get a **list of the sessions** then `tmux attach -t julia` to **re-attach** to the session named julia.  
+Note that if you did not name the session then you can return by referencing the session id.  
+
+One thing that will be awkward at first is remembering that **scroll** will no longer work as anticipated. 
+So, if you cat a file that is longer than a page and you try to scroll with your mouse, it will not work.
+To activate scroll mode	`^b [` and use the mouse to scroll as usual.  
+To exist scroll mode, simply type `q`.
+
+Some common things you will want to do include **creating** and **closing new windows**, **splitting** the terminal session and **moving between windows and panes**.
+
+Start with **vertical and horizontal split** with `^b %`  and `^b "` from which you can `^b o` to switch to the next pane (`^b ;` to toggle b/w two panes) and then type `julia` to kick off the julia repl.
+
+
+
++ Create new window:  `^b c`   (initially hidden from view)
++ Choose window from list: `^b w` (cursor to the window you want; you can press `x` if you want to del)
+
+
+
+
+
 ## Basic commands
 
 Cheatsheet https://tmuxcheatsheet.com/
 
-Note that `^b` indicates `ctl key + b`
+
 
 new session named snme        `tmux new -s snme`  
 kill session                  `tmux kill-session -t snme`   
 
 #### split window into panes:
 
-split current window vert:    `^b %`    
-split current window hori:    `^b "`    
+ 
 
 #### scrolling
 
-start scroll mode	          `^b [`      
-exit scroll mode	          `q`      
+   
 
 #### resize panes
 
