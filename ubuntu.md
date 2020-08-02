@@ -244,6 +244,20 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 
 ```
 
+### nteract
+
+A desktop application that allows you to run notebooks.  
+
+```
+wget https://github.com/nteract/nteract/releases/download/v0.24.1/nteract_0.24.1_amd64.deb
+sudo gdebi nteract_0.24.1_amd64.deb
+```
+
+Now open the Julia REPL and type `]` then add the `IJulia` package with `add IJulia`. 
+Enter `Ctl-C`  to exit the `pkg` manager.
+Find nteract in your applications and launch.
+
+
 ### Firefox
 
 Completely uninstall. 
