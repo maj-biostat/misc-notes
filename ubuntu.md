@@ -4,7 +4,7 @@
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
-
+Boot log is stored at `/var/log/boot.log` and `/var/log/dmesg` and to view use `dmesg | less` (`q` to exit).
 
 ## Drive management
 
