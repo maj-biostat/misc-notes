@@ -4,7 +4,19 @@
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
-Boot log is stored at `/var/log/boot.log` and `/var/log/dmesg` and to view use `dmesg | less` (`q` to exit).
+Boot log is stored at `/var/log/boot.log` and `/var/log/dmesg` (kernel ring buffer) and to view use `dmesg | less` (`q` to exit). 
+Alternatively, if you are in the UI, do special key and then type logs to run the Logs app.
+
+Other useful logs (some might be binary) include:
+
++ `/var/log/auth.log` authorisation 
++ `/var/log/daemon.log` daemons (ssh etc)
++ `/var/log/debug`
++ `/var/log/kern.log`
++ `/var/log/syslog` if you cannot find it anywhere else, it will probably be in here
++ `/var/log/Xorg.0.log` your favourite and mine
++ `/var/log/faillog` login failures
++ `/var/log/wtmp` user info, but just use `who`
 
 ## Drive management
 
