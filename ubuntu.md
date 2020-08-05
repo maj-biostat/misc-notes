@@ -13,7 +13,7 @@ Other useful logs (some might be binary) include:
 + `/var/log/daemon.log` daemons (ssh etc)
 + `/var/log/debug`
 + `/var/log/kern.log`
-+ `/var/log/syslog` if you cannot find it anywhere else, it will probably be in here
++ `/var/log/syslog` if you cannot find it anywhere else, it will probably be in here `man syslogd`
 + `/var/log/Xorg.0.log` your favourite and mine
 + `/var/log/faillog` login failures
 + `/var/log/wtmp` user info, but just use `who`
