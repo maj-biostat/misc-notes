@@ -30,6 +30,12 @@ sudo mount /dev/sda1 /home/fred/media
 sudo umount /home/fred/media
 ```
 
+Also, if you want to see how much space a directory is taking up:
+
+```
+du -sh \home\myfatdir
+```
+
 ### Adding drive to automount
 
 Identify the device (disk) you want to mount with `sudo fdisk -l` (gives you the `/dev/blah`) then get its universal id with `sudo blkid` (gives you the id e.g. `UUID="123a-321b"`).  
