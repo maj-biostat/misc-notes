@@ -345,9 +345,31 @@ sudo apt install r-base-dev
 
 https://github.com/stan-dev/rstan/wiki/Installing-RStan-on-Linux
 
+To install home baked packages from the commanline do:
+
+```
+R CMD INSTALL --preclean --no-multiarch mypackage
+
+# or via R console:
+library(devtools)
+devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))
+devtools::build()
+devtools::install()
+```
+
+For adhoc packages use:
+
+```
+# From R console
+install.packages("pkgname", dependencies = T, repos = 'https://cran.curtin.edu.au', quiet = F)
+```
+
+
+
 ### Zoom
 
 Use sso to login (uni-sydney).
+Note, it is easier to use `zoom`, `teams` etc via a VM, see Virtualbox.
 
 ### VIM
 
