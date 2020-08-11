@@ -378,11 +378,13 @@ Run script from terminal.
 /usr/bin/Rscript main.R
 ```
 
-Packages containing `rstan` models:
+**Packages containing `rstan` models:**
+
+Use `rstantools`; provide the full path, which will end in the name of the package, in this case package is "fred".
 
 ```
 library("rstantools")
-rstan_create_package(path = 'fred') # e.g. rstanDRC
+rstan_create_package(path = '/home/ubuntu/fred') 
 ```
 update DESCRIPTION  
 delete Read-and-delete-me  
@@ -429,7 +431,7 @@ useDynLib(fred, .registration = TRUE)
 close down rstudio, go to the terminal, `cd` to above the package dir and do:
 
 ```
-R CMD INSTALL --preclean rstanDRC
+R CMD INSTALL --preclean fred
 ```
 
 once you are convinced that it is working, go back to rstudio, and do a clean/rebuild/document (via the build dropdown) or:
@@ -437,6 +439,9 @@ once you are convinced that it is working, go back to rstudio, and do a clean/re
 ```
 devtools::document(roclets = c('rd', 'collate', 'namespace'))
 ```
+
+and start adding other models etc.
+The `NAMESPACE` should now update on `roxygen2::roxygenize()` but you know what to do if not.
 
 
 also see https://cran.r-project.org/web/packages/rstantools/vignettes/minimal-rstan-package.html but note the instructions tend to not work.
