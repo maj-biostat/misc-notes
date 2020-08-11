@@ -396,6 +396,12 @@ ssh -p portnum usernamem@199.19.19.1
 
 or do it from scratch: https://support.pawsey.org.au/documentation/display/US/Logging+in+with+SSH
 
+To copy files across, you can use `scp`, e.g.
+
+```
+scp -P 1234 file.tar ubuntu@1.2.3.4:/home/userdir
+```
+
 ### Video/audio capture
 
 ```
