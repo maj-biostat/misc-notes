@@ -382,9 +382,10 @@ Tools for converting ppk from win box to ssh key.
 
 ```
 sudo apt-get install putty-tools
-# convert priv
+# convert priv - here you need to use the passphrase associated with the ppk file. 
+# if you do not have it, you are stuffed.
 puttygen id_dsa.ppk -O private-openssh -o id_dsa
-puttygen id_dsa.ppk -O public-openssh -o id_dsa
+puttygen id_dsa.ppk -O public-openssh -o id_dsa.pub
 # agent running?
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_dsa
