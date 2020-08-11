@@ -30,10 +30,12 @@ sudo mount /dev/sda1 /home/fred/media
 sudo umount /home/fred/media
 ```
 
-Also, if you want to see how much space a directory is taking up:
+Also, if you want to see how much space a directory is taking up (disk usage):
 
 ```
-du -sh \home\myfatdir
+du -sh /home/myfatdir
+# breakdown
+du -shc /home/myfatdir/*
 ```
 
 ### Adding drive to automount
