@@ -372,7 +372,11 @@ For adhoc packages use:
 install.packages("pkgname", dependencies = T, repos = 'https://cran.curtin.edu.au', quiet = F)
 ```
 
+Run script from terminal.
 
+```
+/usr/bin/Rscript main.R
+```
 
 ### Zoom
 
