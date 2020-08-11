@@ -432,7 +432,7 @@ close down rstudio, go to the terminal, `cd` to above the package dir and do:
 R CMD INSTALL --preclean rstanDRC
 ```
 
-once you are convinced that it is working, go back to rstudio, and do a clean/rebuild/document, whatever:
+once you are convinced that it is working, go back to rstudio, and do a clean/rebuild/document (via the build dropdown) or:
 
 ```
 devtools::document(roclets = c('rd', 'collate', 'namespace'))
