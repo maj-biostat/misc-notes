@@ -372,11 +372,28 @@ For adhoc packages use:
 install.packages("pkgname", dependencies = T, repos = 'https://cran.curtin.edu.au', quiet = F)
 ```
 
-Run script from terminal.
+Run script from terminal (redirect output stdout/stderr to log) in the background.
 
 ```
-/usr/bin/Rscript main.R
+/usr/bin/Rscript main.R > log.txt 2>&1 &
 ```
+
+Kill them all!
+
+```
+for pid in $(pgrep R); do kill -9 $pid; done
+```
+
+List the jobs (stop with ctl-z).
+
+```
+jobs
+# bring job 1 into the foreground
+fg % 1
+# to background
+bg % 1
+```
+
 
 **Packages containing `rstan` models:**
 
