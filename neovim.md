@@ -13,6 +13,12 @@ Scroll through the list of topics.
 Put your cursor above a topic then do `ctl + ]`.
 Type `:bd` to close the topic once you are done.
 
+## Information on current environment
+
+`:version`
+
+and to see the current value of a config item, add a `?`, e.g. `:set tabstop?`
+
 ## Thoughts
 
 `vim` is mainly about editing. 
@@ -194,6 +200,15 @@ Can use in combination with delete, e.g. do `dd` move to the **line above** wher
 ## Indenting
 
 In visual mode, select some text then do `>` or `5>>` to indent next 5 lines.
+
+```
+:set tabstop=8     - tabs are at proper location
+:set expandtab     - don't use actual tab character (ctrl-v)
+:set shiftwidth=4  - indenting is 4 spaces
+:set autoindent    - turns it on
+:set smartindent   - does the right thing (mostly) in programs
+:set cindent       - stricter rules for C programs
+```
 
 
 ## External commands
