@@ -5,7 +5,8 @@
 `:Tutor`  This should be done regularly.   
 `vim tutor`  as above
 
-https://learnvimscriptthehardway.stevelosh.com/
+https://learnvimscriptthehardway.stevelosh.com/  
+https://bencrowder.net/files/vim-fu/
 
 ## Getting help
 
@@ -78,7 +79,17 @@ and combine with operators e.g. `2w` move two words
 `C-g` tells you where you are in the file  (in %) and the number of lines in file     
 `99G` moves you to line 99    
 `GG`  bottom of file   
-`gg` start of file    
+`gg` start of file
+`H` home - move the cursor to the top of the screen but do NOT scroll an inch!
+`M` middle - move the cursor to the middle of the screen but do NOT scroll an inch!
+`L` last - move the cursor to the bottom of the screen but do NOT scroll an inch!
+`z.` move current line to centre of screen
+`z-` move current line to bottom of screen
+
+`<Ctl>-u` scroll half a page up 
+`<Ctl>-d` scroll half a page down
+`<Ctl>-b` scroll full page up
+`<Ctl>-f` scroll full page down
 
 ## Inserts
 
