@@ -13,6 +13,8 @@ Scroll through the list of topics.
 Put your cursor above a topic then do `ctl + ]`.
 Type `:bd` to close the topic once you are done.
 
+Help on a specific topic `:he write`
+
 ## Information on current environment
 
 `:version`
