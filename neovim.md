@@ -35,6 +35,25 @@ Until an alternative appears:
 
 https://www.reddit.com/r/neovim/comments/3fricd/easiest_way_to_copy_from_neovim_to_system/
 
+
+## Super tips
+
+Forward search for word under cursor (in normal mode) `*`
+
+Reverse search for word under cursor (in normal mode) `#`
+
+Repeat what I just did `.`
+
+Jump to matching brace `%`
+
+Macro start record `qa` (saves to the `a` register), stop recording with `q` and then replay with `@a` in normal model.
+
+Recent versions of `vim` will have the `pi_paren.txt` aka `matchparen` plugin installed by default.
+This can be maddening to a nube (to say the least) because your cursor will bounce all over the place while trying to navigate through parentheses. 
+You can turn it off with `:NoMatchParen` and turn it back on again with `:DoMatchParen` should you wish to.
+See https://vimhelp.org/pi_paren.txt.html.
+
+
 ## Navigation and motion
 
 `hjkl` are the movement keys one unit at a time    
