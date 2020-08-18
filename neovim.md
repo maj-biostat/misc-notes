@@ -5,6 +5,8 @@
 `:Tutor`  This should be done regularly.   
 `vim tutor`  as above
 
+https://learnvimscriptthehardway.stevelosh.com/
+
 ## Getting help
 
 `:help` 
@@ -54,6 +56,7 @@ Recent versions of `vim` will have the `pi_paren.txt` aka `matchparen` plugin in
 This can be maddening to a nube (to say the least) because your cursor will bounce all over the place while trying to navigate through parentheses. 
 You can turn it off with `:NoMatchParen` and turn it back on again with `:DoMatchParen` should you wish to.
 See https://vimhelp.org/pi_paren.txt.html.
+Also see https://vimawesome.com/plugin/vim-matchup for a seemingly viable alternative.
 
 
 ## Navigation and motion
