@@ -63,7 +63,13 @@ You can use the `-A` option to get the full packet in ascii format (`-x` for hex
 ## Wireshark (Packet tracing)
 
 Wireshark is a GUI based app that also lets you trace network traffic.
+You either need to add yourself to the wireshark group at install time or start up with sudo from terminal.
+Once in wireshark, you can run filters while tracing traffic. 
+For e.g. to filter traffic for a given IP address:
 
+```
+ip.addr==1.2.3.4
+```
 
 
 
