@@ -53,6 +53,7 @@ Jump to matching brace `%`
 
 Macro start record `qa` (saves to the `a` register), stop recording with `q` and then replay with `@a` in normal model.
 
+**NOTE!!**
 Recent versions of `vim` will have the `pi_paren.txt` aka `matchparen` plugin installed by default.
 This can be maddening to a nube (to say the least) because your cursor will bounce all over the place while trying to navigate through parentheses. 
 You can turn it off with `:NoMatchParen` and turn it back on again with `:DoMatchParen` should you wish to.
