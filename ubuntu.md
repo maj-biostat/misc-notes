@@ -370,6 +370,8 @@ For adhoc packages use:
 ```
 # From R console
 install.packages("pkgname", dependencies = T, repos = 'https://cran.curtin.edu.au', quiet = F)
+# Or from a source package
+install.packages(path_to_file, repos = NULL, type="source")
 ```
 
 Run script from terminal (redirect output stdout/stderr to log) in the background.
