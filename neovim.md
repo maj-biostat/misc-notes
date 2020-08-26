@@ -59,6 +59,7 @@ This can be maddening to a nube (to say the least) because your cursor will boun
 You can turn it off with `:NoMatchParen` and turn it back on again with `:DoMatchParen` should you wish to.
 See https://vimhelp.org/pi_paren.txt.html.
 Also see https://vimawesome.com/plugin/vim-matchup for a seemingly viable alternative.
+**To turn this off via `.vimrc` or `init.vim` add `set noshowmatch`**
 
 
 ## Navigation and motion
