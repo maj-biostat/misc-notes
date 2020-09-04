@@ -231,6 +231,7 @@ https://www.dedoimedo.com/computers/grub-2.html
 |apt full-upgrade|	apt-get dist-upgrade	  | Upgrades packages with auto-handling of dependencies    |
 |apt search	     |apt-cache search	        | Searches for the program                                |
 |apt show	       |apt-cache show	          | Shows package details                                   |
+|apt list --installed | ? | Shows all the installed packages |
 
 Examples:
 
