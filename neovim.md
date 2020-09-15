@@ -290,6 +290,23 @@ nnoremap <C-H> <C-W><C-H>
 `:bp` previous buffer   
 `:bn` next buffer    
 
+## Macro
+
+Start recording a macro to register `a` with `qa`, press `q` to stop recording and `@a` to run the macro.
+If you do `10@a` it will repeat the macro 10 times.
+
+```
+# Align to & example
+# Go to the line you want to change and execute
+# Start recording
+qa 
+0f&50i<Space><Esc>039lvf&hxj
+# Stop recording
+q
+# Run 10 times
+10@a
+```
+
 ## Install Neovim
 
 1. Go to https://github.com/neovim/neovim/wiki/Installing-Neovim, then stable releases then grab the `nvim-win64.zip` file and download to your downloads dir.
