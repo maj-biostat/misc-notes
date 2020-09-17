@@ -292,7 +292,7 @@ nnoremap <C-H> <C-W><C-H>
 
 ## Macro
 
-Start recording a macro to register `a` with `qa`, press `q` to stop recording and `@a` to run the macro.
+Start recording a macro to register `a` with `qa`, press `q` to stop recording and `@a` to run the macro.  
 If you do `10@a` it will repeat the macro 10 times.
 
 ```
@@ -305,6 +305,19 @@ qa
 q
 # Run 10 times
 10@a
+```
+
+## Align
+
+You could write a macro as above to align text, but using a plugin is easier.  
+
+See https://github.com/junegunn/vim-easy-align
+
+Basics:
+
+```
+# Align on all &
+gaip*&
 ```
 
 ## Install Neovim
