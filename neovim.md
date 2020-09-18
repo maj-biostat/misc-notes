@@ -215,7 +215,13 @@ Hitting `c3j` gives the following putting the cursor at the line marked by `10`:
 
 `:s/old/new/g`  search and sub old for new.   
 `:%s/old/new/g`  search and sub old for new in the whole file  
-`:%s/old/new/gc`  with a confirm prompt   
+`:%s/old/new/gc`  with a confirm prompt 
+
+Removing windows end of line characters i.e. `^M`.
+
+`:%s/<ctl v><ctl m>//g`
+
+the `<ctl v><ctl m>` gives you `^M`.
 
 *AWESOME*
 
