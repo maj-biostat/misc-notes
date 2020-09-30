@@ -265,6 +265,16 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 
 ```
 
+### Upgrade rollback 
+
+**WARNING:** Fraught. Do not proceed unless absolutely necessary.
+
+```
+grep -A 2 'Start-Date: 2020-09-30' /var/log/apt/history.log
+```
+https://www.cyberciti.biz/howto/debian-linux/ubuntu-linux-rollback-an-apt-get-upgrade/
+
+
 ### nteract
 
 A desktop application that allows you to run notebooks.  
