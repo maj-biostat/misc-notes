@@ -75,22 +75,99 @@ If there are no errors and you can access the mount point then you should be fin
 ## Video drivers
 
 This is without doubt the most hassle you will get from linux.
-Often blue screen of death relates to nvidia drivers.
+Often blue screen of death relates to nvidia drivers. 
+Upgrades of the drivers will result in things like external monitors not working and even entire system not booting.
 
-Current
+Current drivers:
 
 ![VideooDrivers](sep2020vid.png "Additional drivers")
 
-possibly  
-https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
+Various links of interest
+
+https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w  
+https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/  
+https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/  
+
+Note comment on grub update  
+https://askubuntu.com/questions/1059965/internal-laptop-screen-not-detected-when-using-nvidia-driver  
 
 
-Alt-F2 then login to terminal.
+If you need to do a boot to terminal, do, Alt-F2 then login to terminal.
 
 ```
 # Graphics card and drivers
 sudo hwinfo --gfxcard --short
+```
+
+This will give a brief report of the card and driver:
+
+```
 lspci -k | grep -A 2 -i "VGA"
+01:00.0 VGA compatible controller: NVIDIA Corporation TU117GLM [Quadro T2000 Mobile / Max-Q] (rev a1)
+	Subsystem: Dell TU117GLM [Quadro T2000 Mobile / Max-Q]
+	Kernel driver in use: nvidia
+```
+
+The following gives more detail.
+
+```
+nvidia-smi
+
+Wed Sep 30 10:56:30 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 450.66       Driver Version: 450.66       CUDA Version: 11.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro T2000        Off  | 00000000:01:00.0  On |                  N/A |
+| N/A   50C    P0    15W /  N/A |    400MiB /  3903MiB |      3%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      1089      G   /usr/lib/xorg/Xorg                 39MiB |
+|    0   N/A  N/A      1640      G   /usr/lib/xorg/Xorg                168MiB |
+|    0   N/A  N/A      1768      G   /usr/bin/gnome-shell              143MiB |
+|    0   N/A  N/A      4538      G   ...AAAAAAAAA= --shared-files       40MiB |
++-----------------------------------------------------------------------------+
+
+
+# Previously was
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.100      Driver Version: 440.100      CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Quadro T2000        Off  | 00000000:01:00.0  On |                  N/A |
+| N/A   35C    P8     6W /  N/A |    479MiB /  3903MiB |      2%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1035      G   /usr/lib/xorg/Xorg                           161MiB |
+|    0      1614      G   /usr/lib/xorg/Xorg                           125MiB |
+|    0      1819      G   /usr/bin/gnome-shell                         113MiB |
+|    0      2117      G   ...6454/.local/share/hiri_1.4.0.5/hirimain    22MiB |
+|    0      2274      G   ...6454/.local/share/hiri_1.4.0.5/hirimain     1MiB |
+|    0      2299      G   ...AAAAAAAAAAAACAAAAAAAAAA= --shared-files    44MiB |
++-----------------------------------------------------------------------------+
+```
+
+
+
+
+
+
+```
 # suggest recommended drivers
 sudo ubuntu-drivers devices
 # e.g.
@@ -99,7 +176,7 @@ sudo shutdown -r now
 # and pray
 
 # switch primary card
-sudo prime-select query
+sudo prime-select query # sept 2020 gives nvidia
 sudo prime-select intel
 sudo prime-select nvidia
 sudo apt list --installed | grep nvid
@@ -112,12 +189,6 @@ sudo ubuntu-drivers autoinstall
 # in gnome
 nvidia-settings
 ```
-https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
-https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
-
-Note comment on grub update  
-https://askubuntu.com/questions/1059965/internal-laptop-screen-not-detected-when-using-nvidia-driver
-
 
 Restarting X with `pkill X`
 
@@ -152,32 +223,6 @@ sudo lshw -c display
        resources: irq:203 memory:b3000000-b3ffffff memory:60000000-6fffffff ioport:4000(size=64) memory:c0000-dffff
 
 ```
-
-```
-nvidia-smi
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 440.100      Driver Version: 440.100      CUDA Version: 10.2     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|===============================+======================+======================|
-|   0  Quadro T2000        Off  | 00000000:01:00.0  On |                  N/A |
-| N/A   35C    P8     6W /  N/A |    479MiB /  3903MiB |      2%      Default |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                       GPU Memory |
-|  GPU       PID   Type   Process name                             Usage      |
-|=============================================================================|
-|    0      1035      G   /usr/lib/xorg/Xorg                           161MiB |
-|    0      1614      G   /usr/lib/xorg/Xorg                           125MiB |
-|    0      1819      G   /usr/bin/gnome-shell                         113MiB |
-|    0      2117      G   ...6454/.local/share/hiri_1.4.0.5/hirimain    22MiB |
-|    0      2274      G   ...6454/.local/share/hiri_1.4.0.5/hirimain     1MiB |
-|    0      2299      G   ...AAAAAAAAAAAACAAAAAAAAAA= --shared-files    44MiB |
-+-----------------------------------------------------------------------------+
-```
-
 
 
 ```
