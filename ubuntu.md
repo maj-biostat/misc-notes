@@ -74,7 +74,12 @@ If there are no errors and you can access the mount point then you should be fin
 
 ## Video drivers
 
+This is without doubt the most hassle you will get from linux.
 Often blue screen of death relates to nvidia drivers.
+
+Current
+
+![VideooDrivers](sep2020vid.png "Additional drivers")
 
 possibly  
 https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w
