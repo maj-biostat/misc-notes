@@ -19,7 +19,20 @@ Within a session you can have multiple windows.
 In one window you might run `vim` and in another window you might be running a julia `repl`.
 You can also split windows into `tmux` panes so that you can have multiple things running within a window, e.g. a webserver and a terminal.
 
-For example, to **create a new tmux session** named julia type `tmux new -s julia` from the terminal.
+### Create new tmux session
+
+To create a new tmux session named julia:
+
+```
+tmux new -s julia
+# exit to exit
+# ^b d to detach
+# vertical split 
+^b % 
+# horizontal split 
+^b "
+``` 
+
 From here we could start vim or a repl etc.
 Note that from the `tmux` session you can type `exit` to exit or do `^b d` to **detach** and return to the parent terminal.
 Detaching from a session leaves what you were doing running in the background.  
