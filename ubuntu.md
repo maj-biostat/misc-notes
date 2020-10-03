@@ -365,6 +365,16 @@ sudo rm -rf /usr/lib/firefox/
 sudo rm -rf /usr/lib/firefox-addons/
 ```
 
+### wget 
+
+Examples see https://www.gnu.org/software/wget/manual/html_node/Examples.html 
+
+```
+# Retrieve the first two levels of ‘wuarchive.wustl.edu’, saving them to /tmp.
+wget -r -l2 -P/tmp http://www.example.com/dir/
+# You want to download all the pdfs from a directory on an HTTP server. 
+wget -r -l1 --no-parent -A.pdf http://www.example.com/dir/
+```
 
 ### MS Teams
 
