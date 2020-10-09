@@ -18,6 +18,14 @@ Other useful logs (some might be binary) include:
 + `/var/log/faillog` login failures
 + `/var/log/wtmp` user info, but just use `who`
 
+## Device details
+
+Use list hardware `lshw`, for example, computer model:
+
+```
+sudo lshw | grep product
+```
+
 ## Drive management
 
 Useful commants
