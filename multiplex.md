@@ -114,7 +114,18 @@ Cheatsheet https://tmuxcheatsheet.com/ but vital ones below
 `^b o` next pane  
 `^b ;` toggle b/w panes	  
 `^b x` close current pane            
-`^b q` show pane numbers	             
+`^b q` show pane numbers	
+
+To explicitly resize panes using the command menu, do:
+
+`^b + :` to enter the command prompt then type `resize-pane` followed by `-R`, `-L`, `-U`, `-D`
+
+For example, if you want to increase the width of the left hand side pane by 5 units, do:
+
+```
+^b + :
+resize-pane -R 5
+```
 
 `^b + DOWN ARROW` resize pane down (note the `+` key means hold `^b` while pressing DOWN ARROW) 
 `^b + UP ARROW` resize pane 
