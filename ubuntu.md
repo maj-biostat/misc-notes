@@ -595,6 +595,9 @@ sudo apt install filezilla
 
 Tools for converting ppk from win box to ssh key. 
 
+**NOTE** 
+When specifying a port `scp` uses a capital `-P` whereas `ssh uses a small `-p`. Urgh.
+
 ```
 sudo apt-get install putty-tools
 # convert priv - here you need to use the passphrase associated with the ppk file. 
