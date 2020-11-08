@@ -321,6 +321,8 @@ sudo apt list --installed
 # dependency
 sudo apt show apache2
 sudo apt depends apache2
+# upgrade a single package
+sudo apt install apache2
 ```
 
 Package description https://packages.ubuntu.com/focal/
