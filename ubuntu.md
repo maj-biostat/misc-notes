@@ -121,6 +121,31 @@ The following gives more detail.
 ```
 nvidia-smi
 
+Sat Nov 14 13:55:58 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 450.80.02    Driver Version: 450.80.02    CUDA Version: 11.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro T2000        Off  | 00000000:01:00.0  On |                  N/A |
+| N/A   47C    P8     6W /  N/A |    461MiB /  3903MiB |      9%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      1092      G   /usr/lib/xorg/Xorg                161MiB |
+|    0   N/A  N/A      1657      G   /usr/lib/xorg/Xorg                123MiB |
+|    0   N/A  N/A      1784      G   /usr/bin/gnome-shell              109MiB |
+|    0   N/A  N/A      2294      G   ...AAAAAAAAA= --shared-files       57MiB |
++-----------------------------------------------------------------------------+
+
+# Previously was
 Wed Sep 30 10:56:30 2020       
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 450.66       Driver Version: 450.66       CUDA Version: 11.0     |
