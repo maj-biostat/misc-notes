@@ -685,3 +685,14 @@ VBoxManage controlvm "win10_or_whatever_you_called_your_vm" webcam attach /dev/v
 The windows OS should register the webcam and set it up for you and after that you will be able to use the webcam on the vm.
 
 
+### find
+
+
+```
+# all files modified since:
+find . -type f -newermt 2020-11-19
+# pdfs accessed in last 3 days
+find . -iname "*.pdf" -atime -3 -type f
+# modified in the last 24 hours
+find . -iname "*.pdf" -mtime 0 -type d
+```
