@@ -807,6 +807,12 @@ Find all files from current dir and sort them by date/time
 find . your-options -printf "%T+\t%p\n" | sort
 ```
 
+Find all files of a specified type in a given dir then grep them for a term
+
+```
+find . -type f -name '*.R' -print0 | xargs -0 grep -o 'new.env()'
+```
+
 
 Invoke command on other machine when your command has quotes within quotes:
 
