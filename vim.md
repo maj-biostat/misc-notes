@@ -8,6 +8,7 @@ For example, `dw` deletes the remainder of the word that is currently under the 
 
 `vim` remembers our editing, so if we do `.` it repeats our last edit (as a whole chunk) and if we want to undo the last edit by `u`.
 
+
 - [Neovim](#neovim)
   * [Usage](#usage)
     + [Tutorial](#tutorial)
@@ -27,9 +28,6 @@ For example, `dw` deletes the remainder of the word that is currently under the 
     + [Window, Buffer etc management](#window--buffer-etc-management)
     + [Macro](#macro)
     + [Custom verbs](#custom-verbs)
-- [Examples of `init.vim`](#examples-of--initvim-)
-  * [Example 1 simple plugin content](#example-1-simple-plugin-content)
-  * [Example 2 expanded plugin content](#example-2-expanded-plugin-content)
   * [Plugins](#plugins)
     + [Linux plugin install](#linux-plugin-install)
     + [Windows plugin install](#windows-plugin-install)
@@ -43,6 +41,9 @@ For example, `dw` deletes the remainder of the word that is currently under the 
       - [ReplaceWitRegister](#replacewitregister)
       - [Titlecase](#titlecase)
       - [Sort-motion](#sort-motion)
+  * [Examples of `init.vim`](#examples-of--initvim-)
+    + [Example 1 simple plugin content](#example-1-simple-plugin-content)
+    + [Example 2 expanded plugin content](#example-2-expanded-plugin-content)
   * [Tips and issues](#tips-and-issues)
     + [Useful commands](#useful-commands)
     + [Issues](#issues)
@@ -386,25 +387,6 @@ Examples:
 
 
 
-## Examples of `init.vim`
-
-
-Launch neovim and run `:PlugInstall` which should install the plugings listed in the `init.vim` file located in the `nvim` dir.
-
-### Example 1 simple plugin content
-
-The `vim-slime` allows you to select a block of code in a file that is open in `vim` in one `tmux` pane to a `repl` that is open in another pane.
-However, `tmux` is not the default so you have to add the `slime_target` modifier, see more in [](multiplex.md).
-
-See (init.vim1).
-
-### Example 2 expanded plugin content
-
-See (init.vim2).
-
-
-
-
 ### Plugins
 
 #### Linux plugin install
@@ -497,6 +479,32 @@ For toggling commenting.
 ##### Sort-motion
 
 `gsip` 
+
+
+
+
+
+
+
+### Examples of `init.vim`
+
+
+Launch neovim and run `:PlugInstall` which should install the plugings listed in the `init.vim` file located in the `nvim` dir.
+
+#### Example 1 simple plugin content
+
+The `vim-slime` allows you to select a block of code in a file that is open in `vim` in one `tmux` pane to a `repl` that is open in another pane.
+However, `tmux` is not the default so you have to add the `slime_target` modifier, see more in [](multiplex.md).
+
+See (init.vim1).
+
+#### Example 2 expanded plugin content
+
+See (init.vim2).
+
+
+
+
 
 
 
