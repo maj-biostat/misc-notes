@@ -1,6 +1,8 @@
-# script to install R packages
+# R Package install code
 
+R code for installing a set of packages.
 
+```
 # checking for rtools:
 pkgbuild::find_rtools(debug = TRUE)
 pkgbuild::check_rtools(debug = T)
@@ -128,3 +130,4 @@ for(i in 1:length(pkgs)){
 if(dotinytex){
   tinytex::install_tinytex(T)
 }
+```

@@ -1,11 +1,20 @@
+# GIT - rebase
 
-## Rebase a local clone of a forked repository
+Instruction on how to rebase a local copy of a forked repository.
 
-In your local clone of your forked repository, you can add the original GitHub repository as a "remote". ("Remotes" are like nicknames for the URLs of repositories - origin is one, for example.) 
+- [GIT - rebase](#git---rebase)
+  * [Introduction](#introduction)
+  * [Squashing commits (especially for forked repositories)](#squashing-commits--especially-for-forked-repositories-)
+  * [Merge pull requests from forks](#merge-pull-requests-from-forks)
 
-Then you can fetch all the branches from that upstream repository, and rebase your work to continue working on the upstream version. In terms of commands that might look like:
 
-**Instructions**
+## Introduction
+
+In your local clone of your forked repository, you can add the original GitHub repository as a "remote".
+("Remotes" are like nicknames for the URLs of repositories - origin is one, for example.) 
+
+Then you can fetch all the branches from that upstream repository, and rebase your work to continue working on the upstream version.
+In terms of commands that might look like:
 
 Add the remote, call it "upstream":
 ```
@@ -24,12 +33,14 @@ git checkout master
 
 Rewrite your master branch so that any commits of yours that aren't already in upstream/master are replayed on top of that other branch:
 
-NOTE - If you don't want to rewrite the history of your master branch, (for example because other people may have cloned it) then you should use `git merge upstream/master` instead of `git rebase upstream/master`. However, for making further pull requests that are as clean as possible, it's probably better to rebase.
+NOTE - If you don't want to rewrite the history of your master branch, (for example because other people may have cloned it) then you should use `git merge upstream/master` instead of `git rebase upstream/master`. 
+However, for making further pull requests that are as clean as possible, it's probably better to rebase.
 
 ```
 git rebase upstream/master
 ```
-If you've rebased your branch onto upstream/master you may need to force the push in order to push it to your own forked repository on GitHub. You'd do that with (you only need to use the -f the first time after you've rebased):
+If you've rebased your branch onto upstream/master you may need to force the push in order to push it to your own forked repository on GitHub. 
+You'd do that with (you only need to use the -f the first time after you've rebased):
 
 ```
 git push -f origin master
@@ -37,7 +48,7 @@ git push -f origin master
 
 That's it.
 
-## Git squashing commits (especially for forked repositories)
+## Squashing commits (especially for forked repositories)
 
 The mantra seems to be not to push until you are happy. Well, I pushed. The following will squash all the commits but is considered somewhat bad form.
 
@@ -94,7 +105,8 @@ where the 13 is one less than the total number of commits of 14. Typically we wo
 
 Aside - you could also do `git rebase -i 59caa08`
 
-An interactive panel will open up and you basically just replace `pick` with `squash` for the 13 commit points that you want to combine into one. If nothing goes wrong you will get something like:
+An interactive panel will open up and you basically just replace `pick` with `squash` for the 13 commit points that you want to combine into one.
+If nothing goes wrong you will get something like:
 
 ```
 C:\Users\mjones\Documents\automatic_test>git rebase -i HEAD~13
@@ -164,7 +176,8 @@ git lg
 As I said, in this example all of the commits were removed but typically you would just want to do this for a few.
 
 
-## Git - Merging pull requests from forks
+## Merge pull requests from forks
+
 
 The other way around -- you are on the receiving end of a pull request.
 
@@ -244,7 +257,8 @@ origin  https://github.com/maj-tki/linux.git (push)
 ts      https://github.com/t-student/linux.git (fetch)
 ts      https://github.com/t-student/linux.git (push)
 ```
-However, you have not yet got access to the alt codebase. Do a fetch and then checkout the pull request. Following on from the example commands above, you would do something along the lines of:
+However, you have not yet got access to the alt codebase. Do a fetch and then checkout the pull request. 
+Following on from the example commands above, you would do something along the lines of:
 
 ```
 git fetch ts
@@ -285,7 +299,7 @@ head README.md
 This is just some change to make sure I am out of whack with the pull request from james.
 
 
-# Manjaro
+Manjaro
 
 banan jit wrebbly.
 
@@ -294,13 +308,13 @@ more commitment damn you
 ```
 
 ```
-# Vim
+Vim
 
-# hi, i had forgotten about you
+hi, i had forgotten about you
 
 another change
 
-## Visual Mode, Block select
+Visual Mode, Block select
 
 http://vimcasts.org/transcripts/22/en/
 ```
@@ -313,7 +327,7 @@ head README.md
 This is just some change to make sure I am out of whack with the pull request from james.
 
 
-# Manjaro
+Manjaro
 
 ban
 
@@ -321,9 +335,9 @@ changes like this
 ```
 
 ```
-# Vim
+Vim
 
-## Visual Mode, Block select
+Visual Mode, Block select
 
 http://vimcasts.org/transcripts/22/en/
 ```
