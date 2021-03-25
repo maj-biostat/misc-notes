@@ -1,5 +1,37 @@
 # Ubuntu
 
+Notes on installing and setting up Ubuntu.
+
+- [Ubuntu](#ubuntu)
+  * [<a name="install"></a>Installing 20.04 LTS](#-a-name--install----a-installing-2004-lts)
+  * [Device details](#device-details)
+  * [Drive management](#drive-management)
+    + [Disk usage](#disk-usage)
+    + [Adding drive to automount](#adding-drive-to-automount)
+  * [Video drivers](#video-drivers)
+  * [Monitors](#monitors)
+  * [Grub](#grub)
+  * [Software](#software)
+    + [Management](#management)
+    + [Upgrade rollback](#upgrade-rollback)
+    + [nteract](#nteract)
+    + [Firefox](#firefox)
+    + [wget](#wget)
+    + [MS Teams](#ms-teams)
+    + [<a name="email"></a>Email](#-a-name--email----a-email)
+    + [R install](#r-install)
+    + [Zoom](#zoom)
+    + [VIM](#vim)
+    + [KeepassXC](#keepassxc)
+    + [Network monitoring](#network-monitoring)
+    + [Diff/Merge/FTP](#diff-merge-ftp)
+    + [SSH](#ssh)
+    + [Video/audio capture](#video-audio-capture)
+    + [Virtualisation](#virtualisation)
+    + [find](#find)
+
+
+
 ## <a name="install"></a>Installing 20.04 LTS
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
@@ -38,7 +70,9 @@ sudo mount /dev/sda1 /home/fred/media
 sudo umount /home/fred/media
 ```
 
-Also, if you want to see how much space a directory is taking up (disk usage):
+### Disk usage
+
+Size of directory and contents
 
 ```
 du -sh /home/myfatdir
@@ -273,9 +307,12 @@ video                  49152  2 dell_wmi,dell_laptop
 
 
 
-## Monitor madness
+## Monitors
 
-External monitor works, internal screen doesn't or vice versa. Why?
+Sometimes the external monitor works but the laptop screen doesn't.
+Sometimes the reverse is true.
+Why?
+Honestly, I do not really know but the following details a few tips found in forums etc.
 
 `~/.config/monitor.xml` can occassionally get munted.  
 Delete the above file, disconnect external, restart, replug external.  
@@ -298,7 +335,8 @@ And comment out the the nvidia-drm modeset option.
 
 ## Grub
 
-Get rid of the quiet splash:
+Grub is the bootloader; the thing that starts up your system.
+To get rid of the quiet splashscreen so that everything is output while loading:
 
 ```
 # in /etc/default/grub
@@ -425,18 +463,20 @@ https://www.howtoforge.com/how-to-install-microsoft-teams-linux-on-ubuntu-and-ce
 
 ### <a name="email"></a>Email
 
-Use evolution, or hiri, or mailspring (if you can stand it) or thunderbird in conjunction with DavMail, see:
+Have now resorted to using office outlook online.
+
+Alternatively use evolution, or hiri, or mailspring (if you can stand it) or thunderbird in conjunction with DavMail, see:
 
 https://www.youtube.com/watch?v=yCEK2hNP7bg
 
 or Hiri (proprietary) via snap.
 
-related    
+related links:
 
 https://www.zimbra.com/email-server-software/email-outlook-sync-mapi-zco/  
 https://zentyal.com/community/  
 
-### R
+### R install
 
 Add `deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/` to `etc/apt/sources.list`.  
 
@@ -516,7 +556,6 @@ fg % 1
 bg % 1
 ```
 
-
 **Packages containing `rstan` models:**
 
 Use `rstantools`; provide the full path, which will end in the name of the package, in this case package is "fred".
@@ -589,7 +628,10 @@ also see https://cran.r-project.org/web/packages/rstantools/vignettes/minimal-rs
 ### Zoom
 
 Use sso to login (uni-sydney).
-Note, it is easier to use `zoom`, `teams` etc via a VM, see Virtualbox.
+Note, there is something wrong with the sound drivers on my system.
+However, when I use wireless headphone/mic setup, that works ok.
+Urgh.
+Sometimes it is easier to use `zoom`, `teams` etc via a VM, see Virtualbox.
 
 ### VIM
 
@@ -620,7 +662,7 @@ sudo apt install filezilla
 
 ### SSH
 
-Tools for converting ppk from win box to ssh key. 
+Tools for converting a ppk from win box format to ssh key. 
 
 **NOTE** 
 When specifying a port `scp` uses a capital `-P` whereas `ssh uses a small `-p`. Urgh.
