@@ -12,10 +12,10 @@ For example, `dw` deletes the remainder of the word that is currently under the 
 - [Neovim](#neovim)
   * [Usage](#usage)
     + [Tutorial](#tutorial)
-    + [Getting help](#getting-help)
-    + [Information on current environment](#information-on-current-environment)
-    + [Navigation and motion](#navigation-and-motion)
-    + [Inserts](#inserts)
+    + [Help](#help)
+    + [Current environment setup](#current-environment-setup)
+    + [Navigation](#navigation)
+    + [Insert](#insert)
     + [Change](#change)
     + [Delete](#delete)
     + [Relative number](#relative-number)
@@ -42,7 +42,7 @@ For example, `dw` deletes the remainder of the word that is currently under the 
       - [ReplaceWitRegister](#replacewitregister)
       - [Titlecase](#titlecase)
       - [Sort-motion](#sort-motion)
-  * [Examples of `init.vim`](#examples-of--initvim-)
+  * [Vim config `init.vim`](#vim-config--initvim-)
     + [Example 1 simple plugin content](#example-1-simple-plugin-content)
     + [Example 2 expanded plugin content](#example-2-expanded-plugin-content)
   * [Tips and issues](#tips-and-issues)
@@ -69,8 +69,6 @@ For example, `dw` deletes the remainder of the word that is currently under the 
 - [References](#references)
 
 
-
-
 ## Neovim
 
 Improved vim.
@@ -87,7 +85,7 @@ See:
 + https://learnvimscriptthehardway.stevelosh.com/
 + https://bencrowder.net/files/vim-fu/
 
-#### Getting help
+#### Help
 
 `:help` 
 
@@ -97,13 +95,13 @@ Type `:bd` to close the topic once you are done.
 
 Help on a specific topic `:he write`
 
-#### Information on current environment
+#### Current environment setup
 
 `:version`
 
 and to see the current value of a config item, add a `?`, e.g. `:set tabstop?`
 
-#### Navigation and motion
+#### Navigation
 
 `hjkl` are the movement keys one unit at a time
 
@@ -141,7 +139,7 @@ scrolling
 <Ctl>-f - scroll full page down
 ```
 
-#### Inserts
+#### Insert
 
 ```
 i cursor on the `o` of `you` type `i` insert letters before the `o`
@@ -376,8 +374,6 @@ q
 10@a
 ```
 
-
-
 #### Custom verbs
 
 Something to look at later on... 
@@ -496,8 +492,17 @@ cmip - comment the entire paragraph
 
 
 
-### Examples of `init.vim`
+### Vim config `init.vim`
 
+```
+> /home/<user>/.config/nvim
+> ls
+d 4096 Mar 20 17:11 plugged
+d 4096 Feb  8 16:45 pack
+-  179 Jan 14 10:12 .netrwhist
+- 3542 Mar 24 17:28 init.vim
+d 4096 Jul 11  2020 autoload
+```
 
 Launch neovim and run `:PlugInstall` which should install the plugings listed in the `init.vim` file located in the `nvim` dir.
 
