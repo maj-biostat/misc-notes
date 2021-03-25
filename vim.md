@@ -30,6 +30,7 @@ For example, `dw` deletes the remainder of the word that is currently under the 
     + [Custom verbs](#custom-verbs)
   * [Plugins](#plugins)
     + [Linux plugin install](#linux-plugin-install)
+    + [Plugin Management](#plugin-management)
     + [Windows plugin install](#windows-plugin-install)
     + [Plugins Overview](#plugins-overview)
       - [Align](#align)
@@ -66,6 +67,7 @@ For example, `dw` deletes the remainder of the word that is currently under the 
   * [Vim / vim-plug](#vim---vim-plug)
   * [Vim Colourscheme](#vim-colourscheme)
 - [References](#references)
+
 
 
 
