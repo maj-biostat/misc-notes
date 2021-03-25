@@ -7,9 +7,14 @@ The GNU GPLv3 also lets people do almost anything they want with your project, e
 
 ## Contents 
 
+- [EMACS](emacs.md)   
+- [GIT](git.md)
+- [GPG](gpg.md)
 - [Linux](linux.md)   
-- [Linux MISC](misc.md)  
-- [NEOVIM](neovim.md)  
+- [Network](network.md)   
+- [Python](python.md)
+- [R](r.md)
+- [TMUX](tmux.md)
 - [VIM](vim.md)  
 
 
