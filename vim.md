@@ -496,11 +496,11 @@ Launch neovim and run `:PlugInstall` which should install the plugings listed in
 The `vim-slime` allows you to select a block of code in a file that is open in `vim` in one `tmux` pane to a `repl` that is open in another pane.
 However, `tmux` is not the default so you have to add the `slime_target` modifier, see more in [](multiplex.md).
 
-See (init.vim1).
+See [init.vim1](init.vim1).
 
 #### Example 2 expanded plugin content
 
-See (init.vim2).
+See [init.vim2](init.vim2).
 
 
 
