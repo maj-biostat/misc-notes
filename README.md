@@ -11,6 +11,8 @@ The GNU GPLv3 also lets people do almost anything they want with your project, e
 - [EMACS](emacs.md)   
 - [GIT](git.md)
 - [GPG](gpg.md)
+- [Hamster](hamster.md)
+- [Julia](julia.md)
 - [Linux](linux.md)   
 - [Network](network.md)   
 - [Python](python.md)
