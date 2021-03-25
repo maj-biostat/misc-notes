@@ -32,6 +32,194 @@ Notes on installing and setting up Ubuntu.
 
 
 
+
+## Install
+
+## Post-install
+
+## Usage
+
+### File renames
+
+```
+for f in *.txt; do 
+    mv -- "$f" "${f%.txt}.text"
+done
+```
+
+### USB Drives
+
+Ask - what usb devices can my box see?
+
+```
+sudo lsusb
+```
+What devs?
+
+```
+sudo fdisk -l
+```
+
+Create a director in your home directory and mount
+
+```
+mkdir /home/fred/usb
+sudo mount /dev/deviceid /home/fred/usb
+```
+
+Umount
+
+```
+sudo umount /home/fred/usb
+```
+
+### Jupyter / IPython
+
+From the command line
+
+```
+pip install --user jupyter
+jupyter notebook
+```
+
+
+
+## Monitor the results from a command
+
+```
+watch -n 3 ls -l logs/ out/
+```
+
+
+
+### Network configuration
+
+Don't use `ifconfig` use `ip` e.g. 
+
+```
+ip a
+```
+
+and use `iw dev` to get the wifi mac address.
+
+
+### Hamster time tracker
+
+`sudo pacman -S hamster-time-tracker`
+
+
+
+### Vim / vim-plug
+
+`sudo pacman -S vim`
+
+Thing is, the above installs vim-minimal (I think). This does not have clipboard enabled.
+
+Test with:
+
+:echo has('clipboard')
+
+if the result is 0 then install gvim (you might need to uninstall vim). This will give you access to the system clipboard via select and middle mouse button.
+
+
+
+Download the package `nvim-r` from here:
+https://www.vim.org/scripts/script.php?script_id=2628
+
+To install vimplug: go here, follow instruc
+https://
+hub.com/junegunn/vim-plug
+
+In a nutshell:
+open Nvim-R.vmb in vim and then do `:so %`
+
+
+#### Vim Colourscheme
+
+Get colourschemes from eg
+
+https://github.com/flazz/vim-colorschemes
+https://github.com/fxn/vim-monochrome
+https://github.com/sjl/badwolf
+https://github.com/noahfrederick/vim-noctu
+
+Download the .vim files and copy to `~/.vim/color` directory:
+
+mv ~/Downloads/vim-distinguished-develop/colors/*.vim ~/.vim/colors/
+
+Edit the `~/.vimrc` file introducing:
+
+syntax enable
+colorscheme distinguished
+
+
+
+
+
+### git help
+
+`git config --global user.name "Fred Basset"`
+`git config --global user.email email_no_quotes`
+
+History of file...?
+
+`gitk filename.R`
+
+will launch a gui viewer.
+
+remove a file from git but keep locally
+
+`git rm --cached somefile.ext`
+
+
+
+### grep et al
+
+Recursive from current directory, only *.R files.
+
+`grep -R --include="*.R" 'contr.sum' .`
+
+
+
+
+### tar archives
+
+```
+tar cvf archive.tar dir1 dir2 etc
+gzip archive.tar
+
+# hash
+sha256sum archive.tar.gz
+
+# for fat32
+split -b 2000M archive.tar.gz archive_part
+
+# join back together
+cat archive_part* > test.tar.gz
+
+# hash
+sha256sum test.tar.gz
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## <a name="install"></a>Installing 20.04 LTS
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
@@ -57,6 +245,55 @@ Use list hardware `lshw`, for example, computer model:
 ```
 sudo lshw | grep product
 ```
+
+# inittab
+
+Is no longer with us. 
+To switch run level use
+
+```
+systemctl get-default
+ 
+ # Set the current run level to 3 (boot to command line mode)
+systemctl set-default multi-user.target
+ 
+ # Set the current running level to 5 (power on as a graphical interface)
+systemctl set-default graphical.target
+```
+
+
+# Ghostscript (kind of)
+
+`ps2pdf` is obtained via tinytex but my understanding is that this is just a wrapper to gs  
+You can specify an output size as `ps2pdf -g5950x8420 kalman4.ps`
+
+This https://stackoverflow.com/questions/30128250/ps2pdf-preserve-page-size is useful.
+
+# To redo install
+create liveusb
+Press F12? to go to boot screen
+boot the live install
+run the installer (select free driver)
+
+## Wget
+
+Examples
+
+```
+# Mirror
+wget --recursive --no-parent --continue --no-clobber https://urlOfInterest
+# All files of type
+wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
+# Single file
+wget https://test.org/latest.zip
+
+# All files of type
+wget --spider -r --accept "*.docx" 
+# List of urls
+wget ‐‐input list-of-file-urls.txt
+
+```
+
 
 ## Drive management
 

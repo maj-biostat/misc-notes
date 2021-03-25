@@ -1,86 +1,10 @@
 # Linux Miscellaneous 
 
-# inittab
-
-Is no longer with us. 
-To switch run level use
-
-```
-systemctl get-default
- 
- # Set the current run level to 3 (boot to command line mode)
-systemctl set-default multi-user.target
- 
- # Set the current running level to 5 (power on as a graphical interface)
-systemctl set-default graphical.target
-```
-
-# Ghostscript (kind of)
-
-`ps2pdf` is obtained via tinytex but my understanding is that this is just a wrapper to gs  
-You can specify an output size as `ps2pdf -g5950x8420 kalman4.ps`
-
-This https://stackoverflow.com/questions/30128250/ps2pdf-preserve-page-size is useful.
-
-# To redo install
-create liveusb
-Press F12? to go to boot screen
-boot the live install
-run the installer (select free driver)
-
-## Wget
-
-Examples
-
-```
-# Mirror
-wget --recursive --no-parent --continue --no-clobber https://urlOfInterest
-# All files of type
-wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
-# Single file
-wget https://test.org/latest.zip
-
-# All files of type
-wget --spider -r --accept "*.docx" 
-# List of urls
-wget ‐‐input list-of-file-urls.txt
-
-```
 
 
-## File renames
 
-```
-for f in *.txt; do 
-    mv -- "$f" "${f%.txt}.text"
-done
-```
 
-## USB Drives
 
-Ask - what usb devices can my box see?
-
-```
-sudo lsusb
-```
-What devs?
-
-```
-sudo fdisk -l
-```
-
-Create a director in your home directory and mount
-
-```
-mkdir /home/fred/usb
-sudo mount /dev/deviceid /home/fred/usb
-```
-
-Umount
-
-```
-sudo umount /home/fred/usb
-```
 
 
 
@@ -134,35 +58,14 @@ sudo pacman -S yay
 yay -Rns pkgname
 ```
 
-## Jupyter / IPython
 
-From the command line
 
-```
-pip install --user jupyter
-jupyter notebook
-```
-
-## Monitor the results from a command
-
-```
-watch -n 3 ls -l logs/ out/
-```
 
 ## Phoronix bench tests
 
 `yay -S phoronix-test-suite`
 
 
-## Network configuration
-
-Don't use `ifconfig` use `ip` e.g. 
-
-```
-ip a
-```
-
-and use `iw dev` to get the wifi mac address.
 
 ## Panel plugins
 
@@ -171,9 +74,7 @@ yay -S xfce4-hardware-monitor-plugin
 yay -S xfce4-datetime-plugin
 ```
 
-## Hamster time tracker
 
-`sudo pacman -S hamster-time-tracker`
 
 ## Chrome
 
@@ -183,92 +84,10 @@ yay -S xfce4-datetime-plugin
 
 https://www.sublimetext.com/docs/3/linux_repositories.html
 
-## Vim / vim-plug
-
-`sudo pacman -S vim`
-
-Thing is, the above installs vim-minimal (I think). This does not have clipboard enabled.
-
-Test with:
-
-:echo has('clipboard')
-
-if the result is 0 then install gvim (you might need to uninstall vim). This will give you access to the system clipboard via select and middle mouse button.
-
-
-
-Download the package `nvim-r` from here:
-https://www.vim.org/scripts/script.php?script_id=2628
-
-To install vimplug: go here, follow instruc
-https://
-hub.com/junegunn/vim-plug
-
-In a nutshell:
-open Nvim-R.vmb in vim and then do `:so %`
-
-
-### Colourscheme
-
-Get colourschemes from eg
-
-https://github.com/flazz/vim-colorschemes
-https://github.com/fxn/vim-monochrome
-https://github.com/sjl/badwolf
-https://github.com/noahfrederick/vim-noctu
-
-Download the .vim files and copy to `~/.vim/color` directory:
-
-mv ~/Downloads/vim-distinguished-develop/colors/*.vim ~/.vim/colors/
-
-Edit the `~/.vimrc` file introducing:
-
-syntax enable
-colorscheme distinguished
 
 
 
 
-## git help
-
-`git config --global user.name "Fred Basset"`
-`git config --global user.email email_no_quotes`
-
-History of file...?
-
-`gitk filename.R`
-
-will launch a gui viewer.
-
-remove a file from git but keep locally
-
-`git rm --cached somefile.ext`
-
-## grep et al
-
-Recursive from current directory, only *.R files.
-
-`grep -R --include="*.R" 'contr.sum' .`
-
-
-## tar archives
-
-```
-tar cvf archive.tar dir1 dir2 etc
-gzip archive.tar
-
-# hash
-sha256sum archive.tar.gz
-
-# for fat32
-split -b 2000M archive.tar.gz archive_part
-
-# join back together
-cat archive_part* > test.tar.gz
-
-# hash
-sha256sum test.tar.gz
-```
 
 ## Apps
 
@@ -280,77 +99,6 @@ gparted - kde partition mgr
 gimp
 timeshift
 geary - email
-
-## R / RStudio (and dep) / pandoc
-
-Debugging R
-
-```
-tryCatch({
-	if(stuff){
-	  # do something
-	}, error = function(e) {
-	
-	  dump.frames(include.GlobalEnv = T19)
-	  save.image(file = paste0(get_hash(), "_blast.dump.rda"))
-	}
-
-})
-
-```
-
-then in a new session:
-
-```
-> load("7b9ab05b_last.dump.rda")
-> debugger(last.dump)
-Available environments had calls:
-1: sim(cfg_rar_4(trial_interface = trial_GS_RAR, outdir = "outrar4", nsim = 20
-2: mclapply(X = 1:length(ld), mc.cores = ncores, FUN = function(x) {
-    lmet
-3: lapply(seq_len(cores), inner.do)
-4: FUN(X[[i]], ...)
-5: sendMaster(try(lapply(X = S, FUN = FUN, ...), silent = TRUE))
-6: try(lapply(X = S, FUN = FUN, ...), silent = TRUE)
-7: tryCatch(expr, error = function(e) {
-    call <- conditionCall(e)
-    if (!
-8: tryCatchList(expr, classes, parentenv, handlers)
-9: tryCatchOne(expr, names, parentenv, handlers[[1]])
-10: doTryCatch(return(expr), name, parentenv, handler)
-11: lapply(X = S, FUN = FUN, ...)
-12: FUN(X[[i]], ...)
-13: tryCatch(lpar$trial_interface(ld[[x]], lpar, x), error = function(e) {
-
-14: tryCatchList(expr, classes, parentenv, handlers)
-15: tryCatchOne(expr, names, parentenv, handlers[[1]])
-16: doTryCatch(return(expr), name, parentenv, handler)
-17: lpar$trial_interface(ld[[x]], lpar, x)
-18: RAR_alloc(ldat, idxend + 1, nrow(ldat$d), interim = 99)
-19: tryCatch({
-    if (!is.null(arm_to_enable) & length(arm_to_enable) > 0 & !(
-20: tryCatchList(expr, classes, parentenv, handlers)
-21: tryCatchOne(expr, names, parentenv, handlers[[1]])
-22: value[[3]](cond)
-
-```
-to see environment, select a number, e.g. 19 then 
-
-```
-Browse[1]> ls()
-[1] "classes"      "handlers"     "parentenv"    "tryCatchList" "tryCatchOne"
-Browse[1]> get("arm_to_enable", parentenv)
-integer(0)
-Browse[1]> length(integer(0))
-[1] 0
-Browse[1]> get("arms_for_p_best", parentenv)
-[1] 1 2 3
-
-```
-
-to exit `c` should take you back to the menu then `0`.
-
-also note that `if(logical(0))` is a bit of a horrendous bug that you should remember...
 
 
 ### Install R from command line to local folder
@@ -392,183 +140,9 @@ sudo pacman -S pandoc-citeproc
 
 yay -S jags
 
-### Local R packages
-
-See 
-https://support.rstudio.com/hc/en-us/articles/200486518-Customizing-Package-Build-Options
-https://cran.r-project.org/doc/manuals/r-release/R-exts.html
-
-First, install dependencies by any means necessary.
-
-```
-# Build package. First cd to parent dir containing `mypackage`
-cd ~/Documents
-# Build (old school) version is 0.1
-R CMD build mypackage
-# install
-R CMD INSTALL mypackage_0.1.tar.gz
-```
-
-the above builds for all architectures (slow)
-
-```
-R CMD INSTALL --preclean --no-multiarch mypackage
-```
-
-alternatively via R
-
-```
-library(devtools)
-devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))
-devtools::build()
-devtools::install()
-```
-
-### Minimal set of packages
-
-Note that if things go pear shaped with build tools just uninstall and reinstall rstudio and buildtools. 
-
-`pkgbuild::find_rtools()` shows you if the r tools are available.
-
-See:
-http://jtleek.com/modules/01_DataScientistToolbox/02_10_rtools/#1
 
 
-The .Rprofile should look something like:
 
-```
-.First <- function() {
-  Sys.setenv(PATH = paste("path..../R/Rtools35/bin",
-                          "path..../R/Rtools35/mingw_$(WIN)/bin",
-                          Sys.getenv("PATH"), sep=";"))
-  Sys.setenv(BINPREF = "path..../R/Rtools35/mingw_$(WIN)/bin/")
-}
-
-if (interactive()) {
-  suppressMessages(require(usethis))
-}
-
-options(prompt="R> ")
-
-options(usethis.full_name = "maj")
-
-```
-
-also pay attention to the path environment variable.
-
-```
-source("install_R_pkgs.R")
-```
-
-
-```
-install.packages("ggplot2", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("tidyr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("lintr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("dplyr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("pryr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("Rcpp", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("data.table", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("RcppEigen", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("RcppArmadillo", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("RcppDist", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("msm", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("grid", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("simstudy", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("gridExtra", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("optparse", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("formattable", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("psych", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("RcppParallel", dependencies = T, repos = 'https://cran.curtin.edu.au')
-
-install.packages("knitr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("kableExtra", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("configr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("futile.logger", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("survival", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("inline", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("doParallel", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("foreach", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("truncnorm", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("beepr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("tinytex", dependencies = T, repos = 'https://cran.curtin.edu.au')
-tinytex::install_tinytex()
-
-install.packages("microbenchmark", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("coin", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("devtools", dependencies = T, repos = 'https://cran.curtin.edu.au')
-devtools::install_github("rmcelreath/rethinking")
-
-install.packages("eph", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("pch", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("nphsim", dependencies = T, repos = 'https://cran.curtin.edu.au')
-
-
-# Stepped wedge sample size:
-# https://github.com/giabaio/SWSamp
-
-install.packages("SWSamp",
-	repos=c("http://www.statistica.it/gianluca/R",
-		"https://cran.rstudio.org",
-		"https://inla.r-inla-download.org/R/stable"),
-	dependencies=TRUE
-)
-
-# Stan follow instructions
-# https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
-
-install.packages("rstan", dependencies = TRUE, repos = 'https://cran.curtin.edu.au')
-install.packages("brms", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("coda", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("loo", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("rjags", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("pwr", dependencies = T, repos = 'https://cran.curtin.edu.au')
-
-install.packages("mcmc", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("ggfortify", dependencies = T, repos = 'https://cran.curtin.edu.au')
-
-install.packages("LaplacesDemon", dependencies = T, repos = 'https://cran.curtin.edu.au')
-install.packages("invgamma", dependencies = T, repos = 'https://cran.curtin.edu.au')
-
-install.packages(c("HRW","Ecdat","mlbench","quantreg","gam","gamlss","gamsel"),dependencies=TRUE, repos = 'https://cran.curtin.edu.au')
-
-
-#### https://stackoverflow.com/questions/53397352/installing-bayeslogit-package
-#### devtools::install_version("BayesLogit", "0.6")
-#### devtools::install_version("tglm", "1.0")
-#### devtools::install_version("EPGLM", "1.1.2")
-
-
-```
-
-### R install packages
-
-```
-R CMD build pkgname
-R CMD INSTALL packagename_0.1.tar.gz
-```
-
-### yaml Header for Rmd
-
-```
----
-title: "whatevs"
-editor_options:
-	chunk_output_type: console
-output:
-	pdf_document:
-		toc: yes
-		toc_depth: 3
-		number_sections: true
-		fig_captions: yes
-	html_output:
-		theme: united
-		toc: yes
-bibliography: my.bib
----
-```
-
-Use @nameyyyy for citations.
 
 ## python
 

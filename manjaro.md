@@ -1,7 +1,29 @@
 # Manjaro
 
-Arch turns out to be a bit of a nightmare due to a `rstan` dependency on `V8`.  
+Notes on install, setup and use of Linux Manjaro distribution.
+
+- [Manjaro](#manjaro)
+  * [Introduction](#introduction)
+  * [Software](#software)
+    + [Management](#management)
+    + [R](#r)
+    + [Python](#python)
+    + [Email](#email)
+    + [Zoom](#zoom)
+    + [Neovim](#neovim)
+    + [Winmerge alternative](#winmerge-alternative)
+    + [Keepassxc](#keepassxc)
+  * [Video drivers](#video-drivers)
+  * [Video capture](#video-capture)
+  * [Audio](#audio)
+  * [Network access e.g. pawsey](#network-access-eg-pawsey)
+
+
+## Introduction
+
+Turns out that arch can be a bit of a nightmare due to a `rstan` dependency on `V8`.  
 `rstan` needs the `V8` lib but `V8` doesn't currently compile without manual intervention.
+Doh.
 
 For a related discussion see https://discourse.mc-stan.org/t/dangerous-design-in-rstan-2-21/16483
 
@@ -19,6 +41,7 @@ sudo dmesg --level=err,warn
 # timestamps
 dmesg -T
 ```
+
 Also, `modprobe` for adding/removing modules from kernel.
 
 ## Software
