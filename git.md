@@ -457,3 +457,21 @@ then `git remote -v` should only return:
 origin  https://github.com/maj-tki/linux.git (fetch)
 origin  https://github.com/maj-tki/linux.git (push)
 ```
+
+
+
+### git help
+
+`git config --global user.name "Fred Basset"`
+`git config --global user.email email_no_quotes`
+
+History of file...?
+
+`gitk filename.R`
+
+will launch a gui viewer.
+
+remove a file from git but keep locally
+
+`git rm --cached somefile.ext`
+

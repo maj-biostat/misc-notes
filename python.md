@@ -18,6 +18,15 @@ ipcluster nbextension disable
 # More needed here, refer to the link above
 ```
 
+### Jupyter / IPython
+
+From the command line
+
+```
+pip install --user jupyter
+jupyter notebook
+```
+
 ## Packages
 
 Are a way of grouping code. 

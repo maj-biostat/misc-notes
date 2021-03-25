@@ -109,4 +109,47 @@ ctrl-w=          - make all equal size
 :b 2             - open buffer #2 in this window
 ```
 
+### Vim / vim-plug
+
+`sudo pacman -S vim`
+
+Thing is, the above installs vim-minimal (I think). This does not have clipboard enabled.
+
+Test with:
+
+:echo has('clipboard')
+
+if the result is 0 then install gvim (you might need to uninstall vim). This will give you access to the system clipboard via select and middle mouse button.
+
+
+
+Download the package `nvim-r` from here:
+https://www.vim.org/scripts/script.php?script_id=2628
+
+To install vimplug: go here, follow instruc
+https://
+hub.com/junegunn/vim-plug
+
+In a nutshell:
+open Nvim-R.vmb in vim and then do `:so %`
+
+
+#### Vim Colourscheme
+
+Get colourschemes from eg
+
+https://github.com/flazz/vim-colorschemes
+https://github.com/fxn/vim-monochrome
+https://github.com/sjl/badwolf
+https://github.com/noahfrederick/vim-noctu
+
+Download the .vim files and copy to `~/.vim/color` directory:
+
+mv ~/Downloads/vim-distinguished-develop/colors/*.vim ~/.vim/colors/
+
+Edit the `~/.vimrc` file introducing:
+
+syntax enable
+colorscheme distinguished
+
 
