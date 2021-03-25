@@ -7,17 +7,17 @@ Notes on installing and setting up Linux distributions.
   * [File renames](#file-renames)
   * [USB Drives](#usb-drives)
   * [find](#find)
-  * [Wget](#wget)
-  * [Drive management and mount](#drive-management-and-mount)
-  * [Disk usage](#disk-usage)
+  * [wget](#wget)
+  * [mount, fdisk and lsusb](#mount--fdisk-and-lsusb)
+  * [du (Disk usage)](#du--disk-usage-)
   * [pass](#pass)
   * [Job management, e.g. pgrep](#job-management--eg-pgrep)
   * [Text processing and pipes](#text-processing-and-pipes)
   * [Shell script examples](#shell-script-examples)
   * [openssh](#openssh)
   * [screen](#screen)
-  * [Monitor the results from a command](#monitor-the-results-from-a-command)
-  * [Network configuration](#network-configuration)
+  * [watch](#watch)
+  * [ip addresses](#ip-addresses)
   * [grep et al](#grep-et-al)
   * [tar archives](#tar-archives)
 - [Ubuntu install](#ubuntu-install)
@@ -110,9 +110,7 @@ find . -iname "*.pdf" -atime -3 -type f
 find . -iname "*.pdf" -mtime 0 -type d
 ```
 
-### Wget
-
-Examples
+### wget
 
 ```
 # Mirror
@@ -129,7 +127,7 @@ wget ‐‐input list-of-file-urls.txt
 
 ```
 
-### Drive management and mount
+### mount, fdisk and lsusb
 
 Useful commants
 
@@ -155,7 +153,7 @@ sudo umount /home/fred/usb
 ```
 
 
-### Disk usage
+### du (Disk usage)
 
 Size of directory and contents
 
@@ -315,13 +313,13 @@ screen -R <session id (from screen -ls)>
 ctrl a + \
 ```
 
-### Monitor the results from a command
+### watch
 
 ```
 watch -n 3 ls -l logs/ out/
 ```
 
-### Network configuration
+### ip addresses
 
 Don't use `ifconfig` use `ip` e.g. 
 
