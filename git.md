@@ -1,14 +1,28 @@
-# GIT - rebase
+# GIT
+
+- [Config](#config)
+- [Rebasing](#rebasing)
+- [Squashing commits](#squashing-commits)
+- [Merge pull requests from forks](#merge-pull-requests-from-forks)
+
+## Config
+
+`git config --global user.name "Fred Basset"`
+`git config --global user.email email_no_quotes`
+
+History of file...?
+
+`gitk filename.R`
+
+will launch a gui viewer.
+
+remove a file from git but keep locally
+
+`git rm --cached somefile.ext`
+
+## Rebasing
 
 Instruction on how to rebase a local copy of a forked repository.
-
-- [GIT - rebase](#git---rebase)
-  * [Introduction](#introduction)
-  * [Squashing commits (especially for forked repositories)](#squashing-commits--especially-for-forked-repositories-)
-  * [Merge pull requests from forks](#merge-pull-requests-from-forks)
-
-
-## Introduction
 
 In your local clone of your forked repository, you can add the original GitHub repository as a "remote".
 ("Remotes" are like nicknames for the URLs of repositories - origin is one, for example.) 
@@ -17,6 +31,7 @@ Then you can fetch all the branches from that upstream repository, and rebase yo
 In terms of commands that might look like:
 
 Add the remote, call it "upstream":
+
 ```
 git remote add upstream https://github.com/fredbasset/whatever.git
 ```
@@ -48,7 +63,7 @@ git push -f origin master
 
 That's it.
 
-## Squashing commits (especially for forked repositories)
+## Squashing commits
 
 The mantra seems to be not to push until you are happy. Well, I pushed. The following will squash all the commits but is considered somewhat bad form.
 
@@ -109,7 +124,7 @@ An interactive panel will open up and you basically just replace `pick` with `sq
 If nothing goes wrong you will get something like:
 
 ```
-C:\Users\mjones\Documents\automatic_test>git rebase -i HEAD~13
+C:\Users\mjon\Documents\automatic_test>git rebase -i HEAD~13
 [detached HEAD e3ea213] Code review changes and comments.
  Author: James Totterdell <jatotterdell@gmail.com>
  Date: Wed Jul 17 14:47:18 2019 +0800
@@ -460,18 +475,5 @@ origin  https://github.com/maj-tki/linux.git (push)
 
 
 
-### git help
 
-`git config --global user.name "Fred Basset"`
-`git config --global user.email email_no_quotes`
-
-History of file...?
-
-`gitk filename.R`
-
-will launch a gui viewer.
-
-remove a file from git but keep locally
-
-`git rm --cached somefile.ext`
 

@@ -1,6 +1,16 @@
-# R Notes
+# R
 
-Some install and usage notes for R.
+Installation and usage.
+
+- [Debugging R](#debugging-r)
+- [Local R packages](#local-r-packages)
+- [Minimal set of packages](#minimal-set-of-packages)
+- [R install packages](#r-install-packages)
+- [yaml Header for Rmd](#yaml-header-for-rmd)
+- [R Package install code](#r-package-install-code)
+- [tensorflow and greta](#tensorflow-and-greta)
+  * [R install](#r-install)
+
 
 ## Debugging R
 

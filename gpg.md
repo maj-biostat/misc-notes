@@ -1,7 +1,13 @@
-
 # GPG
 
 Allows you to encrypt and sign your data and communication.
+
+- [Introduction](#introduction)
+- [Create a key pair](#create-a-key-pair)
+- [Export your public key](#export-your-public-key)
+- [Import a public key](#import-a-public-key)
+- [Encrypt and decrypt](#encrypt-and-decrypt)
+
 
 ## Introduction
 

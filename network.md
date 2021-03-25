@@ -1,4 +1,8 @@
-# Network (Ubuntu centric)
+# Network Diagnostics
+
+- [IP lookup](#ip-lookup)
+- [Packet tracing](#packet-tracing)
+- [Wireshark (Packet tracing)](#wireshark--packet-tracing-)
 
 ## IP lookup
 

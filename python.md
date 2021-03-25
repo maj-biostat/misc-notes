@@ -1,6 +1,15 @@
 # Python Newb Notes
 
-[Linux MISC](misc.md) [NEOVIM](neovim.md) [PYTHON NOTES](python_newb_notes.md) [VIM](vim.md)  
+- [Jupyter/IPython](#jupyter-ipython)
+- [Parallel in Jupyter/IPython](#parallel-in-jupyter-ipython)
+- [Jupyter / IPython](#jupyter---ipython)
+- [Packages](#packages)
+  * [Install package from a github repo](#install-package-from-a-github-repo)
+- [Virtual Env](#virtual-env)
+- [Execution](#execution)
+- [Classes](#classes)
+- [Special main](#special-main)
+
 
 ## Jupyter/IPython
 
@@ -18,7 +27,7 @@ ipcluster nbextension disable
 # More needed here, refer to the link above
 ```
 
-### Jupyter / IPython
+## Jupyter / IPython
 
 From the command line
 
@@ -32,7 +41,7 @@ jupyter notebook
 Are a way of grouping code. 
 Nothing more than a folder containing a special file, `__init__.py` although even this is not strictly needed since 3.3
 
-### To install a package from a github repo
+### Install package from a github repo
 Sources
 https://medium.com/@lynzt/install-python-packages-from-github-5866d234c4e4
 https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
@@ -57,8 +66,6 @@ env/bin/activate.bat # on windows (use deactivate.bat when you are done)
 
 ## Execution
 
-Chop off their heads! 
-No, much more boring. 
 *Names* refer to objects, e.g. a string `addr = "22 fredstreet"` or a dictionary:
 
 ```
@@ -145,4 +152,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-```
+
+
+
+
