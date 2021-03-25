@@ -3,6 +3,81 @@
 Is a way to get multiple terminal sessions within a single display. 
 `tmux` is a commonly used multiplexer.
 
+- [Basic commands](#basic-commands)
+- [Sessions](#sessions)
+- [Windows](#windows)
+- [Panes](#panes)
+- [Installation of `tmux`](#installation-of--tmux-)
+- [Overview](#overview)
+- [Create new tmux session](#create-new-tmux-session)
+- [Issues with vim colors](#issues-with-vim-colors)
+
+## Basic commands
+
+```
+# new session
+tmux new -s <sessionname>
+# kill, kill all
+tmux kill-session -t <sessionname>
+tmux kill-session -a 
+# detach
+ctl + b, d
+# attach
+tmux a -t <sessionname>
+# list
+tmux ls
+```
+
+Note scroll does not work as anticipated:
+
++ `^b [` and use the mouse to scroll as usual.
++ To exit scroll mode, simply type `q`
+
+Cheatsheet https://tmuxcheatsheet.com/ but vital ones below
+
+## Sessions 
+
+`^b s` shows all sessions
+`tmux new -s julia` new session named julia (don't create a new session within a session)
+`tmux kill-session -t snme` kill session
+`^b $` rename session
+`^b )` next session (`)` for previous)
+
+## Windows
+
+`^b w` shows all windows
+`^b c` creates window   
+`^b ,` renames window   
+`^b &` close current window   
+`^b n` next window  (`p` for previous)
+
+## Panes
+
+`^b o` next pane  
+`^b ;` toggle b/w panes	  
+`^b x` close current pane            
+`^b q` show pane numbers	
+
+To explicitly resize panes using the command menu, do:
+
+`^b + :` to enter the command prompt then type `resize-pane` followed by `-R`, `-L`, `-U`, `-D`
+
+For example, if you want to increase the width of the left hand side pane by 5 units, do:
+
+```
+^b + :
+resize-pane -R 5
+```
+
+`^b + DOWN ARROW` resize pane down (note the `+` key means hold `^b` while pressing DOWN ARROW) 
+`^b + UP ARROW` resize pane 
+`^b + LEFT ARROW` resize pane 
+`^b + RIGHT ARROW` resize pane 
+
+`^b z` toggle zoom to full window
+`^b spacebar` toggle layouts
+
+
 ## Installation of `tmux`
 
 Install (on ubuntu) `sudo apt install tmux`
@@ -10,7 +85,7 @@ Install (on arch) `sudo pacman -S tmux`
 
 ## Overview
 
-Note that `tmux` commands are prefixed with a `Ctl + b` leader (denoted `^b` here). 
+`tmux` commands are prefixed with a `Ctl + b` leader (denoted `^b` here). 
 You hit the leader, let go and then press the command that you want.
 
 There are a number of ways to set up and use `tmux`.
@@ -19,7 +94,7 @@ Within a session you can have multiple windows.
 In one window you might run `vim` and in another window you might be running a julia `repl`.
 You can also split windows into `tmux` panes so that you can have multiple things running within a window, e.g. a webserver and a terminal.
 
-### Create new tmux session
+## Create new tmux session
 
 To create a new tmux session named julia:
 
@@ -31,10 +106,10 @@ tmux new -s julia
 ^b % 
 # horizontal split 
 ^b "
-``` 
+```
 
-From here we could start vim or a repl etc.
-Note that from the `tmux` session you can type `exit` to exit or do `^b d` to **detach** and return to the parent terminal.
+From here start vim or a repl etc.
+From the `tmux` session you can type `exit` to exit or do `^b d` to **detach** and return to the parent terminal.
 Detaching from a session leaves what you were doing running in the background.  
 
 From the parent terminal you can do `tmux ls` to get a **list of the sessions** then `tmux attach -t julia` to **re-attach** to the session named julia.
@@ -89,60 +164,15 @@ If you accidentally **close your target pane** (`^b x`) then you can respecify t
 If you want to **create an entirely new window** then `^b c`.
 You can **list and select windows** with `^b w` (cursor to the window you want; you can press `x` if you want to del a window). 
 
-## Basic commands
+            
 
-Cheatsheet https://tmuxcheatsheet.com/ but vital ones below
-
-### Sessions 
-
-`^b s` shows all sessions
-`tmux new -s julia` new session named julia (don't create a new session within a session)
-`tmux kill-session -t snme` kill session
-`^b $` rename session
-`^b )` next session (`)` for previous)
-
-### Windows
-
-`^b w` shows all windows
-`^b c` creates window   
-`^b ,` renames window   
-`^b &` close current window   
-`^b n` next window  (`p` for previous)
-
-### Panes
-
-`^b o` next pane  
-`^b ;` toggle b/w panes	  
-`^b x` close current pane            
-`^b q` show pane numbers	
-
-To explicitly resize panes using the command menu, do:
-
-`^b + :` to enter the command prompt then type `resize-pane` followed by `-R`, `-L`, `-U`, `-D`
-
-For example, if you want to increase the width of the left hand side pane by 5 units, do:
-
-```
-^b + :
-resize-pane -R 5
-```
-
-`^b + DOWN ARROW` resize pane down (note the `+` key means hold `^b` while pressing DOWN ARROW) 
-`^b + UP ARROW` resize pane 
-`^b + LEFT ARROW` resize pane 
-`^b + RIGHT ARROW` resize pane 
-
-`^b z` toggle zoom to full window
-`^b spacebar` toggle layouts                
-
-### Issues with vim colors
+## Issues with vim colors
 
 see:
 
 https://vi.stackexchange.com/questions/7112/tmux-messing-with-vim-highlighting
 https://sunaku.github.io/vim-256color-bce.html
 https://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
-
 
 ```
 # Add this line to your tmux.conf file
@@ -156,5 +186,5 @@ if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 # Add the line below to your .vimrc
 
 set t_Co=256
-
 ```
+
