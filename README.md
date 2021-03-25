@@ -7,7 +7,7 @@ The GNU GPLv3 also lets people do almost anything they want with your project, e
 
 ## Contents 
 
-- [ubuntu](ubuntu.md)   
+- [Linux](linux.md)   
 - [Linux MISC](misc.md)  
 - [NEOVIM](neovim.md)  
 - [VIM](vim.md)  
