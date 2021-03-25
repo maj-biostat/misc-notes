@@ -5,10 +5,10 @@ Notes on installing and setting up Linux distributions.
 
 - [General usage](#general-usage)
   * [File renames](#file-renames)
-  * [USB Drives](#usb-drives)
   * [find](#find)
   * [wget](#wget)
   * [mount, fdisk and lsusb](#mount--fdisk-and-lsusb)
+  * [usb drives](#usb-drives)
   * [du (Disk usage)](#du--disk-usage-)
   * [pass](#pass)
   * [Job management, e.g. pgrep](#job-management--eg-pgrep)
@@ -85,20 +85,6 @@ for f in *.txt; do
 done
 ```
 
-### USB Drives
-
-Ask - what usb devices can my box see?
-
-```
-sudo lsusb
-```
-
-What devices?
-
-```
-sudo fdisk -l
-```
-
 ### find
 
 ```
@@ -152,6 +138,19 @@ Umount
 sudo umount /home/fred/usb
 ```
 
+### usb drives
+
+Ask - what usb devices can my box see?
+
+```
+sudo lsusb
+```
+
+What devices?
+
+```
+sudo fdisk -l
+```
 
 ### du (Disk usage)
 
