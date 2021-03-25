@@ -5,8 +5,8 @@ Introductory docker.
 - [Overview](#overview)
 - [Installing Docker](#installing-docker)
 - [Docker registries](#docker-registries)
-- [Docker flow - images and containers](#docker-flow---images-and-containers)
-- [Running things in docker](#running-things-in-docker)
+- [Images and containers](#images-and-containers)
+- [Running](#running)
 - [Installing software on containers](#installing-software-on-containers)
 - [Container networking](#container-networking)
 - [Volumes](#volumes)
@@ -144,7 +144,7 @@ To remove an image just do
 > docker rmi f3897a3842e9
 ```
 
-## Docker flow - images and containers
+## Images and containers
 
 Start with an image with just enough of an OS to do what you want to do.
 To see the images are available on the machine do:
@@ -205,7 +205,7 @@ To remove an image do
 ```
 
 
-## Running things in docker
+## Running
 
 
 `docker run` starts a container by giving an image name and a process to run in that container.
