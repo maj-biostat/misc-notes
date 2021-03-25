@@ -1,25 +1,42 @@
-# Ubuntu
+# Linux
 
-Notes on installing and setting up Ubuntu.
+Notes on installing and setting up Linux distributions.
 
-- [Ubuntu](#ubuntu)
-  * [<a name="install"></a>Installing 20.04 LTS](#-a-name--install----a-installing-2004-lts)
-  * [Device details](#device-details)
-  * [Drive management](#drive-management)
+- [Linux](#linux)
+  * [General usage](#general-usage)
+    + [File renames](#file-renames)
+    + [USB Drives](#usb-drives)
+    + [find](#find)
+    + [Wget](#wget)
+    + [Drive management and mount](#drive-management-and-mount)
     + [Disk usage](#disk-usage)
+    + [pass](#pass)
+    + [Job management, e.g. pgrep](#job-management--eg-pgrep)
+    + [Text processing and pipes](#text-processing-and-pipes)
+    + [Shell script examples](#shell-script-examples)
+    + [openssh](#openssh)
+    + [screen](#screen)
+    + [Monitor the results from a command](#monitor-the-results-from-a-command)
+    + [Network configuration](#network-configuration)
+    + [grep et al](#grep-et-al)
+    + [tar archives](#tar-archives)
+  * [Ubuntu install](#ubuntu-install)
+    + [Installing 20.04 LTS](#installing-2004-lts)
+    + [Device details](#device-details)
+    + [inittab](#inittab)
+    + [To redo install](#to-redo-install)
     + [Adding drive to automount](#adding-drive-to-automount)
-  * [Video drivers](#video-drivers)
-  * [Monitors](#monitors)
-  * [Grub](#grub)
-  * [Software](#software)
-    + [Management](#management)
+    + [Software Management](#software-management)
+    + [Video drivers](#video-drivers)
+    + [Monitors](#monitors)
+    + [Grub](#grub)
+    + [Ghostscript (kind of)](#ghostscript--kind-of-)
     + [Upgrade rollback](#upgrade-rollback)
     + [nteract](#nteract)
     + [Firefox](#firefox)
     + [wget](#wget)
     + [MS Teams](#ms-teams)
-    + [<a name="email"></a>Email](#-a-name--email----a-email)
-    + [R install](#r-install)
+    + [Email](#email)
     + [Zoom](#zoom)
     + [VIM](#vim)
     + [KeepassXC](#keepassxc)
@@ -28,22 +45,37 @@ Notes on installing and setting up Ubuntu.
     + [SSH](#ssh)
     + [Video/audio capture](#video-audio-capture)
     + [Virtualisation](#virtualisation)
-    + [find](#find)
+  * [Manjaro install](#manjaro-install)
+    + [Hardware details](#hardware-details)
+    + [Hardware](#hardware)
+    + [pacman](#pacman)
+    + [Pacman tips](#pacman-tips)
+    + [Yay](#yay)
+    + [Hamster time tracker](#hamster-time-tracker)
+    + [R](#r)
+    + [Python](#python)
+    + [Email](#email-1)
+    + [Zoom](#zoom-1)
+    + [Neovim](#neovim)
+    + [Winmerge alternative](#winmerge-alternative)
+    + [Keepassxc](#keepassxc)
+    + [Video drivers](#video-drivers-1)
+    + [Video capture](#video-capture)
+    + [Kernel status modules.](#kernel-status-modules)
+    + [Audio](#audio)
+    + [Network access](#network-access)
+    + [NVIDIA](#nvidia)
+    + [Phoronix bench tests](#phoronix-bench-tests)
+    + [Panel plugins](#panel-plugins)
+    + [Chrome](#chrome)
+    + [Sublime text 3](#sublime-text-3)
+    + [Install R from command line to local folder](#install-r-from-command-line-to-local-folder)
+    + [JAGS](#jags)
+    + [atom](#atom)
+    + [XFCE things](#xfce-things)
 
 
-
-
-## Install
-
-### Hamster time tracker
-
-`sudo pacman -S hamster-time-tracker`
-
-
-
-
-
-## Usage
+## General usage
 
 ### File renames
 
@@ -67,7 +99,47 @@ What devices?
 sudo fdisk -l
 ```
 
-### Mount
+### find
+
+```
+# all files modified since:
+find . -type f -newermt 2020-11-19
+# pdfs accessed in last 3 days
+find . -iname "*.pdf" -atime -3 -type f
+# modified in the last 24 hours
+find . -iname "*.pdf" -mtime 0 -type d
+```
+
+### Wget
+
+Examples
+
+```
+# Mirror
+wget --recursive --no-parent --continue --no-clobber https://urlOfInterest
+# All files of type
+wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
+# Single file
+wget https://test.org/latest.zip
+
+# All files of type
+wget --spider -r --accept "*.docx" 
+# List of urls
+wget ‐‐input list-of-file-urls.txt
+
+```
+
+### Drive management and mount
+
+Useful commants
+
+```
+sudo lsusb
+sudo fdisk -l
+# mkdir /home/fred/media
+sudo mount /dev/sda1 /home/fred/media
+sudo umount /home/fred/media
+```
 
 Create a director in your home directory and mount
 
@@ -82,72 +154,22 @@ Umount
 sudo umount /home/fred/usb
 ```
 
-### GPG
 
-Allows you to encrypt and sign your data and communication.
-Works in much the same way an SSH key or an SSL cert works, you have a public key which encrypts things and a matching private key which decrypts those things.
-It’s safe to give out your public key but not your private key.
+### Disk usage
 
-Here is the arch guide: https://wiki.archlinux.org/index.php/GnuPG. 
-What you need is below.
-
-#### Create a key pair
+Size of directory and contents
 
 ```
-gpg --full-gen-key
-
-# the RSA (sign only) and a RSA (encrypt only) key.
-# a keysize of the default value (2048).
-# an expiration date - 1 year is good enough. Expiration can be extended without having to re-issue a new key.
-# name and email address (seen by anybody who imports your key).
-# You can add multiple identities to the same key later
-# a secure passphrase.
-
-# If you lose your secret key or it is compromised, you will want to revoke your
-# key by uploading the revocation certificate to a public keyserver - assumes you uploaded your public key to a keyserver
-# print out then store securely.
-
-gpg --gen-revoke --armor --output=RevocationCertificate.asc <user-id>
-
-# list public and secret keys
-gpg --list-keys
-gpg --list-secret-keys
-
-# edit keys
-gpg --edit-key <user-id>
+du -sh /home/myfatdir
+# breakdown
+du -shc /home/myfatdir/*
 ```
 
-#### Export your public key
-
-So that others can encrypt messages for you (stored in public.key file). User id is email.
-
-```
-gpg --output public.key --armor --export user-id
-```
-
-#### Import a public key
-
-In order to encrypt messages to others, as well as verify their signatures, you need their public key (below assumed to be stored in a file with the filename public.key). Verify the authenticity of the retrieved public key.
-
-```
-gpg --import public.key
-```
-
-#### Encrypt and decrypt
-
-After importing a public key. For decrypt, `gpg` will prompt you for your passphrase and then decrypt and write the data from doc.gpg to doc.
-
-```
-gpg --recipient user-id --encrypt doc
-gpg --output doc --decrypt doc.gpg
-```
-
-note that to export your secret key for backup you can do `gpg2 --export-secret-keys > secret.gpg` but never put this anywhere unsafe as once it is in someone elses hands you are compromised.
 
 ### pass
 
 This is a command line password manager. 
-However, to use it, you need to set up `gpg`. 
+However, to use it, you need to set up [GPG](gpg.md)  . 
 To initialise a new store:
 
 ```
@@ -173,7 +195,7 @@ Start a job in the background piping to stdout and stderr to file.
 ```
 ./run_sim_3.sh > logs/test.log 2>&1 &
 ```
-### File text processing pipes
+### Text processing and pipes
 
 Can be used for extracting columns, seeing the number of words in a file and selecting unique entries from a file respectively.
 
@@ -309,20 +331,11 @@ ip a
 
 use `iw dev` to get the wifi mac address.
 
-
-
-
-
-
-
 ### grep et al
 
 Recursive from current directory, only *.R files.
 
 `grep -R --include="*.R" 'contr.sum' .`
-
-
-
 
 ### tar archives
 
@@ -353,7 +366,17 @@ sha256sum test.tar.gz
 
 
 
-## <a name="install"></a>Installing 20.04 LTS
+
+
+
+
+
+
+
+
+## Ubuntu install
+
+### Installing 20.04 LTS
 
 https://www.youtube.com/watch?v=n8VwTYU0Mec
 
@@ -371,7 +394,7 @@ Other useful logs (some might be binary) include:
 + `/var/log/faillog` login failures
 + `/var/log/wtmp` user info, but just use `who`
 
-## Device details
+### Device details
 
 Use list hardware `lshw`, for example, computer model:
 
@@ -379,7 +402,7 @@ Use list hardware `lshw`, for example, computer model:
 sudo lshw | grep product
 ```
 
-# inittab
+### inittab
 
 Is no longer with us. 
 To switch run level use
@@ -394,61 +417,12 @@ systemctl set-default multi-user.target
 systemctl set-default graphical.target
 ```
 
-
-# Ghostscript (kind of)
-
-`ps2pdf` is obtained via tinytex but my understanding is that this is just a wrapper to gs  
-You can specify an output size as `ps2pdf -g5950x8420 kalman4.ps`
-
-This https://stackoverflow.com/questions/30128250/ps2pdf-preserve-page-size is useful.
-
-# To redo install
+### To redo install
 create liveusb
 Press F12? to go to boot screen
 boot the live install
 run the installer (select free driver)
 
-## Wget
-
-Examples
-
-```
-# Mirror
-wget --recursive --no-parent --continue --no-clobber https://urlOfInterest
-# All files of type
-wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
-# Single file
-wget https://test.org/latest.zip
-
-# All files of type
-wget --spider -r --accept "*.docx" 
-# List of urls
-wget ‐‐input list-of-file-urls.txt
-
-```
-
-
-## Drive management
-
-Useful commants
-
-```
-sudo lsusb
-sudo fdisk -l
-# mkdir /home/fred/media
-sudo mount /dev/sda1 /home/fred/media
-sudo umount /home/fred/media
-```
-
-### Disk usage
-
-Size of directory and contents
-
-```
-du -sh /home/myfatdir
-# breakdown
-du -shc /home/myfatdir/*
-```
 
 ### Adding drive to automount
 
@@ -484,7 +458,63 @@ Finally, test with `sudo mount -a`.
 If there are no errors and you can access the mount point then you should be fine to reboot.
 
 
-## Video drivers
+
+### Software Management
+
+`apt` gives a simplified interface compared to `apt-get` etc.
+
+
+|apt command     |	the command it replaces	|function of the command                                  |
+|----------------|--------------------------|---------------------------------------------------------|
+|apt install	   | apt-get install	        | Installs a package                                      |
+|apt remove	     |apt-get remove	          | Removes a package                                       |
+|apt purge	     |apt-get purge	            | Removes package with configuration                      |
+|apt update	     |apt-get update	          | Refreshes repository index                              |
+|apt upgrade	   |apt-get upgrade	          | Upgrades all upgradable packages                        |
+|apt autoremove	 |  apt-get autoremove	    | Removes unwanted packages                               |
+|apt full-upgrade|	apt-get dist-upgrade	  | Upgrades packages with auto-handling of dependencies    |
+|apt search	     |apt-cache search	        | Searches for the program                                |
+|apt show	       |apt-cache show	          | Shows package details                                   |
+|apt list --installed | ? | Shows all the installed packages |
+
+Examples:
+
+```
+# update repos
+sudo apt update
+# upgrade apps to lastest repos version
+sudo apt upgrade
+sudo apt remove apache2 vim
+sudo apt-get --purge remove gimp
+# also remove config
+sudo apt purge apache2
+sudo apt search apache2
+sudo apt list --installed
+# dependency
+sudo apt show apache2
+sudo apt depends apache2
+# upgrade a single package
+sudo apt install apache2
+```
+
+Package description https://packages.ubuntu.com/focal/
+
+```
+# update file list (then upgrade if necessary)
+sudo apt update
+
+# to install .deb files with their dependencies
+sudo apt -y install gdebi-core
+
+# e.g.  but note there are also other ways to do this
+sudo gdebi rstudio-1.2.5019-amd64.deb
+
+```
+
+
+
+
+### Video drivers
 
 This is without doubt the most hassle you will get from linux.
 Often blue screen of death relates to nvidia drivers. 
@@ -677,7 +707,7 @@ video                  49152  2 dell_wmi,dell_laptop
 
 
 
-## Monitors
+### Monitors
 
 Sometimes the external monitor works but the laptop screen doesn't.
 Sometimes the reverse is true.
@@ -703,7 +733,7 @@ And comment out the the nvidia-drm modeset option.
 # options nvidia-drm modeset=1
 ```
 
-## Grub
+### Grub
 
 Grub is the bootloader; the thing that starts up your system.
 To get rid of the quiet splashscreen so that everything is output while loading:
@@ -717,60 +747,12 @@ sudo shutdown -r now
 
 https://www.dedoimedo.com/computers/grub-2.html
 
+### Ghostscript (kind of)
 
-## Software
+`ps2pdf` is obtained via tinytex but my understanding is that this is just a wrapper to gs  
+You can specify an output size as `ps2pdf -g5950x8420 kalman4.ps`
 
-### Management
-
-`apt` gives a simplified interface compared to `apt-get` etc.
-
-
-|apt command     |	the command it replaces	|function of the command                                  |
-|----------------|--------------------------|---------------------------------------------------------|
-|apt install	   | apt-get install	        | Installs a package                                      |
-|apt remove	     |apt-get remove	          | Removes a package                                       |
-|apt purge	     |apt-get purge	            | Removes package with configuration                      |
-|apt update	     |apt-get update	          | Refreshes repository index                              |
-|apt upgrade	   |apt-get upgrade	          | Upgrades all upgradable packages                        |
-|apt autoremove	 |  apt-get autoremove	    | Removes unwanted packages                               |
-|apt full-upgrade|	apt-get dist-upgrade	  | Upgrades packages with auto-handling of dependencies    |
-|apt search	     |apt-cache search	        | Searches for the program                                |
-|apt show	       |apt-cache show	          | Shows package details                                   |
-|apt list --installed | ? | Shows all the installed packages |
-
-Examples:
-
-```
-# update repos
-sudo apt update
-# upgrade apps to lastest repos version
-sudo apt upgrade
-sudo apt remove apache2 vim
-sudo apt-get --purge remove gimp
-# also remove config
-sudo apt purge apache2
-sudo apt search apache2
-sudo apt list --installed
-# dependency
-sudo apt show apache2
-sudo apt depends apache2
-# upgrade a single package
-sudo apt install apache2
-```
-
-Package description https://packages.ubuntu.com/focal/
-
-```
-# update file list (then upgrade if necessary)
-sudo apt update
-
-# to install .deb files with their dependencies
-sudo apt -y install gdebi-core
-
-# e.g.  but note there are also other ways to do this
-sudo gdebi rstudio-1.2.5019-amd64.deb
-
-```
+This https://stackoverflow.com/questions/30128250/ps2pdf-preserve-page-size is useful.
 
 ### Upgrade rollback 
 
@@ -780,7 +762,6 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 grep -A 2 'Start-Date: 2020-09-30' /var/log/apt/history.log
 ```
 https://www.cyberciti.biz/howto/debian-linux/ubuntu-linux-rollback-an-apt-get-upgrade/
-
 
 ### nteract
 
@@ -794,7 +775,6 @@ sudo gdebi nteract_0.24.1_amd64.deb
 Now open the Julia REPL and type `]` then add the `IJulia` package with `add IJulia`. 
 Enter `Ctl-C`  to exit the `pkg` manager.
 Find nteract in your applications and launch.
-
 
 ### Firefox
 
@@ -831,7 +811,7 @@ sudo gdebi skype.deb
 
 https://www.howtoforge.com/how-to-install-microsoft-teams-linux-on-ubuntu-and-centos/
 
-### <a name="email"></a>Email
+### Email
 
 Have now resorted to using office outlook online.
 
@@ -846,7 +826,6 @@ related links:
 https://www.zimbra.com/email-server-software/email-outlook-sync-mapi-zco/  
 https://zentyal.com/community/  
 
-
 ### Zoom
 
 Use sso to login (uni-sydney).
@@ -858,7 +837,6 @@ Sometimes it is easier to use `zoom`, `teams` etc via a VM, see Virtualbox.
 ### VIM
 
 Use neovim instead `sudo apt install neovim`. Nb `nvim` to execute.
-
 
 ### KeepassXC
 
@@ -921,7 +899,6 @@ sudo apt install audacity
 sudo apt install vlc
 ```
 
-
 ### Virtualisation
 
 Virtual box.
@@ -949,38 +926,43 @@ VBoxManage controlvm "win10_or_whatever_you_called_your_vm" webcam attach /dev/v
 The windows OS should register the webcam and set it up for you and after that you will be able to use the webcam on the vm.
 
 
-### find
-
-```
-# all files modified since:
-find . -type f -newermt 2020-11-19
-# pdfs accessed in last 3 days
-find . -iname "*.pdf" -atime -3 -type f
-# modified in the last 24 hours
-find . -iname "*.pdf" -mtime 0 -type d
-```
-# Manjaro
-
-Notes on install, setup and use of Linux Manjaro distribution.
-
-- [Manjaro](#manjaro)
-  * [Introduction](#introduction)
-  * [Software](#software)
-    + [Management](#management)
-    + [R](#r)
-    + [Python](#python)
-    + [Email](#email)
-    + [Zoom](#zoom)
-    + [Neovim](#neovim)
-    + [Winmerge alternative](#winmerge-alternative)
-    + [Keepassxc](#keepassxc)
-  * [Video drivers](#video-drivers)
-  * [Video capture](#video-capture)
-  * [Audio](#audio)
-  * [Network access e.g. pawsey](#network-access-eg-pawsey)
 
 
-## Introduction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Manjaro install
+
+NOTE:
 
 Turns out that arch can be a bit of a nightmare due to a `rstan` dependency on `V8`.  
 `rstan` needs the `V8` lib but `V8` doesn't currently compile without manual intervention.
@@ -992,9 +974,7 @@ Going with minimal with xfce: `manjaro-xfce-20.0.3-minimal-200606-linux56.iso`.
 Also tried gnome `manjaro-gnome-20.0.3-minimal-200606-linux56.iso` but did not like.
 
 Install updates to bring you up to date.
-
 Make sure to `sudo pacman -Syu base-devel` to finish off.
-
 Remember, `dmesg | grep blah` `dmesg | tail -20` are your friends.
 
 ```
@@ -1005,9 +985,31 @@ dmesg -T
 
 Also, `modprobe` for adding/removing modules from kernel.
 
-## Software
 
-### Management 
+### Hardware details
+
+```
+sudo pacman -S hardinfo
+
+sudo dmidecode
+
+sudo dmidecode --type memory
+
+
+cat /proc/cpuinfo
+cat /proc/cpuinfo | grep processor | wc -l
+lscpu
+
+sudo pacman -S i-nex libcpuid
+```
+
+### Hardware
+
+Intel Xeon Silver 4110 LGA3647 2.1GHz 8-Core CPU Processor
+SKU# AC08317, Model# BX806734110
+
+
+### pacman 
 
 `pacman` https://wiki.manjaro.org/index.php?title=Pacman_Tips
 
@@ -1054,6 +1056,61 @@ Commands pretty much as per `pacman`
 sudo pacman -Syu yay
 ```
 
+
+### Pacman tips
+
+https://wiki.manjaro.org/index.php?title=Pacman_Tips
+
+```
+# first:
+# run checkupdates, which is included with the pacman, provides a safe way 
+# to check for upgrades to installed packages without running a system 
+# update at the same time
+checkupdates
+
+# update to closest mirror and update system
+sudo pacman-mirrors --geoip  && sudo pacman -Syyu
+# search
+pacman -Ss pkg_name 
+# download fresh copy of master package db 
+pacman -Sy
+# install a package
+pacman -S pkg_name
+# upgrade 
+pacman -Su
+# remove 
+pacman -R package_name
+
+# update the package database and update all packages on the system
+sudo pacman -Syu
+
+# dependencies
+pactree -U package
+pactree -r package
+
+```
+
+Use https://www.archlinux.org/mirrorlist/ to generate new list of mirrors.
+
+
+
+### Yay
+
+https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
+
+```
+sudo pacman -S yay
+# Uninstall package (although you can just use pacman -R)
+yay -Rns pkgname
+```
+
+
+
+### Hamster time tracker
+
+`sudo pacman -S hamster-time-tracker`
+
+
 ### R
 
 Libs:
@@ -1088,7 +1145,6 @@ Translations = /usr/share/qt/translations
 
 Don't bother with `spyder` etc; more hassle than it is worth.
 
-
 ### Email
 
 See around 8:15 mins for config (under gnome) at https://www.youtube.com/watch?v=yCEK2hNP7bg  
@@ -1098,7 +1154,6 @@ Install `hiri` works with full calendar integration; no idea how.
 ### Zoom
 
 Note comments on mic for zoom https://aur.archlinux.org/packages/zoom/
-
 
 ### Neovim
 
@@ -1116,7 +1171,7 @@ Use `meld`
 sudo pacman -Syu keepassxc
 ```
 
-## Video drivers
+### Video drivers
 
 The standard guide is here:
 https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup
@@ -1159,7 +1214,7 @@ ls -la /usr/share/X11/xorg.conf.d ; grep -v /usr/share/X11/xorg.conf.d/*.conf
 
 Default res on external 3840 x 2160 16:9. Pick something more sensible e.g. 1920  x 1080.
 
-## Video capture 
+### Video capture 
 
 First, a simple tool to test things:
 
@@ -1191,7 +1246,8 @@ v4l2-ctl -d /dev/video0 --list-ctrls
 ```
 
 
-Kernel status modules.  
+### Kernel status modules.  
+
 The `uvcvideo` is a kernel driver module meant to support any usb video class compliant device.
 
 ```
@@ -1210,7 +1266,7 @@ https://wiki.archlinux.org/index.php/FFmpeg#Recording_webcam
 some translation of options for ffmpeg http://4youngpadawans.com/stream-camera-video-and-audio-with-ffmpeg/
 
 
-## Audio
+### Audio
 
 Dated but may be useful https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/  
 
@@ -1239,7 +1295,9 @@ arecord -l
 Aside - sound recording via audacity `sudo pacman -Syu audacity`
 
 
-## Network access e.g. pawsey
+### Network access 
+
+For accessing pawsey etc.
 
 SSH
 Tools for converting ppk from win box to ssh key.
@@ -1259,108 +1317,36 @@ ssh -p 22 usernamem@199.19.19.1
 
 or do it from scratch: https://support.pawsey.org.au/documentation/display/US/Logging+in+with+SSH
 
-
-## NVIDIA
+### NVIDIA
 
 You need to have done the install using the free drivers.
 Edit grub (/etc/default/grub) then `sudo update-grub` as per dorian dot slash then go to [https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)\_settings_and_load_them_on_Startup and follow instructions]
 
-## Pacman tips
-
-https://wiki.manjaro.org/index.php?title=Pacman_Tips
-
-```
-# first:
-# run checkupdates, which is included with the pacman, provides a safe way 
-# to check for upgrades to installed packages without running a system 
-# update at the same time
-checkupdates
-
-# update to closest mirror and update system
-sudo pacman-mirrors --geoip  && sudo pacman -Syyu
-# search
-pacman -Ss pkg_name 
-# download fresh copy of master package db 
-pacman -Sy
-# install a package
-pacman -S pkg_name
-# upgrade 
-pacman -Su
-# remove 
-pacman -R package_name
-
-# update the package database and update all packages on the system
-sudo pacman -Syu
-
-# dependencies
-pactree -U package
-pactree -r package
-
-```
-
-Use https://www.archlinux.org/mirrorlist/ to generate new list of mirrors.
-
-## Yay
-
-https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
-
-```
-sudo pacman -S yay
-# Uninstall package (although you can just use pacman -R)
-yay -Rns pkgname
-```
-
-
-
-
-## Phoronix bench tests
+### Phoronix bench tests
 
 `yay -S phoronix-test-suite`
 
-
-
-## Panel plugins
+### Panel plugins
 
 ```
 yay -S xfce4-hardware-monitor-plugin
 yay -S xfce4-datetime-plugin
 ```
 
-
-
-## Chrome
+### Chrome
 
 `yay -S google-chrome`
 
-## Sublime text 3
+### Sublime text 3
 
 https://www.sublimetext.com/docs/3/linux_repositories.html
-
-
-
-
-
-
-## Apps
-
-Look into.
-Nightlight (red shift)
-tweaktool - window deco
-libre
-gparted - kde partition mgr
-gimp
-timeshift
-geary - email
-
 
 ### Install R from command line to local folder
 
 Update 2020-03-26:
 
-The approach https://forum.manjaro.org/t/using-the-statistical-package-r-in-manjaro-with-rstudio/484 
-
+The approach (https://forum.manjaro.org/t/using-the-statistical-package-r-in-manjaro-with-rstudio/484)
 seems to work just fine. 
-
 The following is retained for posterity.
 
 ```
@@ -1392,14 +1378,7 @@ sudo pacman -S pandoc-citeproc
 
 yay -S jags
 
-
-
-
-
-
-
-## atom
-
+### atom
 
 I think I had to uninstall language-r and then let lintr install it as a dependency.
 
@@ -1418,35 +1397,7 @@ apm install block-select
 apm install column-select
 ```
 
-
-
-## Hardware details
-
-```
-sudo pacman -S hardinfo
-
-sudo dmidecode
-
-sudo dmidecode --type memory
-
-
-cat /proc/cpuinfo
-cat /proc/cpuinfo | grep processor | wc -l
-lscpu
-
-sudo pacman -S i-nex libcpuid
-```
-
-
-
-## Hardware
-
-Intel Xeon Silver 4110 LGA3647 2.1GHz 8-Core CPU Processor
-SKU# AC08317, Model# BX806734110
-
-
-
-# XFCE things
+### XFCE things
 
 Switch workspace `ctl alt left/right arrow`
 
