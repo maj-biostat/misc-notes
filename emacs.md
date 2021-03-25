@@ -1,13 +1,17 @@
-# EMACS (mainly for Python) (on Windows)
+# EMACS (python testing on Windows) 
 
-Back to [README](README.md).
+- [Frames, Windows, Buffers](#frames--windows--buffers)
+- [File Functions](#file-functions)
+- [Config](#config)
+- [Package manager](#package-manager)
+- [Jupyter](#jupyter)
+- [Python Related](#python-related)
+  * [Open project dir](#open-project-dir)
+  * [Unit Tests](#unit-tests)
+  * [Debug](#debug)
+- [Git](#git)
 
-## Sources
-
-https://realpython.com/emacs-the-best-python-editor/  
-
-
-## Basic
+See: (https://realpython.com/emacs-the-best-python-editor/)
 
 First, in all the following `C = CTL` `M = ALT`.
 
@@ -15,7 +19,7 @@ If you find yourself in the mini-buffer (command buffer) `C-g` to get back to wh
 
 To do the tutorial `C-H T`
 
-### Frames, Windows, Buffers
+## Frames, Windows, Buffers
 
 "Frames" frame the "Window(s)" which contain "Buffers"
 
@@ -42,14 +46,14 @@ The contents may be a file, or the output from some code etc.
 
 
 
-### File Functions
+## File Functions
 
 `C-x` `C-f` Open file  then you write in the dir and file and press RET. If no file exists then one is created for you.  
 `C-x` `C-s`  Save  
 
 `C-x d` Open directory  
 
-### Config
+## Config
 
 Is stored in ~/.emacs.d/init.el and gives access to the package manager. 
 Here is an example `init.el` that supports various python related tools. 
@@ -102,12 +106,12 @@ Note that you need to do `pip install --user black` first.
 ;; User-Defined init.el ends here
 ```
 
-### Package manager 
+## Package manager 
 
 `M-x` then type `package-show-package-list`.
 To filter by name `f`, to exit press `q`.
 
-### Jupyter
+## Jupyter
 
 Seems a bit crap. 
 If the `ein` package is installed you can do `M-x` `ein:jupyter-server-start` to start up a jupyter instance.  
@@ -129,7 +133,7 @@ If you have unit tests coded using base module `unittest` then you can run them 
 
 `M-x pdb` to start the debugger then when prompted as to how to run, type `python -m pdb foo.py`.  
 
-### Git
+## Git
 
 Obtained via `magit` package.   
 
