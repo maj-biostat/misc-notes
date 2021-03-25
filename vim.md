@@ -80,6 +80,8 @@ Improved vim.
 
 Do `:Tutor`  regularly.
 
+See:
+
 + https://learnvimscriptthehardway.stevelosh.com/
 + https://bencrowder.net/files/vim-fu/
 
@@ -410,6 +412,8 @@ Plug 'junegunn/seoul256.vim'
 call plug#end()
 ```
 
+#### Plugin Management
+
 + Start `nvim` and run `:PlugInstall`.
 + Edit config then `:PlugUpdate` to refresh.
 + Delete unwanted from config then `:PlugClean`
@@ -432,7 +436,7 @@ git clone https://github.com/dracula/vim.git dracula
 
 ##### Align
 
-You could write a macro (see further down) to align text, but using a plugin is easier.
+You could write a macro (see [Macro](#macro) section) to align text, but using a plugin is easier.
 
 See https://github.com/junegunn/vim-easy-align
 
@@ -455,18 +459,22 @@ Stuff for julia support
 
 ##### Surround
 
-`s` becomes a verb modifier for surround
-`ds"` delete surrounding `"`
-`ys"` add surrounding `"` around current word
-`cs"'` change surround `"` to single quote
+```
+s    - becomes a verb modifier for surround
+ds"  - delete surrounding `"`
+ys"  - add surrounding `"` around current word
+cs"' - change surround `"` to single quote
+```
 
 ##### Commentary
 
 For toggling commenting.
 
-`cml` comment current line
-`cmj` comment current and line below
-`cmip` comment the entire paragraph
+```
+cml  - comment current line
+cmj  - comment current and line below
+cmip - comment the entire paragraph
+```
 
 ##### ReplaceWitRegister
 
