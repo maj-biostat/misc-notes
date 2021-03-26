@@ -12,6 +12,7 @@ Introductory docker.
 - [Volumes](#volumes)
 - [Dockerfiles](#dockerfiles)
 - [Multiple containers](#multiple-containers)
+  * [docker-compose](#docker-compose)
 
 ## Overview
 
@@ -528,7 +529,7 @@ Docker recently added a feature that lets you have multi-stage builds.
 When you have a heap of containers, orchestration can become unwieldy.
 Docker compose helps you manage by allowing you to coordinate multi-container environments based on a YAML config file.
 
-### Install docker-compose
+### docker-compose
 
 Get it from github and update file flags to executable.
 
