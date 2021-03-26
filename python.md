@@ -38,10 +38,10 @@ This creates a subdirectory called `env` that contains
 
 
 `venv` creates fresh and sandboxed virtual environments with user-installable libraries that are multi-python safe.
-They are fresh because virtual environments only start with the standard libraries that ship with python; you have to install any other libraries all over again with pip install while the virtual environment is active. 
-They are sandboxed because none of these new library installs are visible outside the virtual environment, so you can delete the whole environment and start again without worrying about impacting your base python install. 
-They are user-installable libraries because the virtual environment's target folder is created without sudo in some directory you already own, so you won't need sudo permissions to install libraries into it. 
-Finally, they are multi-python safe because when virtual environments activate, the shell only sees the python version (3.4, 3.5 etc.) that was used to build that virtual environment.
+They are *fresh* because virtual environments only start with the standard libraries that ship with python; you have to install any other libraries all over again with pip install while the virtual environment is active. 
+They are *sandboxed* because none of these new library installs are visible outside the virtual environment, so you can delete the whole environment and start again without worrying about impacting your base python install. 
+They are *user-installable* libraries because the virtual environment's target folder is created without sudo in some directory you already own, so you won't need sudo permissions to install libraries into it. 
+Finally, they are *multi-python-safe* because when virtual environments activate, the shell only sees the python version (3.4, 3.5 etc.) that was used to build that virtual environment.
 
 More info on this [here](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe).
 
