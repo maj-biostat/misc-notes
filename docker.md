@@ -11,7 +11,7 @@ Introductory docker.
 - [Container networking](#container-networking)
 - [Volumes](#volumes)
 - [Dockerfiles](#dockerfiles)
-
+- [Multiple containers](#multiple-containers)
 
 ## Overview
 
@@ -522,6 +522,52 @@ Other docker keywords include (also see Dockerfile ref page):
 
 We want docker images to be complete but small. 
 Docker recently added a feature that lets you have multi-stage builds.
+
+## Multiple containers
+
+When you have a heap of containers, orchestration can become unwieldy.
+Docker compose helps you manage by allowing you to coordinate multi-container environments based on a YAML config file.
+
+### Install docker-compose
+
+Get it from github and update file flags to executable.
+
+```
+> sudo curl -L "https://github.com/docker/compose/releases/download/<current stable version>/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+> sudo chmod +x /usr/local/bin/docker-compose
+> docker-compose --version
+```
+
+Example: YAML file `docker-compose.yml` 
+
+```
+version: '3.7'
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
+```
+
+Note that the indentation is important.
+The `services` block to define all the various components/containers.
+Build an bring up the service:
+
+```
+docker-compose build
+docker-compose up
+```
+
+Similar to the `docker` command you have 
+
+```
+docker-compose ps
+docker-compose logs
+docker-compose stop
+docker-compose down   - remove all containers, networks, vols
+```
 
 
 
