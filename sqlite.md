@@ -193,14 +193,18 @@ sqlite> select * from gg;
 1|22.0|2021-03-28|10:49:27
 ```
 
-Or from `R`
+Or from `R` (returns the number of rows added).
 
 ```r
 > library(RSQLite)
 > mydb <- dbConnect(RSQLite::SQLite(), "test.db")
-> dbExecute(mydb, 'INSERT INTO gg(price, mydate, mytime) VALUES(55, 
-         date('now', 'localtime'), 
-         time('now', 'localtime'))')
+> dbExecute(mydb, 'INSERT INTO gg(price, mydate, mytime) 
+          VALUES(
+          44, 
+          date(\'now\', \'localtime\'), 
+          time(\'now\', \'localtime\')
+          )')
+[1]          
 ```
 
 if you have a `data.table` with dates and times stored as strings then you can create a table in one hit with:
