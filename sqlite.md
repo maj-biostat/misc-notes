@@ -19,7 +19,7 @@ Examples include single user apps and games and there are several libraries to e
 From the command line.
 
 ```sh
-sqlite> sqlite3 crypto.db
+sqlite> sqlite3 test.db
 ```
 
 List the `tables` defined in current db.
@@ -40,19 +40,19 @@ You can create a DB using the `RSQLite` R package.
 
 ```r
 > library(RSQLite)
-> mydb <- dbConnect(RSQLite::SQLite(), "mydb.db")
+> mydb <- dbConnect(RSQLite::SQLite(), "test.db")
 > dbDisconnect(mydb)
 > unlink(mydb)
 ```
 
 ## Create/Alter/Drop tables
 
-### Create
+### Create table
 
-If you creat a table without specifying `without rowid` then an autoincrement column call `rowid` will be made automatically.
+If you creat a table without specifying `without rowid` then an autoincrement column call `rowid` gives a unique row id.
 
 ```sh
-sqlite> sqlite3 crypto.db
+sqlite> sqlite3 test.db
 sqlite> create table coin(
   column1 datatype PRIMARY KEY,
   column2 datatype,
@@ -70,7 +70,7 @@ Datatypes in sqlite3 can be any of:
 + `text`
 + `blob`
 
-There is no date or time types but there are ways to handle dates and times, see [docs](https://www.sqlite.org/lang_datefunc.html).
+There is no date or time types but there are ways to handle dates and times, see [below](#dates-and-times) and [docs](https://www.sqlite.org/lang_datefunc.html).
 
 
 Example (do not specify primary key):
@@ -93,7 +93,7 @@ sqlite> INSERT INTO gg(id, price, dt)
   etc...
 ```
 
-show the `rowid`s:
+show `rowid`s:
 
 ```sh
 sqlite> SELECT rowid, * FROM gg WHERE price = 22;
@@ -136,7 +136,7 @@ sqlite> SELECT rowid, * FROM hh WHERE price = 22;
 9|9|22.0|2021-03-28 11:17:51
 ```
 
-### Alter
+### Alter table
 
 You can modify tables with `alter`
 
@@ -144,7 +144,7 @@ You can modify tables with `alter`
 sqlite> ALTER TABLE gg ADD COLUMN Age INT;
 ```
 
-### Drop
+### Drop table
 
 You can delete tables with `drop table <tablename>;`
 
@@ -158,7 +158,10 @@ sqlite> INSERT INTO Tablename(col1, col2, ...) VALUES(val1, val2, ...);
 sqlite> INSERT INTO Tablename VALUES(val1, val2, ...);
 ```
 
+Example
+
 ```sh
+$ sqlite3 test.db
 sqlite> INSERT INTO gg(price, dt) VALUES(22, datetime('now', 'localtime'));
 ```
 
@@ -194,7 +197,7 @@ Or from `R`
 
 ```r
 > library(RSQLite)
-> mydb <- dbConnect(RSQLite::SQLite(), "coinspot.db")
+> mydb <- dbConnect(RSQLite::SQLite(), "test.db")
 > dbExecute(mydb, 'INSERT INTO gg(price, mydate, mytime) VALUES(55, 
          date('now', 'localtime'), 
          time('now', 'localtime'))')
