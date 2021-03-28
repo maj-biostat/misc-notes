@@ -1,6 +1,6 @@
-# SQLITE
+# SQLite
 
-sqlite is a lightweight, file-based db that is easily portable.
+[sqlite](https://www.sqlite.org/) is a lightweight, file-based db that is easily portable.
 At the time of writing, the current version of sqlite is 3.31.1.
 It is best used when you need an embedded db that will not require much by future expansion.
 Examples include single user apps and games and there are several libraries to enable you to connect to a sqlite database from R, python etc.
@@ -10,9 +10,12 @@ Examples include single user apps and games and there are several libraries to e
   * [Create table](#create-table)
   * [Alter table](#alter-table)
   * [Drop table](#drop-table)
-- [Adding data](#adding-data)
+- [Add/Update/delete data](#add-update-delete-data)
   * [Dates and times](#dates-and-times)
-  * [Adding data from R](#adding-data-from-r)
+  * [Insert data from R](#insert-data-from-r)
+- [Queries](#queries)
+- [References](#references)
+
 
 ## Create new database
 
@@ -73,19 +76,31 @@ Datatypes in sqlite3 can be any of:
 There is no date or time types but there are ways to handle dates and times, see [below](#dates-and-times) and [docs](https://www.sqlite.org/lang_datefunc.html).
 
 
-Example (do not specify primary key):
+Example (do not specify primary key), default value for price:
 
 ```sh
 sqlite> CREATE TABLE gg (
   id integer,
-  price real,
+  price real default 0,
   dt text
+);
+```
+
+There is functionality to add constraints, e.g. price must be greater than zero and tokens must be unique
+
+```sh
+sqlite> CREATE TABLE temp (
+  id integer,
+  price real not null check(price > 0),
+  token text not null unique
 );
 ```
 
 Insert several records.
 
 ```sh
+sqlite> INSERT INTO gg(id, dt) 
+  VALUES(1, datetime('now', 'localtime'));
 sqlite> INSERT INTO gg(id, price, dt) 
   VALUES(1, 22, datetime('now', 'localtime'));
 sqlite> INSERT INTO gg(id, price, dt) 
@@ -149,7 +164,7 @@ sqlite> ALTER TABLE gg ADD COLUMN Age INT;
 You can delete tables with `drop table <tablename>;`
 
 
-## Adding data
+## Add/Update/delete data
 
 Insert a new record with (colnames are optional:
 
@@ -158,11 +173,23 @@ sqlite> INSERT INTO Tablename(col1, col2, ...) VALUES(val1, val2, ...);
 sqlite> INSERT INTO Tablename VALUES(val1, val2, ...);
 ```
 
+Update with 
+
+```sh
+update <table name> set col1 = value1 where col2 = value2;
+```
+
 Example
 
 ```sh
 $ sqlite3 test.db
 sqlite> INSERT INTO gg(price, dt) VALUES(22, datetime('now', 'localtime'));
+```
+
+Delete
+
+```sh
+delete from <table name> where col1 = val1 and col2 = val2;
 ```
 
 ### Dates and times
@@ -193,7 +220,7 @@ sqlite> select * from gg;
 1|22.0|2021-03-28|10:49:27
 ```
 
-### Adding data from R
+### Insert data from R
 
 From `R` (`dbExecute` returns the number of rows added).
 
@@ -228,4 +255,21 @@ if you have a `data.table` with dates and times stored as strings then you can c
 >
 > dbWriteTable(mydb, "cs", d2)
 ```
+
+
+## Queries
+
+Range from select, joins, aggregation, conditioning, concatenation of fields, boolean operators, grouping.
+
+```
+sqlite> select *
+  from <table name>
+  where <condition>;
+```
+  
+See [here](https://www.guru99.com/sqlite-query.html)
+
+## References
+
++ https://www.guru99.com/sqlite-tutorial.html
 
