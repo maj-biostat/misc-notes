@@ -10,7 +10,9 @@ Notes on installing and setting up Linux distributions.
   * [mount, fdisk and lsusb](#mount--fdisk-and-lsusb)
   * [usb drives](#usb-drives)
   * [du (Disk usage)](#du--disk-usage-)
-  * [cron](cron)
+  * [cron](#cron)
+    + [Editing crontab](#editing-crontab)
+    + [Monitor crontab](#monitor-crontab)
   * [pass](#pass)
   * [Job management, e.g. pgrep](#job-management--eg-pgrep)
   * [Text processing and pipes](#text-processing-and-pipes)
@@ -35,7 +37,7 @@ Notes on installing and setting up Linux distributions.
   * [Upgrade rollback](#upgrade-rollback)
   * [nteract](#nteract)
   * [Firefox](#firefox)
-  * [wget](#wget)
+  * [wget](#wget-1)
   * [MS Teams](#ms-teams)
   * [Email](#email)
   * [Zoom](#zoom)
@@ -194,7 +196,7 @@ etc
 ```
 
 
-#### Edit crontab
+#### Editing crontab
 
 ```
 $ crontab -e
@@ -209,11 +211,11 @@ Edit to add jobs, example:
 30 2 * * * /usr/bin/Rscript /home/test/spot.R
 ```
 
-Monitor jobs with:
+#### Monitor crontab
 
 ```sh
 $ tail -f /var/log/syslog
-``` 
+```
 
 ### pass
 
