@@ -276,3 +276,5 @@ See [here](https://www.guru99.com/sqlite-query.html)
 
 + https://www.guru99.com/sqlite-tutorial.html
 + https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems
++ https://cran.r-project.org/web/packages/RSQLite/vignettes/RSQLite.html
++ https://www.sqlitetutorial.net/
