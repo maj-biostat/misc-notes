@@ -268,6 +268,9 @@ Range from select, joins, aggregation, conditioning, concatenation of fields, bo
 sqlite> select *
   from <table name>
   where <condition>;
+  
+sqlite> SELECT COUNT(id) from <table name>;
+sqlite> SELECT COUNT(distinct(price)) from <table name>;
 ```
   
 See [here](https://www.guru99.com/sqlite-query.html)
