@@ -10,6 +10,7 @@ Notes on installing and setting up Linux distributions.
   * [mount, fdisk and lsusb](#mount--fdisk-and-lsusb)
   * [usb drives](#usb-drives)
   * [du (Disk usage)](#du--disk-usage-)
+  * [cron](cron)
   * [pass](#pass)
   * [Job management, e.g. pgrep](#job-management--eg-pgrep)
   * [Text processing and pipes](#text-processing-and-pipes)
@@ -162,6 +163,57 @@ du -sh /home/myfatdir
 du -shc /home/myfatdir/*
 ```
 
+### cron 
+
+`cron` is a task scheduler.
+Cron jobs are managed via the `crontab`.
+Each user can have their own crontab.
+
+Set to run in the background:
+
+```
+$ sudo systemctl enable cron
+Synchronizing state of cron.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable cron
+```
+
+```sh
+$ sudo systemctl status cron
+cron.service - Regular background program processing daemon
+     Loaded: loaded (/lib/systemd/system/cron.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2021-03-24 14:49:36 AWST; 3 days ago
+       Docs: man:cron(8)
+   Main PID: 962 (cron)
+      Tasks: 1 (limit: 76891)
+     Memory: 10.8M
+     CGroup: /system.slice/cron.service
+             └─962 /usr/sbin/cron -f
+
+Mar 28 11:30:01 blink CRON[303807]: pam_unix(cron:session): session opened for user root by (uid=0)
+etc
+```
+
+
+#### Edit crontab
+
+```
+$ crontab -e
+```
+
+Edit to add jobs, example:
+
+```
+# run every minute
+*/1 * * * * /usr/bin/Rscript /home/test/spot.R
+# run every day at 30th minute of 2nd hour
+30 2 * * * /usr/bin/Rscript /home/test/spot.R
+```
+
+Monitor jobs with:
+
+```sh
+$ tail -f /var/log/syslog
+``` 
 
 ### pass
 
