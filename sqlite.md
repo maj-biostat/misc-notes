@@ -255,9 +255,10 @@ if you have a `data.table` with dates and times stored as strings then you can c
  Class :character   Class :character   Class :character  
  Mode  :character   Mode  :character   Mode  :character  
 >
-> dbWriteTable(mydb, "cs", d2)
+> dbWriteTable(mydb, "cs", d2, append = TRUE)
 ```
 
+specifying `append = TRUE` will append to existing table if necessary.
 
 ## Queries
 
