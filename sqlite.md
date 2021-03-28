@@ -12,6 +12,7 @@ Examples include single user apps and games and there are several libraries to e
   * [Drop table](#drop-table)
 - [Adding data](#adding-data)
   * [Dates and times](#dates-and-times)
+  * [Adding data from R](#adding-data-from-r)
 
 ## Create new database
 
@@ -192,7 +193,9 @@ sqlite> select * from gg;
 1|22.0|2021-03-28|10:49:27
 ```
 
-Or from `R` (returns the number of rows added).
+### Adding data from R
+
+From `R` (`dbExecute` returns the number of rows added).
 
 ```r
 > library(RSQLite)
