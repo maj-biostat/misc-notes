@@ -5,10 +5,14 @@ At the time of writing, the current version of sqlite is 3.31.1.
 It is best used when you need an embedded db that will not require much by future expansion.
 Examples include single user apps and games and there are several libraries to enable you to connect to a sqlite database from R, python etc.
 
-- [Config](#config)
-- [Rebasing](#rebasing)
-- [Squashing commits](#squashing-commits)
-- [Merge pull requests from forks](#merge-pull-requests-from-forks)
+- [Create new database](#create-new-database)
+- [Create/Alter/Drop tables](#create-alter-drop-tables)
+  * [Create](#create)
+  * [Alter](#alter)
+  * [Drop](#drop)
+- [Adding data](#adding-data)
+  * [Dates and times](#dates-and-times)
+
 
 ## Create new database
 
