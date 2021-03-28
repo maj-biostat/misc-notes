@@ -42,6 +42,7 @@ See [here](https://sqlite.org/cli.html) for more of the CLI commands.
 You can create a DB using the `RSQLite` R package.
 
 ```r
+> library(DBI)
 > library(RSQLite)
 > mydb <- dbConnect(RSQLite::SQLite(), "test.db")
 > dbDisconnect(mydb)
@@ -225,6 +226,7 @@ sqlite> select * from gg;
 From `R` (`dbExecute` returns the number of rows added).
 
 ```r
+> library(DBI)
 > library(RSQLite)
 > mydb <- dbConnect(RSQLite::SQLite(), "test.db")
 > dbExecute(mydb, 'INSERT INTO gg(price, mydate, mytime) 
