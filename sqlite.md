@@ -7,12 +7,11 @@ Examples include single user apps and games and there are several libraries to e
 
 - [Create new database](#create-new-database)
 - [Create/Alter/Drop tables](#create-alter-drop-tables)
-  * [Create](#create)
-  * [Alter](#alter)
-  * [Drop](#drop)
+  * [Create table](#create-table)
+  * [Alter table](#alter-table)
+  * [Drop table](#drop-table)
 - [Adding data](#adding-data)
   * [Dates and times](#dates-and-times)
-
 
 ## Create new database
 
