@@ -90,15 +90,17 @@ sudo usermod -aG docker ${USER}
 
 Now, you either need to restart/logout and then log back in or do:
 
-```
-su - $USER
-clear
+```sh
+$ su - $USER
+$ clear
+$ groups
+should include docker
 // should now work without having to sudo
 // status of all the docker processes that are running
-docker ps -a 
+$ docker ps -a 
 
 // test by running the hello-world container
-docker run hello-world
+$ docker run hello-world
 ```
 
 ## Docker registries
