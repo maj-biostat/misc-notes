@@ -6,16 +6,15 @@ It is best used when you need an embedded db that will not require much by futur
 Examples include single user apps and games and there are several libraries to enable you to connect to a sqlite database from R, python etc.
 
 - [Create new database](#create-new-database)
-- [Create/Alter/Drop tables](#create-alter-drop-tables)
+- [Create or Alter or Drop](#create-or-alter-or-drop)
   * [Create table](#create-table)
   * [Alter table](#alter-table)
   * [Drop table](#drop-table)
-- [Add/Update/delete data](#add-update-delete-data)
+- [Add or Update or Delete data](#add-or-update-or-delete-data)
   * [Dates and times](#dates-and-times)
   * [Insert data from R](#insert-data-from-r)
 - [Queries](#queries)
 - [References](#references)
-
 
 ## Create new database
 
@@ -49,7 +48,7 @@ You can create a DB using the `RSQLite` R package.
 > unlink(mydb)
 ```
 
-## Create/Alter/Drop tables
+## Create or Alter or Drop
 
 ### Create table
 
@@ -165,7 +164,7 @@ sqlite> ALTER TABLE gg ADD COLUMN Age INT;
 You can delete tables with `drop table <tablename>;`
 
 
-## Add/Update/delete data
+## Add or Update or Delete data
 
 Insert a new record with (colnames are optional:
 
