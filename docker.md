@@ -44,7 +44,8 @@ Docker sets things up, listens for commands, manages containers.
 + `curl -X POST "http://127.0.0.1:8000/add?x=2&y=10" -H "accept: */*" -d ""` do a http post
 + `curl -X GET "http://127.0.0.1:8000/echo?msg1=a&msg2=b"` do a http get
 + `curl -X GET "http://127.0.0.1:8000/add?x=2&y=10"` do a http get
-+ `localhost:8000/completerand?numbertrt=3&samplesize=10` url for browser test
++ `curl -X GET "http://127.0.0.1:8000/completerand?numbertrt=3&samplesize=3"`  do a http get
++ `localhost:8000/completerand?numbertrt=3&samplesize=3` url for browser test
 + `localhost:8000/completerand?foo=3&foo=2&foo=1&samplesize=10` url for browser test (using arrays) ?
 + `localhost:8000/completerand?weights=%5B0.5%2C%200.5%5D&samplesize=10` url for browser test (using json str arrays) ?
 
