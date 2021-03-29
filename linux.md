@@ -18,6 +18,7 @@ Notes on installing and setting up Linux distributions.
   * [Text processing and pipes](#text-processing-and-pipes)
   * [Shell script examples](#shell-script-examples)
   * [openssh](#openssh)
+  * [postman](#p)
   * [screen](#screen)
   * [watch](#watch)
   * [ip addresses](#ip-addresses)
@@ -337,6 +338,18 @@ On the client do
 ```
 ssh -p portnum user@ipaddr
 ```
+
+
+### postman
+
+An API development platform, see resources [here](https://learning.postman.com/).
+Frustratingly, more things seem to need to be installed with snap, which often seems to be very slow.
+
+```
+sudo snap install postman
+```
+
+You have to create an account.
 
 ### screen
 

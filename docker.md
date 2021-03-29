@@ -3,12 +3,13 @@
 Introductory docker.
 
 - [Overview](#overview)
+- [Common commands](#common-commands)
 - [Installing Docker](#installing-docker)
 - [Docker registries](#docker-registries)
 - [Images and containers](#images-and-containers)
 - [Running](#running)
 - [Installing software on containers](#installing-software-on-containers)
-- [Container networking](#container-networking)
+- [Networking](#networking)
 - [Volumes](#volumes)
 - [Dockerfiles](#dockerfiles)
 - [Multiple containers](#multiple-containers)
@@ -28,6 +29,28 @@ A container can talk with other containers.
 You might have one container that runs redhat with a db and another container that has a web server running on it etc.
 
 Docker sets things up, listens for commands, manages containers.
+
+## Common commands
+
++ `docker images` list docker images 
++ `docker rmi <image id>` remove image by image id (see `docker images`)
++ `docker build -t mycontr .` build container, tag it mycontr use Docker file in pwd
++ `docker ps -a` docker process status (gives assigned names)
++ `docker exec -ti youthful_kalam bash` attach to running container having assigned name youthful_kalam
++ `docker run -p 8000:8000 --rm mycontr` run mycontr, expose int/ext port 8000, remove on exit
++ `docker run -it -p 8000:8000 --rm mycontr bash` run mycontr interactive, expose int/ext port 8000, remove on exit
++ `docker run -ti -v /data/randr:/share ubuntu bash` permanent store volume (files retained after container exited)
++ `docker stop $(docker ps -a -q)` stop all running containers
++ `curl -X POST "http://127.0.0.1:8000/add?x=2&y=10" -H "accept: */*" -d ""` do a http post
++ `curl -X GET "http://127.0.0.1:8000/echo?msg1=a&msg2=b"` do a http get
++ `curl -X GET "http://127.0.0.1:8000/add?x=2&y=10"` do a http get
++ `localhost:8000/completerand?numbertrt=3&samplesize=10` url for browser test
++ `localhost:8000/completerand?foo=3&foo=2&foo=1&samplesize=10` url for browser test (using arrays) ?
++ `localhost:8000/completerand?weights=%5B0.5%2C%200.5%5D&samplesize=10` url for browser test (using json str arrays) ?
+
+NOTE: You must set a container's main process to bind to the special `0.0.0.0` (all interfaces) address, or it will be unreachable from outside the container.
+Outside the container, on your local machine, you would use `http://localhost:8000/ep` or `http://127.0.0.1:8000/ep`, which should be equivalent.
+
 
 ## Installing Docker
 
@@ -310,8 +333,10 @@ hello-world   latest    d1165f221234   2 weeks ago      13.3kB
 ubuntu        latest    4dd97cefde62   2 weeks ago      72.9MB
 ```
 
-## Container networking
+## Networking
 
+NOTE: You must set a container's main process to bind to the special `0.0.0.0` (all interfaces) address, or it will be unreachable from outside the container.
+This means that when running an R `plumber` application, you need to 
 
 Connecting containers together such that they can talk together and talk to the internet.
 You can isolate some containers from others if you want.
