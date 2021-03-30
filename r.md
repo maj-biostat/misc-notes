@@ -3,6 +3,7 @@
 Installation and usage.
 
 - [Rscript](#rscript)
+- [System utilities](#system-utilities)
 - [Debugging R](#debugging-r)
 - [Local R packages](#local-r-packages)
 - [yaml Header for Rmd](#yaml-header-for-rmd)
@@ -35,6 +36,16 @@ fg % 1
 # to background
 bg % 1
 ```
+
+
+## System utilities
+
+### curl
+
+Use [curl](https://cran.r-project.org/web/packages/curl/vignettes/intro.html) or [RCurl](https://cran.r-project.org/web/packages/RCurl/index.html).
+
+
+
 
 ## Debugging R
 
@@ -166,6 +177,8 @@ bibliography: my.bib
 ```
 
 Use @nameyyyy for citations.
+
+
 
 
 ## Auto install code
