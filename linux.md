@@ -48,6 +48,7 @@ Notes on installing and setting up Linux distributions.
   * [Diff/Merge/FTP](#diff-merge-ftp)
   * [SSH](#ssh)
   * [Video/audio capture](#video-audio-capture)
+  * [Webcam Video Camera](#webcam-video-camera)
   * [Virtualisation](#virtualisation)
 - [Manjaro install](#manjaro-install)
   * [Hardware details](#hardware-details)
@@ -955,13 +956,69 @@ To copy files across, you can use `scp`, e.g.
 scp -P 1234 file.tar ubuntu@1.2.3.4:/home/userdir
 ```
 
-### Video/audio capture
+### Video audio capture
 
 ```
 sudo apt install guvcview
 sudo apt install audacity
 sudo apt install vlc
 ```
+
+## Webcam Video Camera
+
+Useful applications and tweaks (see https://www.youtube.com/watch?v=DaZ9zU3tdFY)
+
+```
+sudo apt install v4l-utils
+# but then use
+$ v4l2-ctl # application to control video4linux drivers
+# list devices
+$ v4l2-ctl --list-devices
+Integrated_Webcam_HD: Integrate (usb-0000:00:14.0-11):
+	/dev/video0
+	/dev/video1
+	/dev/video2
+	/dev/video3
+	/dev/media0
+	/dev/media1
+# /dev/video0 is the main game
+# These are the options you can set
+$ v4l2-ctl -d /dev/video0 --list-ctrls
+                     brightness 0x00980900 (int)    : min=-64 max=64 step=1 default=0 value=0
+                       contrast 0x00980901 (int)    : min=0 max=95 step=1 default=0 value=0
+                     saturation 0x00980902 (int)    : min=0 max=100 step=1 default=64 value=64
+                            hue 0x00980903 (int)    : min=-2000 max=2000 step=1 default=0 value=0
+ white_balance_temperature_auto 0x0098090c (bool)   : default=1 value=1
+                          gamma 0x00980910 (int)    : min=100 max=300 step=1 default=100 value=100
+                           gain 0x00980913 (int)    : min=1 max=8 step=1 default=1 value=1
+           power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=2 value=1
+      white_balance_temperature 0x0098091a (int)    : min=2800 max=6500 step=1 default=4600 value=4600 flags=inactive
+                      sharpness 0x0098091b (int)    : min=1 max=7 step=1 default=2 value=2
+         backlight_compensation 0x0098091c (int)    : min=0 max=3 step=1 default=3 value=3
+                  exposure_auto 0x009a0901 (menu)   : min=0 max=3 default=3 value=3
+              exposure_absolute 0x009a0902 (int)    : min=10 max=626 step=1 default=156 value=156 flags=inactive
+# For example - powerline frequency is set to 
+$ v4l2-ctl -d /dev/video0 --get-ctrl=power_line_frequency
+power_line_frequency: 1  
+# Which is 50Hz. If you set it to 60Hz (and you are not in a 50Hz region, e.g. aus) you will see wavy lines on the image.    
+# To set a value do, for example:
+$ v4l2-ctl -d /dev/video0 --set-ctrl=power_line_frequency=2   
+# To see all the attribute data for the device do
+$ udevadm info --attribute-walk --name=/dev/video0
+# To make this persistent across reboots (see from 6:40 mins in video) create file 
+# sudo vim /etc/udev/rules.d/99-logitech.rules
+# and add content (the various attributes are obtained from the output to udevadm call earlier
+SUBSYSTEM=="video4linux", KERNEL=="video[0-9*", ATTRS{product}=="HD Pro Webcam C920", ATTRS{serial}=="E1C05EAF", RUN="/usr/bin/v4l2-ctl -d $devnode --set-ctrl=power_line_frequency=1"
+```
+
+also of note:
+
+```
+hardinfo
+guvcview # video camera config - similar to v4l2ucp (sourceforge)
+cheese # for taking pics etc - also see fswebcam
+```
+
 
 ### Virtualisation
 
