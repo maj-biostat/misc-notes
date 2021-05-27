@@ -22,7 +22,7 @@ Notes on installing and setting up Linux distributions.
   * [screen](#screen)
   * [watch](#watch)
   * [ip addresses](#ip-addresses)
-  * [grep et al](#grep-et-al)
+  * [grep and pdfgrep](#grep-and-pdfgrep)
   * [tar archives](#tar-archives)
 - [Ubuntu install](#ubuntu-install)
   * [Installing 20.04 LTS](#installing-2004-lts)
@@ -396,11 +396,15 @@ ip a
 
 use `iw dev` to get the wifi mac address.
 
-### grep et al
+### grep and pdfgrep
 
 Recursive from current directory, only *.R files.
 
 `grep -R --include="*.R" 'contr.sum' .`
+
+Find text in pdfs recursively from the current directory:
+
+`pdfgrep -r arm .`
 
 ### tar archives
 
