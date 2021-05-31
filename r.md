@@ -21,6 +21,24 @@ Run script from terminal (redirect output stdout/stderr to log) in the backgroun
 /usr/bin/Rscript main.R > log.txt 2>&1 &
 ```
 
+Render rmarkdown (includes passing arguments)
+
+```
+/usr/bin/Rscript -e "rmarkdown::render('example.Rmd', params=list(args = myarg))"
+```
+
+in the rmarkdown yaml:
+
+```
+---
+title: "Simple example"
+output:
+  pdf_document: default
+params:
+  args: myarg
+---
+```
+
 Kill them all!
 
 ```
