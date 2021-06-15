@@ -1030,6 +1030,10 @@ Virtual box.
 
 https://www.youtube.com/watch?v=2oO9CeZXjTY
 
+short version:
+
+https://www.youtube.com/watch?v=eon_NdNfqqg
+
 If everything has gone to plan, you will be prompted on clicking Device -> Insert guest additions to download.  
 Download, then insert the iso as a cd then install the guest additions on the virtual windows box.
 
