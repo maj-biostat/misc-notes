@@ -8,6 +8,9 @@ Note that the [Linux](https://github.com/maj-biostat/misc-notes/blob/master/linu
 ```
 clinfo -l
 nvidia-smi
+nvtop
+# CUDA version
+nvcc --version
 sudo hwinfo --gfxcard --short
 lspci -k | grep -A 2 -i "VGA"
 ```
@@ -29,6 +32,11 @@ sudo apt-get -y install cuda
 ```
 
 which will take about 30 mins to do depending on your connection speed.
+No doubt, cuda will have installed in the wrong place so you may have to do because some GPU functionality expects the CUDA installation to be at /usr/local/cuda-X.X, where X.X should be replaced with the CUDA version number (e.g. cuda-10.2).
+
+```
+sudo ln -s /usr/lib/cuda /usr/local/cuda-11.3
+```
 
 Additionally, NVIDIA provide [cuDNN](https://developer.nvidia.com/cudnn) which is a lib for deep neural nets.
 In order to install cuDNN you need to sign up for a nvidia developer account. 
@@ -52,6 +60,21 @@ pip3 install --upgrade jax==0.2.10 jaxlib==0.1.62+cuda111 -f https://storage.goo
 ```
 
 note the specific versions of `jax` and `jaxlib` were installed to be compatible with the version of `numpyro` at the time of writing.
+
+Test
+
+```python
+# https://github.com/google/jax/issues/989
+import os
+os.environ["XLA_FLAGS"]="--xla_gpu_cuda_data_dir=/usr/lib/cuda"
+os.environ["CUDA_HOME"]="/usr/local/cuda-11.3"
+
+import jax
+import jax.numpy as jnp
+
+x = jnp.arange(10)
+print(x)
+```
 
 ## Numpyro
 
@@ -80,6 +103,10 @@ Successfully installed numpyro-0.6.0
 the following example (also see other [examples](https://github.com/pyro-ppl/numpyro#more-examples) is lifted from the numpyro site for convenience:
 
 ```python
+import os
+os.environ["XLA_FLAGS"]="--xla_gpu_cuda_data_dir=/usr/lib/cuda"
+os.environ["CUDA_HOME"]="/usr/local/cuda-11.3"
+
 import numpy as np
 
 J = 8
