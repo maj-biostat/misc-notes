@@ -92,6 +92,20 @@ from jax import random
 from numpyro.infer import MCMC, NUTS
 from numpyro.infer.reparam import TransformReparam
 
+# standard implementation
+def eight_schools(J, sigma, y=None):
+  mu = numpyro.sample('mu', dist.Normal(0, 5))
+  tau = numpyro.sample('tau', dist.HalfCauchy(5))
+  with numpyro.plate('J', J):
+    theta = numpyro.sample('theta', dist.Normal(mu, tau))
+    numpyro.sample('obs', dist.Normal(theta, sigma), obs=y)
+
+nuts_kernel = NUTS(eight_schools)
+mcmc = MCMC(nuts_kernel, num_warmup=500, num_samples=1000)
+rng_key = random.PRNGKey(0)
+mcmc.run(rng_key, J, sigma, y=y, extra_fields=('potential_energy',))
+
+# noncentred implementation
 def eight_schools_noncentered(J, sigma, y=None):
   mu = numpyro.sample('mu', dist.Normal(0, 5))
   tau = numpyro.sample('tau', dist.HalfCauchy(5))
