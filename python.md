@@ -1,6 +1,6 @@
 # Python Newb Notes
 
-- [Virtual Env](#virtual-env)
+- [Virtual Environments](#virtual-environments)
   * [Activating virtual environments](#activating-virtual-environments)
 - [Jupyter/IPython](#jupyter-ipython)
 - [Parallel in Jupyter/IPython](#parallel-in-jupyter-ipython)
