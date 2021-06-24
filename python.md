@@ -7,6 +7,7 @@
 - [Jupyter / IPython](#jupyter---ipython)
 - [Packages](#packages)
   * [Install package from a github repo](#install-package-from-a-github-repo)
+  * [Install specific package version](#install-specific-package-version)
 - [Execution](#execution)
 - [Classes](#classes)
 - [Special main](#special-main)
@@ -145,7 +146,17 @@ Then either run the setup.py file from the relevant directory *OR* change dir to
 
 Alternatively `pip install git+https://github.com/jkbr/httpie.git#egg=httpie`
 
+### Install specific package version
 
+```
+pip3 install jaxlib=0.1.62
+```
+
+and then show what version was installed:
+
+```
+pip3 show jaxlib
+```
 
 
 ## Execution
