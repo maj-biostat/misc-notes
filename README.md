@@ -7,6 +7,7 @@ The GNU GPLv3 also lets people do almost anything they want with your project, e
 
 ## Contents 
 
+- [Blender](blender.md)   
 - [Docker](docker.md)   
 - [EMACS](emacs.md)   
 - [GIT](git.md)
