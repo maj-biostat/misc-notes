@@ -10,6 +10,7 @@ Installation and usage.
 - [Auto install code](#auto-install-code)
 - [tensorflow and greta](#tensorflow-and-greta)
 - [bioconductor](#bioconductor)
+- [INLA](#inla)
 - [R install](#r-install)
 - [Packages containing rstan models](#packages-containing-rstan-models)
 - [Minimal set of packages](#minimal-set-of-packages)
@@ -386,7 +387,8 @@ BiocManager::install("graph", lib = "/home/mjon6454/R/x86_64-pc-linux-gnu-librar
 Again you need to specify the lib path
 
 ```
-Rscript -e 'install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)' > log.txt 2>&1 &
+wget https://inla.r-inla-download.org/R/stable/INLA_21.02.23.tar.gz
+Rscript -e 'install.packages("INLA_21.02.23.tar.gz", repos = NULL, type="source", dep = TRUE)' > log.txt 2>&1
 ```
 
 ## R install
