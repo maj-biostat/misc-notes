@@ -9,6 +9,7 @@ Installation and usage.
 - [yaml Header for Rmd](#yaml-header-for-rmd)
 - [Auto install code](#auto-install-code)
 - [tensorflow and greta](#tensorflow-and-greta)
+- [bioconductor](#bioconductor)
 - [R install](#r-install)
 - [Packages containing rstan models](#packages-containing-rstan-models)
 - [Minimal set of packages](#minimal-set-of-packages)
@@ -369,6 +370,23 @@ m <- model(intercept, coef, sd)
 
 draws <- greta::mcmc(m, n_samples = 1000, chains = 4)
 bayesplot::mcmc_trace(draws)
+```
+
+## bioconductor
+
+You need to specify the applicable lib path
+
+```
+BiocManager::install(lib = "/home/mjon6454/R/x86_64-pc-linux-gnu-library/4.1")
+BiocManager::install("graph", lib = "/home/mjon6454/R/x86_64-pc-linux-gnu-library/4.1")
+```
+
+## INLA
+
+Again you need to specify the lib path
+
+```
+Rscript -e 'install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)' > log.txt 2>&1 &
 ```
 
 ## R install
