@@ -415,6 +415,9 @@ gzip archive.tar
 # hash
 sha256sum archive.tar.gz
 
+# table of contents
+tar -tf archive.tar
+
 # for fat32
 split -b 2000M archive.tar.gz archive_part
 
@@ -423,6 +426,9 @@ cat archive_part* > test.tar.gz
 
 # hash
 sha256sum test.tar.gz
+
+# delete some files from the archive
+tar -vf yourArchive.tar --delete your/path/to/delete
 ```
 
 
