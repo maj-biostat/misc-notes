@@ -391,6 +391,23 @@ wget https://inla.r-inla-download.org/R/stable/INLA_21.02.23.tar.gz
 Rscript -e 'install.packages("INLA_21.02.23.tar.gz", repos = NULL, type="source", dep = TRUE)' > log.txt 2>&1
 ```
 
+```r
+n = 100; a = 1; b = 1; tau = 100
+z = rnorm(n)
+eta = a + b*z
+
+scale = exp(rnorm(n))
+prec = scale*tau
+y = rnorm(n, mean = eta, sd = 1/sqrt(prec))
+
+
+data = list(y=y, z=z)
+formula = y ~ 1+z
+result = inla(formula, family = "gaussian", data = data)
+
+summary(result)
+```
+
 ## R install
 
 Add `deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/` to `etc/apt/sources.list`.  
