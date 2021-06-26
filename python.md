@@ -160,7 +160,7 @@ pip3 show jaxlib
 ```
 
 
-### install pymupdf
+### Install pymupdf
 
 [pymupdf](https://github.com/pymupdf/PyMuPDF) is a python binding that uses [mupdf](https://mupdf.com/) to access pdf data.
 
