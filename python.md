@@ -8,7 +8,7 @@
 - [Packages](#packages)
   * [Install package from a github repo](#install-package-from-a-github-repo)
   * [Install specific package version](#install-specific-package-version)
-  * [Install pymupdf](install-pymupdf)
+  * [Install pymupdf](#install-pymupdf)
 - [Execution](#execution)
 - [Classes](#classes)
 - [Special main](#special-main)
@@ -160,7 +160,7 @@ pip3 show jaxlib
 ```
 
 
-### Install pymupdf
+### install pymupdf
 
 [pymupdf](https://github.com/pymupdf/PyMuPDF) is a python binding that uses [mupdf](https://mupdf.com/) to access pdf data.
 
