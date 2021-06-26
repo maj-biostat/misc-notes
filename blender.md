@@ -1,5 +1,10 @@
 # Blender
 
+## Units
+
+Select the `scene` tab in the RHS group.
+Units can be found under this.
+
 ## Hotkey
 
 Say you moved the 3d cursor by mistake. 
