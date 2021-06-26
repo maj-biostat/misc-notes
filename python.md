@@ -163,6 +163,7 @@ pip3 show jaxlib
 ### Install pymupdf to extract annotations
 
 [pymupdf](https://github.com/pymupdf/PyMuPDF) is a python binding that uses [mupdf](https://mupdf.com/) to access pdf data.
+Some of the capabilities of mupdf can be found [here](https://mupdf.com/docs/index.html).
 
 First install mupdf
 
