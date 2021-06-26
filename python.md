@@ -8,6 +8,7 @@
 - [Packages](#packages)
   * [Install package from a github repo](#install-package-from-a-github-repo)
   * [Install specific package version](#install-specific-package-version)
+  * [Install pymupdf](install-pymupdf)
 - [Execution](#execution)
 - [Classes](#classes)
 - [Special main](#special-main)
@@ -158,6 +159,33 @@ and then show what version was installed:
 pip3 show jaxlib
 ```
 
+
+### Install pymupdf
+
+[pymupdf](https://github.com/pymupdf/PyMuPDF) is a python binding that uses [mupdf](https://mupdf.com/) to access pdf data.
+
+First install mupdf
+
+```
+sudo apt install mupdf mupdf-tools
+```
+
+Now add the python bits into your virtual env
+
+```
+pip3 install pymupdf
+```
+
+Test with this snippet, which extracts annotations/comments from a pdf
+
+```
+import fitz
+doc = fitz.open("example.pdf")
+for i in range(doc.pageCount):
+ page = doc[i]
+ for annot in page.annots():
+  print(annot.info["content"])
+```
 
 ## Execution
 
