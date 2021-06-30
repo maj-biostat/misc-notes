@@ -375,15 +375,18 @@ bayesplot::mcmc_trace(draws)
 
 ## bioconductor
 
+See https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html
 You need to specify the applicable lib path
 
 ```
-BiocManager::install(lib = "/home/mjon6454/R/x86_64-pc-linux-gnu-library/4.1")
-BiocManager::install("graph", lib = "/home/mjon6454/R/x86_64-pc-linux-gnu-library/4.1")
+BiocManager::install(lib = "/home/<username>/R/x86_64-pc-linux-gnu-library/4.1")
+BiocManager::install("graph", lib = "/home/<username>/R/x86_64-pc-linux-gnu-library/4.1")
+BiocManager::install("Rgraphviz", lib = "/home/<username>/R/x86_64-pc-linux-gnu-library/4.1")
 ```
 
 ## INLA
 
+There are a couple of dependencies that are not in CRAN so pick up `graph` and `Rgraphviz` from bioconductor, see above.
 Again you need to specify the lib path
 
 ```
