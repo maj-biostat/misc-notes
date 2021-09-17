@@ -390,12 +390,14 @@ watch -n 3 ls -l logs/ out/
 ### top
 
 CPU utilisation can be monitored with `top` or `htop`. 
-For AMD, `mpstat` is more detailed.
+For AMD, `mpstat` is more detailed and `nmon` is another alternative, see [http://nmon.sourceforge.net/pmwiki.php]
 
 ```
 sudo apt install sysstat
 # report utilisation on all cpus
 mpstat -P 0-
+sudo apt install nmon
+nmon
 ```
 
 ### ip addresses
