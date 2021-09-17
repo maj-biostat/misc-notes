@@ -21,6 +21,7 @@ Notes on installing and setting up Linux distributions.
   * [postman](#p)
   * [screen](#screen)
   * [watch](#watch)
+  * [top and mpstat](#top)
   * [ip addresses](#ip-addresses)
   * [grep and pdfgrep](#grep-and-pdfgrep)
   * [tar archives](#tar-archives)
@@ -384,6 +385,17 @@ ctrl a + \
 
 ```
 watch -n 3 ls -l logs/ out/
+```
+
+### top
+
+CPU utilisation can be monitored with `top` or `htop`. 
+For AMD, `mpstat` is more detailed.
+
+```
+sudo apt install sysstat
+# report utilisation on all cpus
+mpstat -P 0-
 ```
 
 ### ip addresses
