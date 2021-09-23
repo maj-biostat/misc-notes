@@ -8,6 +8,9 @@ For example, `dw` deletes the remainder of the word that is currently under the 
 
 `vim` remembers our editing, so if we do `.` it repeats our last edit (as a whole chunk) and if we want to undo the last edit by `u`.
 
+For a fresh install, you will want a plugin manager installed. 
+I use [vim-plug](https://github.com/junegunn/vim-plug), follow the installation instructions at the link.
+
 
 - [Neovim](#neovim)
   * [Usage](#usage)
