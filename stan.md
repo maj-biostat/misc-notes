@@ -57,4 +57,10 @@ fit$summary()
 
 If that all runs, then you are good to go.
 
+Aside - to get the draws out of the fit object do:
 
+```
+fit$draws(format = "df")
+```
+
+and if you are using the algebraic solver then you need to specify `fixed_param = T` when running `sample`.
