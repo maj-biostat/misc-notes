@@ -990,6 +990,15 @@ sudo apt install vlc
 
 ## Webcam Video Camera
 
+If the mic stops working execute:
+
+```
+modprobe snd-usb-audio
+```
+
+see last post here https://www.pclinuxos.com/forum/index.php?topic=152015.0
+
+
 Useful applications and tweaks (see https://www.youtube.com/watch?v=DaZ9zU3tdFY)
 
 ```
