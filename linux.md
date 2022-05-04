@@ -996,7 +996,7 @@ If the mic stops working execute:
 modprobe snd-usb-audio
 ```
 
-see last post here https://www.pclinuxos.com/forum/index.php?topic=152015.0
+see last post here https://www.pclinuxos.com/forum/index.php?topic=152015.0 and also https://wiki.parabola.nu/Advanced_Linux_Sound_Architecture
 
 
 Useful applications and tweaks (see https://www.youtube.com/watch?v=DaZ9zU3tdFY)
