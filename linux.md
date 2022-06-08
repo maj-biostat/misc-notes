@@ -100,7 +100,14 @@ find . -type f -newermt 2020-11-19
 find . -iname "*.pdf" -atime -3 -type f
 # modified in the last 24 hours
 find . -iname "*.pdf" -mtime 0 -type d
+# find and grep
+find -name '*.yml' -exec grep MYVAR {} \+
 ```
+
+The last command will find, from the current directory and recursively deeper, any files ending with .yml. 
+It then substitutes that list of files into the pair of braces `{}`. 
+The trailing `\+` is just a special find delimiter to say the `-exec` switch has finished. 
+The result is matching a list of files and handing them to grep.
 
 ### wget
 
