@@ -1,5 +1,7 @@
 # Miscellaneous Notes
 
+https://askubuntu.com/questions/135509/how-would-i-boot-into-the-ubuntu-and-windows-recovery-modes-if-i-removed-the-opt
+
 Please be patient, do not panic under any circumstances. 
 At the end of the day, everything will be fine, and in the long run, we will be dead anyway.
 
