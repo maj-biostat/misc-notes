@@ -616,7 +616,24 @@ This is without doubt the most hassle you will get from linux.
 Often blue screen of death relates to nvidia drivers. 
 Upgrades of the drivers will result in things like external monitors not working and even entire system not booting.
 
-Current drivers:
+
+To list your cards (most laptops will have an onboard VGA graphics and an NVIDIA GPU or something similar):
+
+```
+lspci -k | grep -A 2 -i "VGA"
+00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 630 (Mobile) (rev 02)
+	DeviceName: Onboard - Video
+	Subsystem: Dell UHD Graphics 630 (Mobile)
+--
+01:00.0 VGA compatible controller: NVIDIA Corporation TU117GLM [Quadro T2000 Mobile / Max-Q] (rev a1)
+	Subsystem: Dell TU117GLM [Quadro T2000 Mobile / Max-Q]
+	Kernel driver in use: nvidia
+```
+
+If you go to system settings then about you will see which one is being used right now.
+On mine, it is the nvidia card.
+
+To list the current drivers:
 
 ![VideooDrivers](sep2020vid.png "Additional drivers")
 
@@ -629,7 +646,6 @@ https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
 Note comment on grub update  
 https://askubuntu.com/questions/1059965/internal-laptop-screen-not-detected-when-using-nvidia-driver  
 
-
 If you need to do a boot to terminal, do, Alt-F2 then login to terminal.
 
 ```
@@ -637,16 +653,7 @@ If you need to do a boot to terminal, do, Alt-F2 then login to terminal.
 sudo hwinfo --gfxcard --short
 ```
 
-This will give a brief report of the card and driver:
-
-```
-lspci -k | grep -A 2 -i "VGA"
-01:00.0 VGA compatible controller: NVIDIA Corporation TU117GLM [Quadro T2000 Mobile / Max-Q] (rev a1)
-	Subsystem: Dell TU117GLM [Quadro T2000 Mobile / Max-Q]
-	Kernel driver in use: nvidia
-```
-
-The following gives more detail.
+You can get more detail on the card usage with:
 
 ```
 nvidia-smi
