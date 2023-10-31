@@ -1,6 +1,5 @@
 # Miscellaneous Notes
 
-test
 
 
 https://askubuntu.com/questions/135509/how-would-i-boot-into-the-ubuntu-and-windows-recovery-modes-if-i-removed-the-opt
