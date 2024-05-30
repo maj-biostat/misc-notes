@@ -9,7 +9,7 @@ Notes on installing and setting up Linux distributions.
   * [wget](#wget)
   * [mount, fdisk and lsusb](#mount--fdisk-and-lsusb)
   * [usb drives](#usb-drives)
-  * [du (Disk usage)](#du--disk-usage-)
+  * [Disk usage](#disk-usage)
   * [cron](#cron)
     + [Editing crontab](#editing-crontab)
     + [Monitor crontab](#monitor-crontab)
@@ -48,6 +48,7 @@ Notes on installing and setting up Linux distributions.
   * [Network monitoring](#network-monitoring)
   * [Diff/Merge/FTP](#diff-merge-ftp)
   * [SSH](#ssh)
+  * [User mgt](#user-mgt)
   * [Video/audio capture](#video-audio-capture)
   * [Webcam Video Camera](#webcam-video-camera)
   * [Virtualisation](#virtualisation)
@@ -165,7 +166,7 @@ What devices?
 sudo fdisk -l
 ```
 
-### du (Disk usage)
+### Disk usage
 
 Size of directory and contents
 
@@ -608,7 +609,14 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 ```
 
 
+Also, remember cleanup
 
+```
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+```
 
 ### Video drivers
 
@@ -993,6 +1001,30 @@ To copy files across, you can use `scp`, e.g.
 ```
 scp -P 1234 file.tar ubuntu@1.2.3.4:/home/userdir
 ```
+
+
+### User mgt
+
+Add a user (or add user and assign to group):
+
+```
+sudo adduser fred
+sudo adduser fred groupname
+```
+
+Assign groups
+
+```
+sudo usermod -aG sudo fred
+```
+
+Delete user:
+
+```
+deluser fred
+```
+
+
 
 ### Video audio capture
 
